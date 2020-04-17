@@ -1,0 +1,68 @@
+
+body {
+  background-color: rgb(41, 45, 62);
+}
+
+.logo-font-container {
+  /* font-size: 120px; */
+  /* font-weight: bold; */
+  text-transform: uppercase;
+}
+
+.logo-font-container svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.logo-font-container .text {
+  fill: none;
+  stroke-width: 0.5;
+  stroke-dasharray: 0 0;
+  stroke-dashoffset: 0;
+}
+
+.logo-font-container .text:nth-child(4n + 1) {
+  stroke: rgb(223, 249, 251);
+  animation: text1 4s ease-in-out forwards;
+}
+.logo-font-container .text:nth-child(4n + 2) {
+  stroke: rgb(72, 219, 251);
+  animation: text2 4s ease-in-out forwards;
+}
+.logo-font-container .text:nth-child(4n + 3) {
+  stroke: rgb(255, 121, 121);
+  animation: text3 4s ease-in-out forwards;
+}
+.logo-font-container .text:nth-child(4n + 4) {
+  stroke: rgb(246, 229, 141);
+  animation: text4 4s ease-in-out forwards;
+}
+
+@keyframes text1 {
+  100% {
+    stroke-dashoffset: 1000;
+    stroke-dasharray: 60 180;
+  }
+}
+
+@keyframes text2 {
+  100% {
+    stroke-dashoffset: 1060;
+    stroke-dasharray: 60 180;
+  }
+}
+
+@keyframes text3 {
+  100% {
+    stroke-dashoffset: 1120;
+    stroke-dasharray: 60 180;
+  }
+}
+
+@keyframes text4 {
+  100% {
+    stroke-dashoffset: 1180;
+    stroke-dasharray: 60 180;
+  }
+}
