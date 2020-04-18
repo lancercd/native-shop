@@ -3,7 +3,6 @@ body{
     background-color: skyblue;
 }
 
-
 .blur{
     filter: blur(20px); /*滤镜：模糊20px*/
     pointer-events: none; /*阻止元素的点击事件*/
@@ -28,9 +27,7 @@ body{
     border-radius: 10px;
     box-shadow: 0 5px 30px rgba(0,0,0,0.30); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
     background-color: #fff; /*背景颜色*/
-    /* display:block; */
     opacity: 0; /*不透明度*/
-    /* transition: 5s;  */
     animation: infoStart .3s linear;
     animation-fill-mode: forwards;
 }
@@ -40,21 +37,10 @@ body{
         top:30%;
         opacity: 0;
     }
-    /* 50%{
-        top: 35%;
-        opacity: .2;
-    } */
     100%{
         top: 40%;
         opacity: 1;
     }
-}
-#info-form.active{
-    /* top:50%;  */
-    /* visibility: visible; */
-    /* display: block; */
-    /* opacity: 1;  */
-    /* transition: 5s; */
 }
 
 
@@ -108,9 +94,3 @@ body{
     width: 45%;
     height: 50px;
 }
-
-
-/* #info-form{
-
-
-} */

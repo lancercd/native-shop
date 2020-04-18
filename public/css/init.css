@@ -1,20 +1,14 @@
-HTML, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
-pre, form, fieldset, table, th, td {
-    border:none;
-    font-family:"微软雅黑","黑体","宋体";
-    /* font-size:14px; */
-    margin:0px;
-    padding:0px;
-    }
-html,body{
-    height: 100%;
-    width: 100%;
-    }
-address, caption, cite, code, dfn, em, strong, th, var {
-    font-style: normal;
-    font-weight: normal;
+html,body,p,h1,h2,h3,h4,h5,h6,
+form,
+table,th,td,
+ul,ol,dl,li,dt,dd,{
+	margin: 0;
+	padding: 0;
 }
+
+
 a{
+    color: #333;
     text-decoration:none;
 }
 a:link{
@@ -29,16 +23,20 @@ a:hover{
 a:active{
     color:#fff;
 }
+select,input,textarea,button{
+	/*清除外框，用于自定义的前置操作*/
+	outline: none;
+	vertical-align: middle;
+}
 input::-ms-clear{
     display:none;
-    }
+}
 input::-ms-reveal{
     display:none;
 }
 input{
     -webkit-appearance: none;
     margin: 0;
-    outline: none;
     padding: 0;
 }
 input::-webkit-input-placeholder{
@@ -50,29 +48,29 @@ input::-ms-input-placeholder{
 input::-moz-placeholder{
     color: #ccc;
 }
+
 input[type=submit],input[type=button]{
     cursor: pointer;
+}
+
+button{
+    -webkit-appearance:none;
+    padding: 0;
+    margin: 0;
 }
 button[disabled], input[disabled] {
     cursor: default;
 }
 img{
     border:none;
+	vertical-align: middle;
 }
 ul,ol,li{
     list-style-type:none;
 }
-/*公共方法*/
 
-
-
-
-
-
-/*背景及色值表*/
-.bg000{
-    background: #000;
-}
-.color000{
-    color: #000;
+i{
+	/*i标签作为字体图片使用，使用em标签实现斜体*/
+	font-style: normal;
+	vertical-align: middle;
 }
