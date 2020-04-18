@@ -8,39 +8,46 @@ export default function request(opt){
         data = options.data || null,
         // error = opt.error || function(){},
         // success = opt.success || function(){},
-        complete = options.complete || function(){},
+        begin = options.begin || function(){},
+        finish = options.finish || function(){},
         url = options.url;
-
-        function formatDatas(obj){
-            let str = '';
-            for(let key in obj){
-                str +=key + '=' + obj[key] + '&';
-            }
-            return str.replace(/&$/, '');
+    begin();
+    function formatDatas(obj){
+        let str = '';
+        for(let key in obj){
+            str +=key + '=' + obj[key] + '&';
         }
-        console.log('url: ' + url);
+        return str.replace(/&$/, '');
+    }
+console.log('url: ' + url);
     return new Promise((resolve, reject) => {
         const xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         if(!xhr){
             throw new Erroe('浏览器不支持ajax    换一下浏览器');
         }
 
-
         xhr.open(type, url, async);
         type === 'POST' && xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-        // console.log(data);
+console.log('data: ' + data);
         xhr.send(type === 'GET' ? null: formatDatas(data));
 
-        xhr.onreadystatechange = function(){
-            // console.log(1);
-            if(xhr.readyState==4 && xhr.status==200)
+        xhr.onload = function(){
+            finish();
+            if(xhr.status==200)
                 resolve(xhr.responseText);
                 // resolve(JSON.parse(xhr.responseText));
             else
-                // reject('加载失败');
-
-            complete();
+                reject('加载失败');
         };
+        // xhr.onreadystatechange = function(){
+        //     if(xhr.readyState==4 && xhr.status==200)
+        //         resolve(xhr.responseText);
+        //         // resolve(JSON.parse(xhr.responseText));
+        //     else
+        //         // reject('加载失败');
+        //
+        //     // complete();
+        // };
         xhr.onerror = function(){
             reject(this);
         }
