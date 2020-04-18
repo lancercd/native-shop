@@ -1,12 +1,11 @@
 import request from './../../utils/request.js';
 import InfoForm from './../../utils/InfoForm.js';
 
-// let a;
 let test = document.getElementById('test');
-// test.addEventListener('click', () => {
+test.addEventListener('click', () => {
     const container = document.getElementById('container');
     new InfoForm(container).init();
-// }, false);
+}, false);
 
 
 
