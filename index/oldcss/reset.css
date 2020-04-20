@@ -1,0 +1,129 @@
+
+html,body,p,h1,h2,h3,h4,h5,h6,
+form,
+table,th,td,
+ul,ol,dl,li,dt,dd,{
+	margin: 0;
+	padding: 0;
+}
+li {
+  list-style: none;
+}
+img{
+    border:none;
+	vertical-align: middle;
+}
+
+ul,ol,li{
+    list-style-type:none;
+}
+
+i{
+	/*i标签作为字体图片使用，使用em标签实现斜体*/
+	font-style: normal;
+	vertical-align: middle;
+}
+
+/* table {
+  border-spacing: 0;
+  border-collapse: collapse;
+} */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+
+[hidden] {
+  display: none;
+}
+
+
+
+:focus {
+  outline: none;
+}
+:link,
+:visited {
+  color:#fff;
+  text-decoration: none;
+}
+
+a {
+  color: #757575;
+  text-decoration: none;
+}
+a:active,
+a:hover,
+a:focus {
+  outline: 0;
+}
+a:hover {
+  color: #ff6700;
+}
+
+
+select,input,textarea,button{
+	/*清除外框，用于自定义的前置操作*/
+	outline: none;
+	vertical-align: middle;
+}
+input::-ms-clear{
+    display:none;
+}
+input::-ms-reveal{
+    display:none;
+}
+input{
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+}
+input::-webkit-input-placeholder{
+    color: #ccc;
+}
+input::-ms-input-placeholder{
+    color: #ccc;
+}
+input::-moz-placeholder{
+    color: #ccc;
+}
+
+input[type=submit],input[type=button]{
+    cursor: pointer;
+}
+
+button{
+    -webkit-appearance:none;
+    padding: 0;
+    margin: 0;
+}
+button[disabled], input[disabled] {
+    cursor: default;
+}
+
+
+
+
+/*common css
+------------------------------*/
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/*common css end*/
