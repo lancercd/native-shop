@@ -1,5 +1,10 @@
 import request from './../../utils/request.js';
 import InfoForm from './../../utils/InfoForm.js';
+import Banner from './../components/Banner.js';
+
+
+
+
 
 // let test = document.getElementById('test');
 // test.addEventListener('click', () => {
@@ -26,3 +31,7 @@ import InfoForm from './../../utils/InfoForm.js';
 // ).finally(() => {
 //     console.log('finally');
 // }));
+
+const banner = document.getElementsByClassName('J_wrap')[0];
+// console.log(banner.getElementsByTagName('li'));
+new Banner(banner).init();
