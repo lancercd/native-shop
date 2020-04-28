@@ -5,7 +5,7 @@ export default class InfoForm{
         this.name = 'InfoForm';
         this.el = el;
         this.el.classList.toggle("blur");
-
+        document.body.classList.toggle('overflow');
     }
 
     init(){
@@ -15,7 +15,6 @@ export default class InfoForm{
         // setTimeout(this.show(), 1000);
         // this.show();
     }
-    // TODO *******bindEvent*******
 
     render(){
         const oFrag = document.createDocumentFragment();
@@ -96,6 +95,7 @@ export default class InfoForm{
         body.removeChild(this.form);
         // console.info(this.form.parentNode);
         this.el.classList.toggle("blur");
+        document.body.classList.toggle('overflow');
         // this.form.parentNode.removeNode(this.form);
     }
 

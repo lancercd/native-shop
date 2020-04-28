@@ -1,6 +1,5 @@
-
-body{
-    background-color: skyblue;
+.overflow{
+    overflow: hidden;
 }
 
 .blur{

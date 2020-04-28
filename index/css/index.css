@@ -1,13 +1,4 @@
 
-
-@font-face {
-  font-family: 'iconfont';
-
-  src: url('../font/iconfont.ttf');
-}
-
-
-
 .clearfix {
   zoom: 1;
 }
@@ -338,6 +329,9 @@ body {
 .site-header .search-form-active .btn-search {
   border-color: #ff6700;
 }
+.site-header .search-form-active .btn-search i{
+    font-size: 30px;
+}
 .site-header .search-keywords {
   position: absolute;
   top: 14px;
@@ -420,6 +414,7 @@ body {
     color:#000;
 }
 .site-main.container .J_wrap #goPre i{
+    font-size: 30px;
     color:#000;
 }
 .site-main.container .J_wrap #goNext {
@@ -427,6 +422,7 @@ body {
 
 }
 .site-main.container .J_wrap #goNext i{
+    font-size: 30px;
     color:#000;
 }
 .site-main.container .J_wrap .item.active {
@@ -463,27 +459,6 @@ body {
 .site-main.container .J_wrap .point.active {
     background-color: rgba(238,60,10,0.9);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -900,6 +875,10 @@ body {
   width: 48px;
   height: 48px;
 }
+.site-product .brick-item-s .btn-more i{
+    font-size: 50px;
+    color: #ff6709;
+}
 .site-product .brick-item-s .readmore {
   display: block;
   margin: 0 110px 0 30px;
@@ -934,7 +913,8 @@ body {
   padding-bottom: 60px;
 }
 .model-recommend .recommend-list {
-  height: 300px;
+  /* height: 300px; */
+  width: 1240px;
 }
 
 .model-recommend .recommend-list li {
@@ -942,6 +922,7 @@ body {
   width: 234px;
   height: 300px;
   margin-right: 14px;
+  margin-top:14px;
   padding-top: 40px;
   background: #fafafa;
   -webkit-transition: transform .2s linear;
@@ -959,13 +940,10 @@ body {
   font-weight: 400;
   white-space: nowrap;
   text-overflow: ellipsis;
-
-  _zoom: 1;
-}
-
-.model-recommend .recommend-list .title a {
   color: #212121;
+  zoom: 1;
 }
+
 
 .model-recommend .recommend-list .tips {
   overflow: hidden;

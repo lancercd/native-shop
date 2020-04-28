@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="stylesheet" href="../public/css/init.css"> -->
-  <!-- <link rel="stylesheet" href="../public/css/info-form.css"> -->
-  <!-- <link rel="stylesheet" href="../public/icon-font/iconfont.css"> -->
-  <link rel="stylesheet" href="../public/css/logo-font.css">
+  <link rel="stylesheet" type="text/css" href="../public/css/info-form.css">
+  <link rel="stylesheet" type="text/css" href="../public/icon-font/iconfont.css">
+  <link rel="stylesheet" type="text/css" href="../public/css/logo-font.css">
   <link rel="stylesheet" type="text/css" href="./css/reset.css">
   <link rel="stylesheet" type="text/css" href="./css/index.css">
   <title>商品主页</title>
 </head>
-<body>
+<body scroll="no">
 
 
 <div id="container">
@@ -31,13 +31,13 @@
         <!--购物车-->
         <div class="topbar-cart pull-right">
           <a href="javascript:;" class="btn cart">
-            <i class="icon iconfont"></i>
+            <i class="icon iconfont icon-cart-Empty"></i>
             购物车(<span>0</span>)
           </a>
         </div>
         <!--登入、注册-->
         <div class="topbar-user pull-right">
-          <a href="javascript:;">登录</a>
+          <button type="button" name="loginBtn">登录</button>
           <span class="sep">|</span>
           <a href="javascript:;">注册</a>
         </div>
@@ -74,15 +74,11 @@
         </ul>
         <!--搜索框-->
         <div class="header-search pull-right">
-          <form class="search-form">
+          <form class="search-form" >
             <input type="text" class="search-text" id="search-text"/>
-            <a href="javascript:;" class="btn-search">
-              <i class="icon iconfont1"></i>
-            </a>
-            <div class="search-keywords" id="search-keywords">
-              <a href="javascript:;">手环</a>
-              <a href="javascript:;">小米手机4</a>
-            </div>
+            <button class="btn-search">
+              <i class="icon iconfont icon-search"></i>
+            </button>
           </form>
         </div>
       </div>
@@ -135,9 +131,9 @@
           </ul>
           <ul class="pointList"> </ul>
           <button type="button" class="btn" id="goPre">
-              <i class="icon iconfont5 btn-prev">&#xe65c;</i>
+              <i class="icon iconfont icon-Left"></i>
           </button>
-          <button type="button" class="btn" id="goNext"><i class="icon iconfont5 btn-next">&#xe602;</i></button>
+          <button type="button" class="btn" id="goNext"><i class="icon iconfont icon-right1"></i></button>
         </div>
         <!-- /轮播 -->
 
@@ -236,10 +232,10 @@
           <h2 class="title">小米明星单品</h2>
           <div class="more">
             <a href="javascript:;">
-              <i class="icon iconfont5 btn-prev">&#xe65c;</i>
+              <i class="icon iconfont icon-chevron_left_square"></i>
             </a>
             <a href="javascript:;">
-              <i class="icon iconfont5 btn-next">&#xe602;</i>
+              <i class="icon iconfont icon-chevron_right_square"></i>
             </a>
           </div>
         </div>
@@ -367,7 +363,7 @@
             <div class="more-links">
               <a href="javascript:;">
               查看全部
-              <i class="icon iconfont6">&#xe6cb;</i>
+              <i class="icon iconfont icon-Rightarrow"></i>
               </a>
             </div>
           </div>
@@ -587,7 +583,7 @@
             </li>
             <li class="brick-item  brick-item-s">
               <div class="btn-more">
-                <a href="javascript:;"><i class="icon iconfont7">&#xe608;</i></a>
+                <a href="javascript:;"><i class="icon iconfont icon-Rightarrow"></i></a>
               </div>
               <a href="javascript:;" class="readmore">浏览更多
                 <small>热门</small>
@@ -598,46 +594,44 @@
         <div class="model product-3 model-recommend">
           <div class="title-box clearfix">
             <h2 class="title">为你推荐</h2>
-            <div class="more">
+            <!-- <div class="more">
               <a href="javascript:;">
-                <i class="icon iconfont5 btn-prev">&#xe65c;</i>
+                <i class="icon iconfont icon-chevron_left_square"></i>
               </a>
               <a href="javascript:;">
-                <i class="icon iconfont5 btn-next">&#xe602;</i>
+                <i class="icon iconfont icon-chevron_right_square"></i>
               </a>
-            </div>
+            </div> -->
           </div>
           <div class="slid-warp">
-            <ul class="recommend-list" style="width:2048px;">
+            <ul class="recommend-list" >
               <li>
-                <a class="thumb" href="javascript:;">
-                  <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
                 </a>
-                <h3 class="title">
-                  <a href="javascript:;">小米手机4</a>
-                </h3>
-                <p class="price">1299元起</p>
-                <p class="tips"> 13.5万人好评  </p>
               </li>
               <li>
-                <a class="thumb" href="javascript:;">
-                  <img src="./image/di1-2.jpg"/>
-                </a>
-                <h3 class="title">
-                  <a href="javascript:;">小米平板</a>
-                </h3>
-                <p class="price">1299元起</p>
-                <p class="tips"> 13.5万人好评  </p>
+                  <a href="javascript:;">
+                        <img src="./image/di1-2.jpg"/>
+                      <h3 class="title">
+                        小米平板
+                      </h3>
+                      <p class="price">1299元起</p>
+                      <p class="tips"> 13.5万人好评  </p>
+                  </a>
               </li>
               <li>
-                <a class="thumb" href="javascript:;">
-                  <img src="./image/di1-3.jpg"/>
-                </a>
-                <h3 class="title">
-                  <a href="javascript:;">小米盒子增强版 1G</a>
-                </h3>
-                <p class="price">1299元起</p>
-                <p class="tips"> 13.5万人好评  </p>
+                  <a href="javascript:;">
+                        <img src="./image/di1-2.jpg"/>
+                      <h3 class="title">小米盒子增强版 1G</h3>
+                      <p class="price">1299元起</p>
+                      <p class="tips"> 13.5万人好评  </p>
+                  </a>
               </li>
               <li>
                 <a class="thumb" href="javascript:;">
@@ -678,6 +672,96 @@
                 </h3>
                 <p class="price">1299元起</p>
                 <p class="tips"> 13.5万人好评  </p>
+              </li>
+              <li>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                      <img src="./image/T1UCV_B4dv1RXrhCrK.jpg"/>
+                    <h3 class="title">
+                      小米手机4
+                    </h3>
+                    <p class="price">1299元起</p>
+                    <p class="tips"> 13.5万人好评  </p>
+                </a>
               </li>
             </ul>
           </div>

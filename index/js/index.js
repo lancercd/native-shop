@@ -5,12 +5,12 @@ import Banner from './../components/Banner.js';
 
 
 
-
-// let test = document.getElementById('test');
-// test.addEventListener('click', () => {
-//     const container = document.getElementById('container');
-//     new InfoForm(container).init();
-// }, false);
+// console.log('lllllllll');
+let loginBtn = document.getElementsByName('loginBtn')[0];
+loginBtn.addEventListener('click', () => {
+    const container = document.getElementById('container');
+    new InfoForm(container).init();
+}, false);
 
 
 
