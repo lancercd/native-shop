@@ -452,7 +452,8 @@ body {
     display: flex;
     justify-content: space-around;
     /* align-items:center; */
-    width: 100px;
+    max-width: 250px;
+    min-width: 100px;
     position: absolute;
     right: 50%;
     top: 80%;
@@ -460,28 +461,25 @@ body {
     z-index: 10000;
 }
 .site-main.container .J_wrap .point {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
+    width: 20px;
+    height: 5px;
+    border-radius: 20%;
+    margin-left: 1px;
+    margin-right: 2px;
     float: left;
-    /* margin-right: 14px; */
-    border-style: solid;
-    border-width: 2px;
-    /* border-color: #fff; */
-    border-color: #ddd;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(180,180,180,0.5);
+    /* background-color: rgba(255,255,255,0.8); */
+
     cursor: pointer;
 }
 .site-main.container .J_wrap .point:hover {
-    background-color: rgba(238,60,10,0.9);
+    /* background-color: rgba(238,60,10,0.9); */
+    background-color: rgba(255,255,255,0.9);
 }
 .site-main.container .J_wrap .point.active {
-    background-color: rgba(238,60,10,0.9);
+    /* background-color: rgba(238,60,10,0.9); */
+    background-color: rgba(255,255,255,0.9);
 }
-
-
-
-
 
 
 
