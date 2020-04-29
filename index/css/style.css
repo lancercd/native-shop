@@ -130,33 +130,7 @@ header .top .right .gouwuche:hover{color:#000;background: #666;} */
 .liulangengduo{margin-top: 12px;}
 .liulangengduo:hover{margin-top: 10px;box-shadow: 0px 0px 30px #ccc;}
 /*xiangqing*/
-.xiangqing{width: 100%;height: 58px;background: rgb(240,240,240);}
-.xiangqing .neirong{height: 58px;width: 1226px;}
-.xiangqing .neirong .xiaomi6{width:300px;height: 58px;line-height: 58px;font-size:
-22px;font-weight: bold;}
-.xiangqing .neirong nav{display:inline-block;width: 410px;height: 58px;line-height: 58px;}
-.xiangqing .neirong nav li{font-size:14px;float: left;display: block;margin:0px 5px;}
-.xiangqing .neirong nav li a{color: #333;font-size: 14px;}
-.xiangqing .neirong nav li a:hover{color:#ff6700;}
-/*jieshao*/
-.jieshao{height: 560px; }
-.jieshao .left{width:560px;height:560px;border:1px solid #ccc;}
-.jieshao .right{width:620px;background: rgb(248,248,248);height: 600px;}
-.jieshao .right .jianjie{font-size: 14px;color: rgb(176,176,176);line-height: 20px;}
-.jieshao .right .jiage{font-size: 18px;color:#ff6700;font-weight: bold;}
-.jieshao .right .xzbb{height: 58px;line-height:58px;}
-.jieshao .right .xzbb .banben{height: 58px;line-height: 58px;width: 278px;cursor:pointer;margin-right: 5px;border:1px solid #bbb;}
-.jieshao .right .xzbb .banben a{display:block;font-size: 18px;color:#000;padding:0 10px;}
-.jieshao .right .xzbb .banben a span{display: inline-block;margin-right: 10px;}
-.jieshao .right .xzbb .banben a:hover{color:#ff6700;}
-.jieshao .right .xzbb .banben:hover{border:1px solid #ff6700;}
-.jieshao .right .xzbb .banben a .yuandian{display: inline-block;height: 15px;width: 15px;border-radius: 50%;background: #000;margin-left: 80px;}
-/*选取详情*/
-.xqxq{height: 80px;width: 555px;background: rgb(255,255,255);padding:20px;}
-/*是否下单*/
-.xiadan{height: 50px;line-height: 50px;}
-.xiadan .jrgwc{height: 50px;width: 200px;border:none;background:#ff6700;color:#fff;font-size: 18px;font-weight: bold;cursor:pointer;margin-right: 50px;}
-.xiadan .jrgwc:hover{border:1px solid #fff;}
+
 /*我的购物车*/
 .banner_x .wdgwc{height: 100px;line-height: 100px;font-weight:bold;font-size: 24px;}
 .banner_x .wxts{height: 90px;line-height: 105px;font-size: 12px;color:#777;}
