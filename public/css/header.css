@@ -1,0 +1,118 @@
+
+
+.flex-container{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.space-between{
+    justify-content: space-between;
+    align-items:center;
+}
+.sep {
+  margin: 0 3px;
+  font-family: sans-serif;
+}
+.container {
+  width: 1226px;
+  margin: 0 auto;
+}
+.site-header {
+  position: relative;
+  z-index: 20;
+  height: 100px;
+}
+.site-header .header-logo {
+  width: 80px;
+  height: 55px;
+  line-height: 55px;
+  margin-top: 22px;
+  padding: 3px;
+  /* background: #ff6700; */
+}
+.site-header .topbar-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:22px;
+    width: 180px;
+    height: 55px;
+
+}
+
+
+
+
+
+.site-header .header-nav .link {
+  display: block;
+  padding: 26px 18px 38px;
+  color: #333;
+}
+.site-header .header-nav .link:hover {
+  color: #ff6700;
+}
+.site-header .header-search {
+  width: 300px;
+  margin-top: 25px;
+}
+.site-header .search-form {
+  position: relative;
+  width: 296px;
+  height: 50px;
+}
+
+.site-header .search-form .search-text {
+  position: absolute;
+  top: 0;
+  right: 51px;
+  z-index: 1;
+  width: 223px;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid #e0e0e0;
+  outline: 0;
+  font-size: 14px;
+  line-height: 48px;
+}
+.site-header .search-form-active .search-text,
+.site-header .search-form-active .btn-search {
+  border-color: #ff6700;
+}
+.site-header .search-form-active .btn-search i{
+    font-size: 30px;
+}
+.site-header .search-keywords {
+  position: absolute;
+  top: 14px;
+  right: 62px;
+  z-index: 2;
+  text-align: right;
+}
+.site-header .search-keywords a {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 0 5px;
+  background: #eee;
+  font-size: 12px;
+  color: #757575;
+}
+.site-header .search-keywords a:hover {
+  background: #ff6700;
+  -webkit-transition: border-color .2s;
+          transition: border-color .2s;
+  color: #fff;
+}
+.site-header .btn-search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: 52px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  outline: 0;
+  background: #fff;
+  font-size: 24px;
+  line-height: 24px;
+  color: #616161;
+}
