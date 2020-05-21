@@ -1,8 +1,9 @@
 import request from './../../utils/request.js';
 import InfoForm from './../../utils/InfoForm.js';
+import {HEADER} from './../../utils/test.js';
 import Banner from './../components/Banner.js';
 
-
+console.log(HEADER);
 
 
 // console.log('lllllllll');
