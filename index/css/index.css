@@ -593,7 +593,7 @@ body {
   line-height: 58px;
   color: #333;
 }
-.model .title-box .more {
+.model .title-box #more {
   float: right;
   margin-top: 24px;
   font-size: 0;
@@ -647,10 +647,12 @@ body {
   width: 160px;
   margin: 0 auto 22px;
 }
-.model-star-goods .slid-warp {
+.model-star-goods #slid-warp {
+  /* display: flex; */
   position: relative;
   overflow: hidden;
   width: 1226px;
+  /* height: 720px; */
   padding-bottom: 40px;
 }
 .model-star-goods .star-goods-list {
@@ -661,7 +663,7 @@ body {
   float: left;
   width: 234px;
   height: 340px;
-  margin-right: 14px;
+  margin-right: 13px;
   padding-top: 39px;
   border-top-width: 1px;
   border-top-style: solid;

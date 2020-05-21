@@ -1,19 +1,22 @@
 import request from './../../utils/request.js';
 import InfoForm from './../../utils/InfoForm.js';
-import {HEADER} from './../../utils/test.js';
-import Banner from './../components/Banner.js';
+// import {HEADER} from './../../utils/test.js';
+import Banner from './../models/Banner.js';
+import ProductMore from './../models/ProductMore.js';
 
-console.log(HEADER);
+const banner = document.getElementsByClassName('J_wrap')[0];
+// console.log(banner.getElementsByTagName('li'));
+new Banner(banner).init();
 
 
-// console.log('lllllllll');
-let loginBtn = document.getElementsByName('loginBtn')[0];
+const loginBtn = document.getElementsByName('loginBtn')[0];
 loginBtn.addEventListener('click', () => {
     const container = document.getElementById('container');
     new InfoForm(container).init();
 }, false);
 
-
+const oProductMore = document.getElementById('more');
+new ProductMore(oProductMore);
 
 
 // console.log(request({
@@ -32,7 +35,3 @@ loginBtn.addEventListener('click', () => {
 // ).finally(() => {
 //     console.log('finally');
 // }));
-
-const banner = document.getElementsByClassName('J_wrap')[0];
-// console.log(banner.getElementsByTagName('li'));
-new Banner(banner).init();

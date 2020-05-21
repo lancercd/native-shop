@@ -19,7 +19,7 @@
     padding-bottom: 20px;
 }
 .jieshao .right .jianjie{font-size: 14px;color: rgb(176,176,176);line-height: 20px;}
-.jieshao .right .product-options{
+.jieshao .right #product-options{
     display: flex;
     margin-left: 20px;
     margin-top: 10px;
@@ -31,15 +31,19 @@
     /* height: 100%; */
     background-color: #fff;
 }
-.jieshao .right .product-options .title{
+.jieshao .right #product-options .title{
 
 }
-.jieshao .right .product-options .item{
+.jieshao .right #product-options .item{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 5px 15px;
 
+}
+.jieshao .right #product-options .item .select{
+    border-color: #e74c3c;
+    color: #e74c3c;
 }
 .jieshao .right .option-list{
     display: flex;
