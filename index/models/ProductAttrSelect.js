@@ -12,6 +12,11 @@ export default class productAttrSelect{
         // this.selected.add(['key', 'value']);
         // console.log(this.selected.get('key'));
         this.init();
+
+
+        // this.selected.forEach((v,k) => {
+        //     console.log(k + "  " + v);
+        // })
     }
 
     init(){
@@ -37,13 +42,6 @@ export default class productAttrSelect{
     renderPrice(){
         this.oPrice.innerText = 9999;
 
-
-        //----------------------\\
-        // console.log(this.selected);
-        console.log('---------------------');
-        this.selected.forEach((v,k) => {
-            console.log(k + "  " + v);
-        })
     }
 
     onAttrSelect(ev){
