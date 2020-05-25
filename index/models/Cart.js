@@ -1,8 +1,11 @@
+import ListSelect from './../../utils/ListSelect.js'
+
 
 export default class Cart{
-    constructor(el){
+    constructor(el, oClassName){
         this.el = el;
-        console.log(this.el);
+        this.Select = new ListSelect(this.el, oClassName);
+        // console.log(this.el);
     }
 
 

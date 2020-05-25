@@ -1,0 +1,36 @@
+.lc-btn{
+    box-sizing:border-box;
+    display: inline-block;
+
+    border-radius: 2px;
+    vertical-align: middle;
+    text-transform: none;
+    outline: none;
+    border: none;
+    text-align: center;
+    white-space:nowrap;
+    overflow: visible;
+    color: #fff;
+    cursor: pointer;
+}
+.btn-xs{
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    padding: 0 5px;
+}
+.btn-m{
+    height: 28px;
+    line-height: 28px;
+    font-size: 16px;
+    padding: 0 7px;
+}
+.btn-del{
+    background-color: #e74c3c;
+}
+.btn-normal{
+    background-color: #3498db;
+}
+.btn-warring{
+    background-color: #f39c12;
+}
