@@ -1,7 +1,7 @@
 
 export default class ListSelect {
     constructor(el, name){
-        console.log('ListSelect on ready');
+        // console.log('ListSelect on ready');
         this.el = el;
         this._all = name.all;
         this._one = name.one;
@@ -31,39 +31,39 @@ export default class ListSelect {
             this.oSelectOne[i].checked = flag;
             flag? this.selected.add(this.oSelectOne[i].dataset[this._attrName]): this.selected.clear();
         }
-        console.log(this.selected);
-
         this.onChange();
     }
-
 
     onSelectOne(ev){
         const e = ev || window.event,
               tar = e.target || e.srcElement;
+        let is_select_all = this.oSelectAll.checked;
         if(tar.checked){
             this.selected.add(tar.dataset[this._attrName]);
-
             //TODO 是否已经全部选中了   若全部选中  全选按钮变为选中状态
-
+            let flag = true;//默认每个都被选中
+            for(let item of this.oSelectOne){ if(!item.checked){ flag = false;break; } }
+            if(flag){ this.oSelectAll.checked = true; }
         }else{
             this.selected.delete(tar.dataset[this._attrName]);
-
             // TODO 若全按钮已经为选中状态   则改变为取消状态
+            if(is_select_all) this.oSelectAll.checked = false;
         }
         // tar.checked? this.selected.add(tar.dataset[this._attrName]):this.selected.delete(tar.dataset[this._attrName]);
-
-        // console.log(this.selected);
-        // this.selectCount();
-        console.log(this.selected.size);
+        // console.log(this.selected.size);
         this.onChange();
     }
-
 
     selectCount(){
         return this.selected.size;
     }
 
     onChange(){
-        this._onChange();
+        return this._onChange();
+    }
+
+    getSelect(){
+        return Array.from(this.selected);
+        // return Array.from(this.selected).join(',');
     }
 }

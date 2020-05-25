@@ -1,7 +1,6 @@
 .lc-btn{
     box-sizing:border-box;
     display: inline-block;
-
     border-radius: 2px;
     vertical-align: middle;
     text-transform: none;
@@ -25,6 +24,13 @@
     font-size: 16px;
     padding: 0 7px;
 }
+.btn-lg{
+    height: 50px;
+    width: 150px;
+    /* line-height: 50px; */
+    font-size: 25px;
+    /* padding: 0 7px; */
+}
 .btn-del{
     background-color: #e74c3c;
 }
@@ -33,4 +39,7 @@
 }
 .btn-warring{
     background-color: #f39c12;
+}
+.btn-style{
+    background-color: #ff6700;
 }

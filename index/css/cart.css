@@ -7,7 +7,14 @@
 .xiantiao{width: 100%;height: 2px;background:#ff6700; }
 /*购物车详单*/
 .J_gwcxqbj{width: 100%;height:auto;background: rgb(245,245,245);padding-bottom: 20px;}
-.J_gwcxqbj .gwcxd{background: #fff;width: 1226px;height: auto;padding-top: 30px;}
+
+.J_gwcxqbj .gwcxd{
+    background: #fff;
+    width: 1226px;
+    height: auto;
+    padding-top: 30px;
+    transition: .5s;
+}
 /* .J_gwcxqbj .gwcxd .top{
     width:1226px;
     height: 70px;
@@ -54,7 +61,16 @@
 .J_gwcxqbj .gwcxd .J_cart_item div:nth-child(6){width: 8%;}
 .J_gwcxqbj .gwcxd .J_cart_item div:nth-child(7){width: 5%;}
 
-.J_gwcxqbj .gwcxd .content .shuliang{width: 70px;height: 35px;border:2px solid #ccc;text-align: center;font-size:16px;color:#ff6700;}
+.J_gwcxqbj .gwcxd .content .number{
+    width: 70px;
+    height: 35px;
+    border: none;
+    outline: none;
+    /* border:1px solid #ccc; */
+    /* text-align: center; */
+    font-size:16px;
+    color:#ff6700;
+}
 
 /* .J_gwcxqbj .gwcxd .content .sub_content{width:50px;height: 120px;line-height:120px;margin-right: 0px;}
 .J_gwcxqbj .gwcxd .sub_content .select-one{width:18px;height:18px;border:1px solid #ccc;background: none;}
@@ -66,17 +82,67 @@
 .J_gwcxqbj .gwcxd .content .sub_content:nth-of-type(5){margin-left: 115px;}
 .J_gwcxqbj .gwcxd .content .sub_content:nth-of-type(6){margin-left: 115px;color:#ff6700;}
 .J_gwcxqbj .gwcxd .content .sub_content:nth-of-type(7){margin-left: 145px;font-size: 25px;}
-.J_gwcxqbj .gwcxd .content .sub_content .shuliang{width: 70px;height: 35px;border:2px solid #ccc;text-align: center;font-size:16px;color:#ff6700;}
+.J_gwcxqbj .gwcxd .content .sub_content .number{width: 70px;height: 35px;border:2px solid #ccc;text-align: center;font-size:16px;color:#ff6700;}
 .J_gwcxqbj .gwcxd .content .sub_content a{display: block;width: 20px;height: 20px;border-radius: 10px;color:#000;}
 .J_gwcxqbj .gwcxd .content .sub_content a:hover{color:#ff6700;} */
 /*结算单*/
-.jiesuandan{width:1226px;height: 50px;background: #fff;}
-.jiesuandan .tishi{width: 400px;height: 50px;line-height: 50px;}
-.jiesuandan .tishi ul li{float: left; font-size: 14px;display: inline-block;padding:0 10px;color:#666;}
-.jiesuandan .tishi ul li a{color:#666;}
-.jiesuandan .tishi ul li a:hover{color:#ff6700;}
-.jiesuandan .tishi ul li span{display:inline-block;color:#ff6700;margin:0 4px;}
-.jiesuandan .jiesuan{width: 500px;height: 50px;line-height: 50px;font-size: 14px;color:#ff6700;}
-.jiesuandan .jiesuan .jiesuanjiage span{font-size: 24px;font-weight: bold;}
-.jiesuandan .jiesuan .jsanniu .jsan{width: 200px;height: 50px;color:#fff;background:rgb(255,103,0); font-size: 20px;border:none;cursor:pointer;}
-.jiesuandan .jiesuan .jsanniu .jsan:hover{background: rgb(242,88,7);}
+.confirm-panel{
+    display: flex;
+    width:1226px;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    /* padding: 0 20px; */
+    background: #fff;
+}
+.confirm-panel span{
+    color:#ff6700;
+}
+.confirm-panel .select-product-info{
+    width: 400px;
+    height: 50px;
+    margin-left: 30px;
+    line-height: 50px;
+}
+/* .confirm-panel .select-product-info ul li{float: left; font-size: 14px;display: inline-block;padding:0 10px;color:#666;}
+.confirm-panel .select-product-info ul li a{color:#666;}
+.confirm-panel .select-product-info ul li a:hover{color:#ff6700;}
+.confirm-panel .select-product-info ul li span{display:inline-block;color:#ff6700;margin:0 4px;} */
+.confirm-panel .money-count{
+    display: flex;
+    width: auto;
+    /* margin-right: 30px; */
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color:#ff6700;
+}
+.confirm-panel .money-count span.total-money{
+    /* display: inline-block; */
+    /* padding: 0 10px; */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.confirm-panel .money-count .money{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 200px;
+}
+
+/* .confirm-panel .money-count input{
+    background-color: #ff6700;
+    border: none;
+    outline: none;
+    color: #fff;
+} */
+
+.confirm-panel .money-count button{
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+/* .confirm-panel .money-count .jsanniu .jsan{width: 200px;height: 50px;color:#fff;background:rgb(255,103,0); font-size: 20px;border:none;cursor:pointer;}
+.confirm-panel .money-count .jsanniu .jsan:hover{background: rgb(242,88,7);} */
