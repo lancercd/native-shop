@@ -66,4 +66,8 @@ export default class ListSelect {
         return Array.from(this.selected);
         // return Array.from(this.selected).join(',');
     }
+
+    getSelected(){
+        return this.selected;
+    }
 }
