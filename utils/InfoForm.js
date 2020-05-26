@@ -6,6 +6,7 @@ export default class InfoForm{
         this.el = el;
         this.el.classList.toggle("blur");
         document.body.classList.toggle('overflow');
+        this.init();
     }
 
     init(){
@@ -21,7 +22,6 @@ export default class InfoForm{
 
 // <div class="close-btn"><i class="icon iconfont icon-baseline-close-px"></i></div>
         const template = `
-
                 <div class="head">
                     <div class="title"><i class="icon iconfont icon-info2"></i>title</div>
                     <div class="close-btn"><i class="icon iconfont icon-baseline-close-px"></i></div>

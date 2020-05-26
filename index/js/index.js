@@ -12,7 +12,7 @@ new Banner(banner).init();
 const loginBtn = document.getElementsByName('loginBtn')[0];
 loginBtn.addEventListener('click', () => {
     const container = document.getElementById('container');
-    new InfoForm(container).init();
+    new InfoForm(container);
 }, false);
 
 const oProductMore = document.getElementById('more');

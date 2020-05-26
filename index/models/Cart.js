@@ -1,6 +1,8 @@
 import ListSelect from './../../utils/ListSelect.js';
 import EventAgent from '../../utils/EventAgent.js';
 import request from '../../utils/request.js';
+import Fade from '../../utils/Fade.js';
+import InfoForm from '../../utils/InfoForm.js';
 
 export default class Cart{
     constructor(el){
@@ -17,7 +19,7 @@ export default class Cart{
 
         this.oSelectNum = el.getElementsByClassName('J_select_num')[0];
         this.oTotalMoney = el.getElementsByClassName('J_total_money')[0];
-
+        this.oPayment = el.getElementsByClassName('J_payment')[0];
         this.list = el.getElementsByClassName('gwcxd')[0];
         this.init();
     }
@@ -28,6 +30,7 @@ export default class Cart{
 
     bindEvent(){
         this.list.addEventListener('click', this.onDelBtnClick.bind(this), false);
+        this.oPayment.addEventListener('click', this.onPaymentClick.bind(this), false);
         for(let item of this.oItemsNum){
             item.addEventListener('blur', this.onNumBlur.bind(this), false);
         }
@@ -75,16 +78,28 @@ export default class Cart{
     onDelBtnClick(ev){
         const e = new EventAgent(ev);
         if(e.getTagName() === 'button'){
-            // console.log(e.getTar());
             // 若为选中去除set中相应值
-            e.getTar().parentNode.parentNode.style.display = 'none';
+            const tar = e.getTar(),
+                  parent = tar.parentNode.parentNode,
+                  oCheckBox = parent.getElementsByClassName('select-one')[0];
+            if(oCheckBox.checked){
+                this.Select.selected.delete(oCheckBox.dataset.id);
+            }
+            const fade = new Fade(tar.parentNode.parentNode);
+            fade.fadeout({duration: 0.5});
             this.render();
+
+            
         }
-
+    }
+    onPaymentClick(){
+        if(!this.Select.selectCount()){
+            const body = document.getElementsByTagName('body')[0];
+            new InfoForm(body);
+            return;
+        }
         //发送请求
-        request({
-
-        });
+        // request({  });
     }
 
 

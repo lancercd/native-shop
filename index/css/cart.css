@@ -6,7 +6,7 @@
 .banner_x .dlzc ul li a:hover{color:#ff6700; }
 .xiantiao{width: 100%;height: 2px;background:#ff6700; }
 /*购物车详单*/
-.J_gwcxqbj{width: 100%;height:auto;background: rgb(245,245,245);padding-bottom: 20px;}
+.J_gwcxqbj{width: 100%;height:auto;background: rgb(245,245,245);padding-bottom: 20px;transition: .5s;}
 
 .J_gwcxqbj .gwcxd{
     background: #fff;

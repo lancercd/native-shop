@@ -34,8 +34,8 @@ console.log('data: ' + data);
         xhr.onload = function(){
             finish();
             if(xhr.status==200)
-                resolve(xhr.responseText);
-                // resolve(JSON.parse(xhr.responseText));
+                // resolve(xhr.responseText);
+                resolve(JSON.parse(xhr.responseText));
             else
                 reject('加载失败');
         };

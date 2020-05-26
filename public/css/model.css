@@ -43,3 +43,21 @@
 .btn-style{
     background-color: #ff6700;
 }
+
+@keyframes fadeout{
+    from{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to{
+        transform: translateX(-600px);
+        opacity: 0;
+    }
+}
+
+.fadeout{
+    transform: translateX(0);
+    opacity: 1;
+    animation: fadeout .5s ease;
+    animation-fill-mode: forwards;
+}
