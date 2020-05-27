@@ -38,6 +38,7 @@ export default class Banner{
         for (let i = 0 ; i < this.points.length ; i++){
             this.points[i].addEventListener('click',() => {
                 let pointIndex = this.points[i].getAttribute('data-index');
+                console.log(this.points[i]);
                 this.index = pointIndex;
                 this.goIndex();
                 this.time = 0;

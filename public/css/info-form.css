@@ -1,95 +1,58 @@
-.overflow{
-    overflow: hidden;
-}
-
-.blur{
-    filter: blur(20px); /*滤镜：模糊20px*/
+.info-body{
     pointer-events: none; /*阻止元素的点击事件*/
     user-select: none; /*用户是否可以选择文本*/
+    /* overflow:hidden; */
 }
 
-#info-form{
-    display: flex; /*弹性盒*/
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+#mask{
+    /* display: block; */
+    position: absolute;
+    /* width: 100vw;
+    height: 100vh; */
+    width: 100%;
+    height: 100%;
 
-    box-sizing: border-box;
-    position:fixed; /*绝对定位*/
-    top:30%; /*距上部*/
-    left: 50%; /*距左部*/
-    transform: translate(-50%,-50%); /*2D转换*/
-        width: 500px; /*宽度*/
-        height: 300px;
-    padding: 8px;
-    padding-top: 5px;
+
+
+    background-color: rgba(50, 50, 50, .5);
+    z-index: 9999;
+}
+
+
+#info-Form{
+    /* display: block; */
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    transform: translate(-50%, -50%);
     border-radius: 10px;
-    box-shadow: 0 5px 30px rgba(0,0,0,0.30); /*元素阴影 X偏移 Y偏移 阴影模糊半径 阴影颜色*/
-    background-color: #fff; /*背景颜色*/
-    opacity: 0; /*不透明度*/
-    animation: infoStart .3s linear;
-    animation-fill-mode: forwards;
+    box-shadow: 2px 2px 10px #888;
+    z-index: 99999;
+    background: #ddd;
 }
 
-@keyframes infoStart {
-    0%{
-        top:30%;
-        opacity: 0;
-    }
-    100%{
-        top: 40%;
-        opacity: 1;
-    }
-}
-
-
-
-
-#info-form .head{
-    display: flex;
-    justify-content: space-between;
+#info-Form .inner-content{
+    position: relative;
     width: 100%;
-    border-bottom: 1px solid #ddd;
-    line-height: 25px;
-    font-size: 20px;
+    height: 100%;
+}
+
+#info-Form .inner-content .close-btn{
+    position: absolute;
+    right: 0;
+    width: auto;
+    height: auto;
 
 }
 
-#info-form .head .title i{
-    padding-right: 5px;
-    font-size: 16px;
-    line-height: 10px;
-    color: #999;
-}
-#info-form .head .close-btn i{
-    font-size: 30px;
+#info-Form .inner-content .close-btn i{
+    margin-right: 0;
+    font-size: 25px;
 }
 
-#info-form .head .close-btn:hover{
+#info-Form .inner-content .close-btn i:hover{
     color: red;
-}
-
-#info-form .body{
-    width: 100%;
-    text-align: center;
-}
-
-
-
-
-
-
-
-
-
-#info-form .bottom{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-}
-
-#info-form .bottom button{
-    width: 45%;
-    height: 50px;
 }
