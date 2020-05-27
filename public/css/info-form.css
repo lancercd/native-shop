@@ -12,8 +12,6 @@
     width: 100%;
     height: 100%;
 
-
-
     background-color: rgba(50, 50, 50, .5);
     z-index: 9999;
 }
@@ -22,8 +20,8 @@
 #info-Form{
     /* display: block; */
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     top: 50%;
     left: 50%;
     padding: 10px;
@@ -31,28 +29,98 @@
     border-radius: 10px;
     box-shadow: 2px 2px 10px #888;
     z-index: 99999;
-    background: #ddd;
+    background: #fff;
 }
 
 #info-Form .inner-content{
+    display: flex;
     position: relative;
     width: 100%;
     height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
 }
 
 #info-Form .inner-content .close-btn{
     position: absolute;
     right: 0;
-    width: auto;
-    height: auto;
+    top: 0;
+    /* width: 25px;
+    height: 25px; */
 
 }
 
 #info-Form .inner-content .close-btn i{
     margin-right: 0;
     font-size: 25px;
+    /* transform: rotate(7deg); */
 }
 
-#info-Form .inner-content .close-btn i:hover{
+#info-Form .inner-content .close-btn:hover{
+    /* -webkit-transform:rotate(45deg); */
+    /* -moz-transform:rotate(45deg); */
+    transform:rotate(360deg);
+    transition: .7s;
     color: red;
+}
+
+
+
+#info-Form .inner-content .info-icon{
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    height: 30%;
+    width: auto;
+
+    /* background-color: #ddd; */
+    text-align: center;
+    /* line-height: 30%; */
+
+}
+#info-Form .inner-content .info-icon>i{
+    margin-right: 0;
+    font-size: 100px;
+    font-weight: 100;
+}
+#info-Form .inner-content .info-icon>i.i-warring{
+    color: #f39c12;
+}
+
+#info-Form .inner-content .content{
+    width: 100%;
+    min-height: 20%;
+    text-align: center;
+    word-wrap: break-word;
+    /* background-color: #ddd; */
+    font-size: 25px;
+
+}
+
+
+#info-Form .inner-content .btn-group{
+    display: flex;
+    width: 100%;
+    min-height: 10%;
+    align-items: center;
+    justify-content: space-around;
+    user-select: none;
+}
+
+#info-Form .inner-content .btn-group button.conform{
+    background-color: rgba(231, 76, 60,.8);
+}
+
+
+
+#info-Form .inner-content .btn-group button.cancle{
+    background-color: rgba(241, 196, 15,.8);
+}
+@keyframes hover-btn-lightning{from{opacity: 1;}50%{opacity: .3;}to{opacity: 1;}}
+
+#info-Form .inner-content .btn-group>button:hover{
+    box-shadow: 2px 2px 15px #ddd;
+    animation: hover-btn-lightning 3s ease infinite;
 }

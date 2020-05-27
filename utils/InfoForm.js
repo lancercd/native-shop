@@ -120,8 +120,3 @@ export default class InfoForm{
     //     target.innerText = value;
     // }
 }
-
-// class Test{
-//
-// }
-// export { Calculator, Test };
