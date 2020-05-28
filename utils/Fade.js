@@ -10,14 +10,10 @@ export default class Fade{
         options = Object.assign({
             duration: 0.5,
             rate: "ease",
+            way:'r-l',
 
         }, options);
-        // this.addCSSRule(
-        //     document.styleSheets[0],
-        //     "@keyframes fade-fadeout",
-        //     `from{transform: translateX(0);opacity: 1;}to{transform: translateX(-600px);opacity: 0;}`
-        // );
-        this.el.style.animationName = 'fadeout';
+        this.el.style.animationName = 'fadeout' + options.way;
         this.el.style.animationFillMode = 'forwards';
         this.el.style.webkitAnimationDuration = options.duration + "s";
         this.el.style.webkitAnimationTimintFunction = options.rate;
@@ -28,12 +24,4 @@ export default class Fade{
 
     }
 
-
-    // addCSSRule(sheet, selector, rules, index){
-    //         if("insertRule" in sheet) {
-    //             sheet.insertRule(selector + "{" + rules + "}", index);
-    //         }else if("addRule" in sheet) {
-    //             sheet.addRule(selector, rules, index);
-    //         }
-    //     }
 }

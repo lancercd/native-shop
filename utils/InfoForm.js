@@ -1,47 +1,73 @@
-
+import EventAgent from './EventAgent.js';
 
 export default class InfoForm{
-    constructor(el){
+    constructor(options={}){
         this.name = 'InfoForm';
-        this.el = el;
-        this.el.classList.toggle("blur");
-        document.body.classList.toggle('overflow');
+        this.options = Object.assign({
+            type: 'frame',//frame   message
+            mask: true,//true  false
+            w: 400,
+            h: 400,
+            close: true,
+        }, options);
         this.init();
     }
 
     init(){
+        this.createMsgConta();
         this.render();
-        this.getBtn();
+        // this.getBtn();
         this.bindEvent();
+
         // setTimeout(this.show(), 1000);
         // this.show();
     }
 
+    createMsgConta(){
+        let oMsgContainer = document.getElementById('msg-container');
+        if(oMsgContainer){
+            this.oMsgContainer = oMsgContainer;
+        }else{
+            const oDiv = document.createElement('div');
+            oDiv.setAttribute('id', 'msg-container');
+            document.body.appendChild(oDiv);
+            this.oMsgContainer = oDiv;
+        }
+    }
+
     render(){
         const oFrag = document.createDocumentFragment();
-
-// <div class="close-btn"><i class="icon iconfont icon-baseline-close-px"></i></div>
         const template = `
-                <div class="head">
-                    <div class="title"><i class="icon iconfont icon-info2"></i>title</div>
-                    <div class="close-btn"><i class="icon iconfont icon-baseline-close-px"></i></div>
+            <div class="inner-content">
+                <div class="close-btn"><i class="icon iconfont icon-baseline-close-px"></i></div>
+                <div class="info-icon">
+                    <i class="icon iconfont icon-info i-warring"></i>
                 </div>
-                <div class="body">
-                    <h2>Lorem ipsum dolor sit amet</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nihil magnam repellendus nostrum nemo? Tempore dolore libero ea molestiae. Delectus iusto nulla architecto eos minima culpa accusamus voluptatum velit vero!</p>
+                <div class="content">
+                    请确认信息是否准确!<br>
+                    hhh
                 </div>
-                <div class="bottom">
-                    <button type="button" name="button" data-btninfo="确定">确定</button>
-                    <button type="button" name="button" data-btninfo="取消">取消</button>
+                <div class="btn-group">
+                    <button class="lc-btn btn-lg conform">确定</button>
+                    <button class="lc-btn btn-lg cancle">取消</button>
                 </div>
-
+            </div>
         `;
         let doc = document.createElement('div');
-        doc.setAttribute('id', 'info-form');
+        doc.setAttribute('id', '_info-Form');
         doc.innerHTML = template;
-        oFrag.appendChild(doc);
-        document.body.appendChild(oFrag);
-
+        doc.style.width = this.options.w + 'px';
+        doc.style.height = this.options.h + 'px';
+        if(this.options.mask){
+            let mask = document.createElement('div');
+            mask.setAttribute('id', '_mask');
+            mask.appendChild(doc);
+            oFrag.appendChild(mask)
+        }else{
+            oFrag.appendChild(doc);
+        }
+        this.oMsgContainer.appendChild(oFrag);
+        this.doc = doc;
     }
 
     getBtn(){
@@ -55,22 +81,15 @@ export default class InfoForm{
     // }
 
     bindEvent(){
-        // const form = this.form;
-        this.form.addEventListener('click', this.onBtnClick.bind(this), false);
-        if(this.closeBtn !== undefined){
-            this.closeBtn.addEventListener('click', this.onClose.bind(this), false);
-
-        }
-        // else{
-        //     alert('undefind');
-        // }
+        this.doc.addEventListener('click', this.onBtnClick.bind(this), false)
 
     }
 
     onBtnClick(ev){
-        const e = ev || window.event;
-        const tar = e.target || e.srcElement;
-        const tagName = tar.tagName.toLowerCase();
+        // const e = ev || window.event;
+        // const tar = e.target || e.srcElement;
+        // const tagName = tar.tagName.toLowerCase();
+        const e = new EventAgent(ev);
         // alert(tagName);
         if(tagName === 'button'){
             const btninfo = tar.getAttribute('data-btninfo');

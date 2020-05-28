@@ -44,7 +44,7 @@
     background-color: #ff6700;
 }
 
-@keyframes fadeout{
+@keyframes fadeout-r-l{
     from{
         transform: translateX(0);
         opacity: 1;

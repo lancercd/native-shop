@@ -12,7 +12,11 @@ new Banner(banner).init();
 const loginBtn = document.getElementsByName('loginBtn')[0];
 loginBtn.addEventListener('click', () => {
     // const container = document.getElementById('container');
-    // new InfoForm(container);
+    new InfoForm({
+        type: 'frame',
+        mask: true,
+
+    });
 }, false);
 
 

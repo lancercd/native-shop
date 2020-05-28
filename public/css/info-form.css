@@ -4,9 +4,14 @@
     /* overflow:hidden; */
 }
 
-#mask{
+/* hover按钮  闪烁 */
+@keyframes hover-btn-lightning{from{opacity: 1;}50%{opacity: .3;}to{opacity: 1;}}
+
+#_mask{
     /* display: block; */
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     /* width: 100vw;
     height: 100vh; */
     width: 100%;
@@ -17,11 +22,11 @@
 }
 
 
-#info-Form{
+#_info-Form{
     /* display: block; */
     position: absolute;
-    width: 400px;
-    height: 400px;
+    /* width: 400px;
+    height: 400px; */
     top: 50%;
     left: 50%;
     padding: 10px;
@@ -32,7 +37,7 @@
     background: #fff;
 }
 
-#info-Form .inner-content{
+#_info-Form .inner-content{
     display: flex;
     position: relative;
     width: 100%;
@@ -43,7 +48,7 @@
     flex-wrap: nowrap;
 }
 
-#info-Form .inner-content .close-btn{
+#_info-Form .inner-content .close-btn{
     position: absolute;
     right: 0;
     top: 0;
@@ -52,13 +57,13 @@
 
 }
 
-#info-Form .inner-content .close-btn i{
+#_info-Form .inner-content .close-btn i{
     margin-right: 0;
     font-size: 25px;
     /* transform: rotate(7deg); */
 }
 
-#info-Form .inner-content .close-btn:hover{
+#_info-Form .inner-content .close-btn:hover{
     /* -webkit-transform:rotate(45deg); */
     /* -moz-transform:rotate(45deg); */
     transform:rotate(360deg);
@@ -68,7 +73,7 @@
 
 
 
-#info-Form .inner-content .info-icon{
+#_info-Form .inner-content .info-icon{
     /* width: 100%; */
     display: flex;
     align-items: center;
@@ -80,16 +85,16 @@
     /* line-height: 30%; */
 
 }
-#info-Form .inner-content .info-icon>i{
+#_info-Form .inner-content .info-icon>i{
     margin-right: 0;
     font-size: 100px;
     font-weight: 100;
 }
-#info-Form .inner-content .info-icon>i.i-warring{
+#_info-Form .inner-content .info-icon>i.i-warring{
     color: #f39c12;
 }
 
-#info-Form .inner-content .content{
+#_info-Form .inner-content .content{
     width: 100%;
     min-height: 20%;
     text-align: center;
@@ -100,7 +105,7 @@
 }
 
 
-#info-Form .inner-content .btn-group{
+#_info-Form .inner-content .btn-group{
     display: flex;
     width: 100%;
     min-height: 10%;
@@ -109,18 +114,18 @@
     user-select: none;
 }
 
-#info-Form .inner-content .btn-group button.conform{
+#_info-Form .inner-content .btn-group button.conform{
     background-color: rgba(231, 76, 60,.8);
 }
 
 
 
-#info-Form .inner-content .btn-group button.cancle{
+#_info-Form .inner-content .btn-group button.cancle{
     background-color: rgba(241, 196, 15,.8);
 }
-@keyframes hover-btn-lightning{from{opacity: 1;}50%{opacity: .3;}to{opacity: 1;}}
 
-#info-Form .inner-content .btn-group>button:hover{
+
+#_info-Form .inner-content .btn-group>button:hover{
     box-shadow: 2px 2px 15px #ddd;
     animation: hover-btn-lightning 3s ease infinite;
 }
