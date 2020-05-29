@@ -15,14 +15,14 @@ loginBtn.addEventListener('click', () => {
     new InfoForm({
         type: 'warring',
         mask: true,
-        btn:{
-            0:{class: 'conform', func: 'testFunc', text: '晓得老'},
-            1:{class: 'cancle', text: '晓得老', func: 'close'}
-        },
-        func: {
-            'testFunc': function(){alert('ssssssssss');},
-            'close': function(){alert('close');},
-        },
+        // btn:{
+        //     0:{class: 'conform', func: 'testFunc', text: '晓得老'},
+        //     1:{class: 'cancle', text: '晓得老', func: 'close'}
+        // },
+        // func: {
+        //     'testFunc': function(){alert('ssssssssss');},
+        //     'close': function(){alert('close');},
+        // },
     });
 }, false);
 

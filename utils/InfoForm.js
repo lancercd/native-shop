@@ -7,23 +7,14 @@ export default class InfoForm{
         this.options = Object.assign({
             way: 'frame',//frame   message
             type: 'warring',//info warring
-            mask: true,//true  false
-            w: 400,
-            h: 400,
+            mask: true,//true  fals
+            w: 400,h: 400,
             close: true,
-            msg: '请确认!',
-            tiny:'',
-            btn:{
-                0:{class: 'conform', func: '_close', text: '确定'},
-            },
-            func:{
-                'close':()=>{this.close()},
-            },
+            msg: '请确认!',tiny:'',
+            btn:{0:{class: 'conform', func: 'close', text: '确定'}},
+            func:{'close':()=>{this.close()}},
         }, options);
-        console.log(this.options);
-        if(!this.options.func['close']){
-            this.options.func['close'] = ()=>{this.close()};
-        }
+        if(!this.options.func['close']){this.options.func['close'] = ()=>{this.close()};}
         this.init();
     }
 
@@ -47,9 +38,7 @@ export default class InfoForm{
 
     render(){
         this.bulidForm();
-
     }
-
 
     // div#_mask
     //     div#_info_Form
@@ -96,21 +85,12 @@ export default class InfoForm{
         }
         const oBtnGroup = document.createElement('div');
         oBtnGroup.classList.add('btn-group');
-        if(JSON.stringify(op.btn) === '{}'){
-            oBtnGroup.innerHTML = `
-            <button class="lc-btn btn-lg conform" data-btn-func="_close">确定</button>
-            `;
-            // <button class="lc-btn btn-lg cancle">取消</button>
-        }else{
-            let btn = ``;
-            for(let i in op.btn){
-                btn += `<button class="lc-btn btn-lg ${op.btn[i].class? op.btn[i].class:''}" data-btn-func="${op.btn[i].func? op.btn[i].func:''}">${op.btn[i].text? op.btn[i].text:''}</button>`;
-            }
-            oBtnGroup.innerHTML = btn;
+        let btn = ``;
+        for(let i in op.btn){
+            btn += `<button class="lc-btn btn-lg ${op.btn[i].class? op.btn[i].class:''}" data-btn-func="${op.btn[i].func? op.btn[i].func:''}">${op.btn[i].text? op.btn[i].text:''}</button>`;
         }
-
+        oBtnGroup.innerHTML = btn;
         oInnerContent.appendChild(oBtnGroup);
-        console.log(op.mask);
         if(op.mask){
             let mask = document.createElement('div');
             mask.setAttribute('id', '_mask');
@@ -132,13 +112,12 @@ export default class InfoForm{
         const e = new EventAgent(ev);
         const tagName = e.getTagName();
         const tar = e.getTar();
-        if(tagName === 'button'){//点的button
+        if(tagName === 'button'){
             this.btnGroupClick(e);
         }else if(tagName === 'i' && tar.dataset['iType'] === '_close'){ //点的左上角的关闭按钮
             this.close();
         }
     }
-
 
     btnGroupClick(e){
         const tar = e.getTar();
@@ -148,26 +127,7 @@ export default class InfoForm{
 
     close(){
         let duration = 0.3;
-        this.fade.fadeout({
-            duration,
-            way: 'frame-fadeout-m-t',
-        });
+        this.fade.fadeout({duration,way: 'frame-fadeout-m-t'});
         this.options.mask && new Fade(this.mask).fadeout({duration});//有遮罩层
     }
-
 }
-
-// const template = `
-//         <div class="close-btn"><i class="icon iconfont icon-baseline-close-px" data-i-type="_close"></i></div>
-//         <div class="info-icon">
-//             <i class="icon iconfont icon-info i-warring"></i>
-//         </div>
-//         <div class="content">
-//             请确认信息是否准确!<br>
-//             hhh
-//         </div>
-//         <div class="btn-group">
-//             <button class="lc-btn btn-lg conform" data-btn-func="ok">确定</button>
-//             <button class="lc-btn btn-lg cancle">取消</button>
-//         </div>
-// `;
