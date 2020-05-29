@@ -13,9 +13,16 @@ const loginBtn = document.getElementsByName('loginBtn')[0];
 loginBtn.addEventListener('click', () => {
     // const container = document.getElementById('container');
     new InfoForm({
-        type: 'frame',
+        type: 'warring',
         mask: true,
-
+        btn:{
+            0:{class: 'conform', func: 'testFunc', text: '晓得老'},
+            1:{class: 'cancle', text: '晓得老', func: 'close'}
+        },
+        func: {
+            'testFunc': function(){alert('ssssssssss');},
+            'close': function(){alert('close');},
+        },
     });
 }, false);
 

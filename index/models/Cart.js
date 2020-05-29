@@ -86,10 +86,10 @@ export default class Cart{
                 this.Select.selected.delete(oCheckBox.dataset.id);
             }
             const fade = new Fade(tar.parentNode.parentNode);
-            fade.fadeout({duration: 0.5});
+            fade.fadeout({duration: 0.5,way: 'fadeout-r-l'});
             this.render();
 
-            
+
         }
     }
     onPaymentClick(){

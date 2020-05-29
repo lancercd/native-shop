@@ -1,27 +1,44 @@
 
 export default class Fade{
     constructor(el){
+        this.name = 'Fade';
         this.el = el;
     }
 
 
     fadeout(options={}){
-        console.log(options);
         options = Object.assign({
             duration: 0.5,
             rate: "ease",
-            way:'r-l',
-
+            way:'fadeout',
         }, options);
-        this.el.style.animationName = 'fadeout' + options.way;
+        this.setAnimation(options);
+
+        if(options.duration){
+            setTimeout(()=>{
+                // this.el.style.display = 'none';
+                this.el.remove();
+            }, (options.duration * 1000));
+        }
+        return this;
+    }
+
+    fadein(options={}){
+        options = Object.assign({
+            duration: 0.5,
+            rate: "ease",
+            way:'fadein',
+        }, options);
+        this.setAnimation(options);
+        return this;
+    }
+
+
+    setAnimation(options){
+        this.el.style.animationName = options.way;
         this.el.style.animationFillMode = 'forwards';
         this.el.style.webkitAnimationDuration = options.duration + "s";
         this.el.style.webkitAnimationTimintFunction = options.rate;
-
-        setTimeout(()=>{
-            this.el.style.display = 'none';
-        }, (options.duration * 1000));
-
     }
 
 }

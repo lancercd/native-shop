@@ -1,29 +1,39 @@
 import EventAgent from './EventAgent.js';
+import Fade from './Fade.js';
 
 export default class InfoForm{
     constructor(options={}){
         this.name = 'InfoForm';
         this.options = Object.assign({
-            type: 'frame',//frame   message
+            way: 'frame',//frame   message
+            type: 'warring',//info warring
             mask: true,//true  false
             w: 400,
             h: 400,
             close: true,
+            msg: '请确认!',
+            tiny:'',
+            btn:{
+                0:{class: 'conform', func: '_close', text: '确定'},
+            },
+            func:{
+                'close':()=>{this.close()},
+            },
         }, options);
+        console.log(this.options);
+        if(!this.options.func['close']){
+            this.options.func['close'] = ()=>{this.close()};
+        }
         this.init();
     }
 
     init(){
-        this.createMsgConta();
+        this.createMsgContainer();
         this.render();
-        // this.getBtn();
         this.bindEvent();
-
-        // setTimeout(this.show(), 1000);
-        // this.show();
     }
 
-    createMsgConta(){
+    createMsgContainer(){
         let oMsgContainer = document.getElementById('msg-container');
         if(oMsgContainer){
             this.oMsgContainer = oMsgContainer;
@@ -36,106 +46,128 @@ export default class InfoForm{
     }
 
     render(){
-        const oFrag = document.createDocumentFragment();
-        const template = `
-            <div class="inner-content">
-                <div class="close-btn"><i class="icon iconfont icon-baseline-close-px"></i></div>
-                <div class="info-icon">
-                    <i class="icon iconfont icon-info i-warring"></i>
-                </div>
-                <div class="content">
-                    请确认信息是否准确!<br>
-                    hhh
-                </div>
-                <div class="btn-group">
-                    <button class="lc-btn btn-lg conform">确定</button>
-                    <button class="lc-btn btn-lg cancle">取消</button>
-                </div>
-            </div>
-        `;
-        let doc = document.createElement('div');
-        doc.setAttribute('id', '_info-Form');
-        doc.innerHTML = template;
-        doc.style.width = this.options.w + 'px';
-        doc.style.height = this.options.h + 'px';
-        if(this.options.mask){
+        this.bulidForm();
+
+    }
+
+
+    // div#_mask
+    //     div#_info_Form
+    //         div.inner-content
+    //             div.close-btn > i data-i-type="_close"
+    //             div.info-icon > i class=`i-${this.options.type}`
+    //             div.content   > ${this.options.msg} > p ${this.options.tiny}
+    //             div.btn-group > button class="conform" data-btn-func="ok" 确定
+    bulidForm(){
+        const op = this.options,
+              oFrag = document.createDocumentFragment(),
+              oForm = document.createElement('div'),
+              oInnerContent = document.createElement('div');
+        oForm.setAttribute('id', '_info-Form');
+        oForm.style.width = op.w + 'px';
+        oForm.style.height = op.h + 'px';
+        this.fade = new Fade(oForm).fadein({
+            duration: 0.3,
+            way: 'frame-fadein-t-m',
+        });
+        oFrag.appendChild(oForm);
+        oInnerContent.classList.add('inner-content');
+        oForm.appendChild(oInnerContent);
+        if(op.close){
+            const oCloseBtn = document.createElement('div');
+            oCloseBtn.innerHTML = `<i class="icon iconfont icon-baseline-close-px" data-i-type="_close"></i>`;
+            oCloseBtn.classList.add('close-btn');
+            oInnerContent.appendChild(oCloseBtn);
+        }
+        if(op.type){//提示框的icon
+            const oInfoIcon = document.createElement('div');
+            oInfoIcon.innerHTML = `<i class="icon iconfont icon-info i-${op.type}"></i>`;
+            oInfoIcon.classList.add('info-icon');
+            oInnerContent.appendChild(oInfoIcon);
+        }
+        if(op.msg){
+            const oContent = document.createElement('div');
+            oContent.innerHTML = `${op.msg}`;
+            if(op.tiny){
+                oContent.innerHTML += `<p>${op.tiny}</p>`;
+            }
+            oContent.classList.add('content');
+            oInnerContent.appendChild(oContent);
+        }
+        const oBtnGroup = document.createElement('div');
+        oBtnGroup.classList.add('btn-group');
+        if(JSON.stringify(op.btn) === '{}'){
+            oBtnGroup.innerHTML = `
+            <button class="lc-btn btn-lg conform" data-btn-func="_close">确定</button>
+            `;
+            // <button class="lc-btn btn-lg cancle">取消</button>
+        }else{
+            let btn = ``;
+            for(let i in op.btn){
+                btn += `<button class="lc-btn btn-lg ${op.btn[i].class? op.btn[i].class:''}" data-btn-func="${op.btn[i].func? op.btn[i].func:''}">${op.btn[i].text? op.btn[i].text:''}</button>`;
+            }
+            oBtnGroup.innerHTML = btn;
+        }
+
+        oInnerContent.appendChild(oBtnGroup);
+        console.log(op.mask);
+        if(op.mask){
             let mask = document.createElement('div');
             mask.setAttribute('id', '_mask');
-            mask.appendChild(doc);
-            oFrag.appendChild(mask)
+            mask.appendChild(oForm);
+            oFrag.appendChild(mask);
+            this.mask = mask;
         }else{
-            oFrag.appendChild(doc);
+            oFrag.appendChild(oForm);
         }
         this.oMsgContainer.appendChild(oFrag);
-        this.doc = doc;
+        this.oForm = oForm;
     }
-
-    getBtn(){
-        this.form = document.getElementById('info-form');
-        this.closeBtn = this.form.getElementsByClassName('close-btn')[0];
-        console.log(this.closeBtn);
-    }
-
-    // show(){
-    //     this.form.classList.add('active');
-    // }
 
     bindEvent(){
-        this.doc.addEventListener('click', this.onBtnClick.bind(this), false)
-
+        this.oForm.addEventListener('click', this.onBtnClick.bind(this), false);
     }
 
     onBtnClick(ev){
-        // const e = ev || window.event;
-        // const tar = e.target || e.srcElement;
-        // const tagName = tar.tagName.toLowerCase();
         const e = new EventAgent(ev);
-        // alert(tagName);
-        if(tagName === 'button'){
-            const btninfo = tar.getAttribute('data-btninfo');
-            alert(btninfo);
-            // let value1 = Number(this.oInputs[0].value.replace(/\s+/g, '')) || 0;
-            // let value2 = Number(this.oInputs[1].value.replace(/\s+/g, '')) || 0;
-            //
-            //
-            // this.renderRes(this.oRes, this.comput(method, value1, value2));
+        const tagName = e.getTagName();
+        const tar = e.getTar();
+        if(tagName === 'button'){//点的button
+            this.btnGroupClick(e);
+        }else if(tagName === 'i' && tar.dataset['iType'] === '_close'){ //点的左上角的关闭按钮
+            this.close();
         }
     }
 
 
-    onClose(ev){
-        // alert('close');
-        // this.form.parentNode.removeNode(thisNode);
-        let childs = this.form.childNodes;
-        for(var i = childs .length - 1; i >= 0; i--) {
-            this.form.removeChild(childs[i]);
-        }
-        const body = document.getElementsByTagName('body')[0];
-        body.removeChild(this.form);
-        // console.info(this.form.parentNode);
-        this.el.classList.toggle("blur");
-        document.body.classList.toggle('overflow');
-        // this.form.parentNode.removeNode(this.form);
+    btnGroupClick(e){
+        const tar = e.getTar();
+        const btnFunc = tar.dataset['btnFunc'];
+        this.options.func[btnFunc] && this.options.func[btnFunc]();
     }
 
+    close(){
+        let duration = 0.3;
+        this.fade.fadeout({
+            duration,
+            way: 'frame-fadeout-m-t',
+        });
+        this.options.mask && new Fade(this.mask).fadeout({duration});//有遮罩层
+    }
 
-    // comput(method, val1, val2){
-    //     switch(method){
-    //         case 'plus':
-    //             return val1 + val2;
-    //         case 'sub':
-    //             return val1 - val2;
-    //         case 'mul':
-    //             return val1 * val2;
-    //         case 'div':
-    //             return val1 /val2;
-    //         default:
-    //             break;
-    //     }
-    // }
-
-
-    // renderRes(target, value){
-    //     target.innerText = value;
-    // }
 }
+
+// const template = `
+//         <div class="close-btn"><i class="icon iconfont icon-baseline-close-px" data-i-type="_close"></i></div>
+//         <div class="info-icon">
+//             <i class="icon iconfont icon-info i-warring"></i>
+//         </div>
+//         <div class="content">
+//             请确认信息是否准确!<br>
+//             hhh
+//         </div>
+//         <div class="btn-group">
+//             <button class="lc-btn btn-lg conform" data-btn-func="ok">确定</button>
+//             <button class="lc-btn btn-lg cancle">取消</button>
+//         </div>
+// `;
