@@ -5,27 +5,24 @@ export default class Fade{
         this.el = el;
     }
 
-
     fadeout(options={}){
         options = Object.assign({
-            duration: 0.5,
+            duration: 500,
             rate: "ease",
             way:'fadeout',
         }, options);
         this.setAnimation(options);
-
         if(options.duration){
             setTimeout(()=>{
-                // this.el.style.display = 'none';
                 this.el.remove();
-            }, (options.duration * 1000));
+            }, options.duration);
         }
         return this;
     }
 
     fadein(options={}){
         options = Object.assign({
-            duration: 0.5,
+            duration: 500,
             rate: "ease",
             way:'fadein',
         }, options);
@@ -37,7 +34,7 @@ export default class Fade{
     setAnimation(options){
         this.el.style.animationName = options.way;
         this.el.style.animationFillMode = 'forwards';
-        this.el.style.webkitAnimationDuration = options.duration + "s";
+        this.el.style.webkitAnimationDuration = (options.duration/1000) + "s";
         this.el.style.webkitAnimationTimintFunction = options.rate;
     }
 

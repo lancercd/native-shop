@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "9826664",
+      "name": "警告",
+      "font_class": "jinggao",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "1131521",
+      "name": "加载",
+      "font_class": "jiazai",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "1951950",
+      "name": "成功",
+      "font_class": "chenggong",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "6204756",
+      "name": "失败",
+      "font_class": "shibai",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "7821205",
+      "name": "提示",
+      "font_class": "tishi_",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "11132288",
+      "name": "fail",
+      "font_class": "fail",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "1381332",
+      "name": "close",
+      "font_class": "close1",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
       "icon_id": "12309748",
       "name": "chevron_left_square",
       "font_class": "chevron_left_square",

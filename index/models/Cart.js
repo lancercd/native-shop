@@ -6,6 +6,7 @@ import InfoForm from '../../utils/InfoForm.js';
 
 export default class Cart{
     constructor(el){
+        this.name = 'Cart';
         this.el = el;
         this.Items = el.getElementsByClassName('J_cart_item');
         this.Select = new ListSelect(this.el, {
@@ -86,7 +87,7 @@ export default class Cart{
                 this.Select.selected.delete(oCheckBox.dataset.id);
             }
             const fade = new Fade(tar.parentNode.parentNode);
-            fade.fadeout({duration: 0.5,way: 'fadeout-r-l'});
+            fade.fadeout({duration: 500,way: 'fadeout-r-l'});
             this.render();
 
 

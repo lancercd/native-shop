@@ -1,18 +1,15 @@
 export default class ProductMore{
     constructor(el){
-        // console.log(el);
+        this.name = 'ProductMore';
         this.el = el;
         this.btn = el.getElementsByTagName('i');
         console.log(this.btn);
         this.init();
     }
 
-
     init(){
         this.bindEvent();
     }
-
-
 
     bindEvent(){
         for(let i=0; i<this.btn.length; i++){

@@ -1,5 +1,6 @@
 export default class productAttrSelect{
     constructor(el){
+        this.name = 'productAttrSelect';
         this.el = el;
         this.items = el.querySelectorAll('.option-list');
         this.oPrice = el.getElementsByClassName('price')[0];

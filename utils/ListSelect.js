@@ -2,6 +2,7 @@
 export default class ListSelect {
     constructor(el, name){
         // console.log('ListSelect on ready');
+        this.name = 'ListSelect';
         this.el = el;
         this._all = name.all;
         this._one = name.one;

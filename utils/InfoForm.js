@@ -25,12 +25,12 @@ export default class InfoForm{
     }
 
     createMsgContainer(){
-        let oMsgContainer = document.getElementById('msg-container');
+        let oMsgContainer = document.getElementById('info-container');
         if(oMsgContainer){
             this.oMsgContainer = oMsgContainer;
         }else{
             const oDiv = document.createElement('div');
-            oDiv.setAttribute('id', 'msg-container');
+            oDiv.setAttribute('id', 'info-container');
             document.body.appendChild(oDiv);
             this.oMsgContainer = oDiv;
         }
@@ -56,7 +56,7 @@ export default class InfoForm{
         oForm.style.width = op.w + 'px';
         oForm.style.height = op.h + 'px';
         this.fade = new Fade(oForm).fadein({
-            duration: 0.3,
+            duration: 300,
             way: 'frame-fadein-t-m',
         });
         oFrag.appendChild(oForm);
@@ -126,7 +126,7 @@ export default class InfoForm{
     }
 
     close(){
-        let duration = 0.3;
+        let duration = 300;
         this.fade.fadeout({duration,way: 'frame-fadeout-m-t'});
         this.options.mask && new Fade(this.mask).fadeout({duration});//有遮罩层
     }

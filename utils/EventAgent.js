@@ -1,6 +1,7 @@
 
 export default class EventAgent{
     constructor(ev){
+        this.name = 'EventAgent';
         this.e = ev || window.event;
         this.tar = this.e.target || this.e.srcElement;
         this.tagName = this.tar.tagName.toLowerCase();
