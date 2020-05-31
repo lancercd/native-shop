@@ -1,4 +1,4 @@
-// import CONFIG from './../config/config.js';
+import {URL} from '../config/config.js';
 
 
 export default function request(opt){
