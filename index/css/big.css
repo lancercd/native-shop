@@ -1,0 +1,11 @@
+body{
+    /* background-color: yellow; */
+}
+header .container{
+    width: 1180px;
+    margin: 0 auto;
+}
+
+html{
+    font-size: 15px;
+}
