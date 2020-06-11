@@ -1,3 +1,7 @@
-body{
-    /* background-color: red; */
+html{
+    font-size: 18px;
+}
+
+.container{
+    width: 100%;
 }

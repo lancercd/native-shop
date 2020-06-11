@@ -1,0 +1,117 @@
+// "out": true
+header{
+    z-index: 99;
+    width: auto;
+    border-bottom: 3px solid #16a085;
+    box-shadow: 0 5px 5px rgba(0,0,0,.3);
+}
+header .container{ /* 导航条宽度   后期抽离开  */
+    width: 1180px;
+    margin: 0 auto;
+}
+
+
+
+header .navbar{
+    // height: 60px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    // margin: 0 auto;
+}
+header .navbar .logo{
+    font-weight: bold;
+    margin-right: 20px;
+    color: #2ecc71;
+    font-size: 1.3rem;
+
+    & + label{
+        display: none;
+        & + input{
+            display: none;
+            &:checked{
+                & + .collapse{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+header .navbar .collapse{
+    display: flex;
+    flex-grow: 1;
+}
+header .navbar .collapse .links{
+    display: flex;
+    margin-right: auto;
+
+    li{
+        margin: 10px 10px;
+    }
+}
+
+header .navbar .collapse .links a{
+    color: #777;
+}
+
+header .navbar .collapse .form{
+
+}
+header .navbar .collapse .form a{
+    border: 1px solid #1abc9c;
+    border-radius: .3rem;
+    padding: .3rem 1rem;
+    color: #1abc9c;
+}
+
+header .navbar .collapse .form a.login{
+    background-color:  #1abc9c;;
+    color: #fff;
+}
+
+
+@media only screen and (max-width: 960px){
+    header .container{
+        width: 758px;
+        margin: 0 auto;
+    }
+    header .navbar{
+        flex-flow: row wrap;
+        .logo{
+            margin-right: auto;
+            & + label{
+                display: block;
+                i{
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+        .collapse{
+            display: none;
+            flex-flow: column;
+            width: 100%;
+            .links{
+                flex-direction: column;
+                margin-bottom: 1.5rem;
+
+
+                li{
+                    margin: .5rem 0;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+/* @media only screen and (max-width: 120){
+    header .container{
+        width: 758px;
+        margin: 0 auto;
+    }
+} */
