@@ -123,6 +123,8 @@ export default class InfoForm{
         const tar = e.getTar();
         const btnFunc = tar.dataset['btnFunc'];
         this.options.func[btnFunc] && this.options.func[btnFunc]();
+        //执行完用户的函数     关闭
+        this.close();
     }
 
     close(){

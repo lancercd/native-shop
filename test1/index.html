@@ -13,8 +13,19 @@
             color: yellow;
         }
 
-        [title~='test']{
+        [title~='test']:after{
+            content: '这里是after';
             color: red;
+        }
+        [title~='test']:before{
+            content: '这里是after';
+            color: red;
+        }
+
+        [data-id|="tail"]{
+            height: 200vw;
+            width: 50px;
+            background-color: #ddd;
         }
 
         /* [title="test"]{
@@ -29,15 +40,25 @@
     </div>
 <div class="box1 col-s">
     afaf
-    <table>
-        <thead>
-            <tr><td class="col-lan">111</td><td>2222</td></tr>
-        </thead>
-        <tr>
-            <td>ddd</td>
-        </tr>
-    </table>
+
 </div>
+
+
+<table border="1">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+
 </body>
+<script type="text/javascript">
+    console.dir(document.body.scrollTop);
+</script>
 <script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
 </html>

@@ -1,0 +1,204 @@
+body{
+    background-color: rgb(245,245,245);
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.main{
+    display: flex;
+    padding: 20px 0 0 0;
+
+    .left-menu{
+        display: flex;
+        flex-direction: column;
+        max-height: 600px;
+        margin-right: 15px;
+        padding : 30px 70px 10px 40px;
+        background-color: #fff;
+
+
+        .menu-item{
+            margin-top: 20px;
+
+            .title{
+                color: rgb(51, 51, 51);
+                font-size: 20px;
+            }
+            .menu-list{
+                li{
+                    margin-top: 20px;
+
+                    a{
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+
+                    &.active a{
+                        color: #ff6700;
+                        font-size: 18px;
+                        font-weight: 800;
+                    }
+
+                }
+            }
+        }
+    }
+    .right-box{
+        flex-grow: 1;
+        min-height: 100%;
+        padding-bottom: 20px;
+        background-color: #fff;
+
+        .right-box-title{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px 10px 30px;
+            border-bottom: 2px solid rgb(204, 204, 204);
+            .title{
+
+                font-size: 23px;
+                color: rgb(117, 117, 117);
+                font-weight: bold;
+            }
+
+            .add-address-btn{
+                padding: 5px 15px;
+                border-radius: 5px;
+                background-color: rgba(255, 77, 77, .8);
+                cursor: pointer;
+                &>a{
+                    color: #fff;
+                }
+                &:hover{
+                    background-color: rgba(255, 77, 77, 1);
+                }
+            }
+        }
+
+
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+
+
+            .item{
+                display: flex;
+                height: 50px;
+                width: 98%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 5px 0;
+                padding: 0 10px;
+                border-radius: 5px;
+                border: 1px solid rgb(220, 220, 220);
+                color: rgb(117, 117, 117);
+                &:hover{
+                    background-color: rgba(200,200,200,.1);
+                }
+                &>div{
+                    // border: 1px;
+                    // background-color: #000;
+                }
+                .circle{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 100%;
+                    font-size: 16px;
+                    text-align: center;
+                    line-height: 30px;
+                    background-color: #f6e58d;
+                    color: #fff;
+                    overflow: hidden;
+                }
+                .name{
+                    min-width: 10%;
+                    font-size: 18px;
+                }
+                .phone{
+                    width: 12%;
+                    font-size: 16px;
+                    color: #999;
+                }
+                .detail{
+                    width: 30%;
+                    // overflow: hidden;
+                    color: #aaa;
+                }
+                .del{
+                    width: 50px;
+                    padding: 2px;
+                    border-radius: 5px;
+                    border: 1px solid #ff6700;
+                    color: #ff6700;
+                    text-align: center;
+                    transition: .5s;
+                    cursor: pointer;
+
+                    &:hover{
+                        color: #fff;
+                        background-color: rgba(255, 77, 77, 1);
+                    }
+                }
+                .is-default{
+                    width: 6%;
+
+                    .show{
+                        width: 50px;
+                        border-radius: 5px;
+                        text-align: center;
+                        padding: 2px;
+                        border: 1px solid rgba(243, 156, 18,.5);
+                        color: rgba(243, 156, 18,.8);
+                        // background-color: rgba(241, 196, 15,.3);
+                        // color: rgba(231, 76, 60,.8);
+
+                        // background-color: #ff6700;
+                    }
+                }
+                .address-deit{
+                    width: auto;
+                    position: relative;
+
+                    &:before{
+                        content: '查看/编辑';
+                        position: absolute;
+                        width: 90px;
+                        top: 100%;
+                        left: -130%;
+                        border-radius: 5px;
+                        padding: 3px 5px;
+                        border: 1px solid rgba(230, 126, 34,.3);
+                        color: rgba(230, 126, 34,1);
+                        opacity: 0;
+                        text-align: center;
+                        transition: 1s;
+                    }
+                    &:hover:before{
+                        opacity: 1;
+                    }
+                    a{
+                        color: #e67e22;
+
+                        i{
+                            font-size: 25px;
+                        }
+                    }
+
+                }
+
+
+
+
+            }
+
+        }
+    }
+}

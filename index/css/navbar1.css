@@ -131,7 +131,6 @@ header .navbar .collapse .form a.login {
       display: flex;
       align-items: center;
       justify-content: space-around;
-
       position: fixed;
       bottom: 0;
       border-radius: 3px 3px 0 0;
