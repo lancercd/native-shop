@@ -57,7 +57,7 @@
       <div class="container flex-container  space-between">
         <!--网站logo-->
         <div class="header-logo">
-          <a href="index.php">
+          <a href="index.html">
             <!-- <img src="./image/logo.png"> -->
             lc-shop
           </a>
@@ -807,13 +807,50 @@
                 <i class="icon iconfont icon-info i-warring"></i>
             </div>
             <div class="content">
-                请确认信息是否准确!<br>
-                hhh
+                登录
             </div>
-            <div class="btn-group">
-                <button class="lc-btn btn-lg conform">确定</button>
-                <button class="lc-btn btn-lg cancle">取消</button>
-            </div>
+            <form action="post" autocomplete="off">
+                <div>
+                    <label for="account">账号: </label>
+                    <input type="text" name="account" value="" id="account">
+                </div>
+                <div>
+                    <label for="pwd">密码: </label>
+                    <input type="password" name="pwd" value="" id="pwd" placeholder="">
+                </div>
+                <div>
+                    <label for="pwd">age: </label>
+                    <input type="number" name="age" value="" id="age">
+                </div>
+                <div>
+                    <label for="pwd">性别: </label>
+                    <input type="radio" name="sex" value="1">
+                    <input type="radio" name="sex" value="2">
+                </div>
+                <div>
+                    <label for="account">账号: </label>
+                    <input type="text" name="account" value="" id="account">
+                </div>
+                <div>
+                    <label for="pwd">密码: </label>
+                    <input type="password" name="pwd" value="" id="pwd">
+                </div>
+                <div>
+                    <label for="pwd">age: </label>
+                    <input type="number" name="age" value="" id="age">
+                </div>
+                <div>
+                    <label for="pwd">性别: </label>
+                    <input type="radio" name="sex" value="1">
+                    <input type="radio" name="sex" value="2">
+                </div>
+
+                <div class="btn-group">
+                    <button class="lc-btn btn-lg conform">确定</button>
+                    <button class="lc-btn btn-lg cancle">取消</button>
+                </div>
+            </form>
+
         </div>
     </div>
 </div> -->

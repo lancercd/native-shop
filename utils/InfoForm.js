@@ -1,16 +1,27 @@
 import EventAgent from './EventAgent.js';
 import Fade from './Fade.js';
+import request from './request.js';
 
 export default class InfoForm{
     constructor(options={}){
         this.name = 'InfoForm';
         this.options = Object.assign({
-            way: 'frame',//frame   message
-            type: 'warring',//info warring
+            way: 'frame',//frame   message  <---暂时不启用了
+            type: 'warring',//info warring  form(表单)
             mask: true,//true  fals
-            w: 400,h: 400,
-            close: true,
+            w: 400,h: 400,//宽度   高度     不包含px
+            close: true,  //是否显示关闭按钮
+            autoClose: true,  //点击按钮后  关闭
             msg: '请确认!',tiny:'',
+            form:{
+                method:'post',class:'',name: '',id:'', action:'', autocomplete:'off', enctype:'',
+            },
+            input:{
+                0:{label: 'label',type: 'text', name:'', id:'', value:'', placeholder:''},
+            },
+            input:{
+                0:{type: 'num',name: '', class: '', id:''},
+            },
             btn:{0:{class: 'conform', func: 'close', text: '确定'}},
             func:{'close':()=>{this.close()}},
         }, options);
@@ -68,7 +79,7 @@ export default class InfoForm{
             oCloseBtn.classList.add('close-btn');
             oInnerContent.appendChild(oCloseBtn);
         }
-        if(op.type){//提示框的icon
+        if(op.type && op.type !== 'form'){//提示框的icon   表单不显示icon
             const oInfoIcon = document.createElement('div');
             oInfoIcon.innerHTML = `<i class="icon iconfont icon-info i-${op.type}"></i>`;
             oInfoIcon.classList.add('info-icon');
@@ -83,14 +94,18 @@ export default class InfoForm{
             oContent.classList.add('content');
             oInnerContent.appendChild(oContent);
         }
-        const oBtnGroup = document.createElement('div');
-        oBtnGroup.classList.add('btn-group');
-        let btn = ``;
-        for(let i in op.btn){
-            btn += `<button class="lc-btn btn-lg ${op.btn[i].class? op.btn[i].class:''}" data-btn-func="${op.btn[i].func? op.btn[i].func:''}">${op.btn[i].text? op.btn[i].text:''}</button>`;
+
+        if(op.type && op.type === 'form'){//表单
+            const elForm = this.createForm();
+
+            elForm.appendChild(this.createBtnGroup());
+            oInnerContent.appendChild(elForm);
+
+        }else{
+            oInnerContent.appendChild(this.createBtnGroup());
         }
-        oBtnGroup.innerHTML = btn;
-        oInnerContent.appendChild(oBtnGroup);
+
+
         if(op.mask){
             let mask = document.createElement('div');
             mask.setAttribute('id', '_mask');
@@ -108,6 +123,62 @@ export default class InfoForm{
         this.oForm.addEventListener('click', this.onBtnClick.bind(this), false);
     }
 
+    createBtnGroup(){
+        const op = this.options;
+        const oBtnGroup = document.createElement('div');
+        oBtnGroup.classList.add('btn-group');
+        let btn = ``;
+        for(let i in op.btn){
+            btn += `<button class="lc-btn btn-lg ${op.btn[i].class? op.btn[i].class:''}" data-btn-func="${op.btn[i].func? op.btn[i].func:''}">${op.btn[i].text? op.btn[i].text:''}</button>`;
+        }
+        oBtnGroup.innerHTML = btn;
+
+        return oBtnGroup;
+    }
+
+    createForm(){
+        const opForm = this.options.form;
+        const opInput = this.options.input;
+        const elForm = document.createElement('form');
+        this.form = elForm;
+        elForm.setAttribute('onsubmit', 'return false');
+        for(let op in opForm){
+            opForm[op] && elForm.setAttribute(op, opForm[op]);
+        }
+
+        for (let input in opInput) {
+            elForm.appendChild(this.createInput(opInput[input]));
+        }
+
+
+        return elForm;
+    }
+
+    createInput(op){
+        const oDiv = document.createElement('div');
+
+        if(op['type'] !== 'radio'){
+            oDiv.innerHTML = `
+                <label for="${op['id']}">${op['label']}: </label>
+                <input type="${op['type']? op['type']:'text'}"
+                    ${op['name']? 'name="'+ op['name']+ '"':''}
+                    ${op['value']? 'value="'+ op['value']+ '"':''}
+                    ${op['id']? 'id="'+ op['id']+ '"':''}
+                    ${op['placeholder']? 'placeholder="'+ op['placeholder']+ '"':''}
+                    >
+            `;
+        }else{ //非input   没有写好
+            // oDiv.innerHTML = `
+            //     <label for="${op['id']}">${op['label']}: </label>
+            //     <input type="${op['type']? op['type']:'text'}"
+            //         ${op['name']? 'name="'+ op['name']+ '"':''}
+            //         ${op['value']? 'value="'+ op['value']+ '"':''}
+            //     >
+            // `;
+        }
+        return oDiv;
+    }
+
     onBtnClick(ev){
         const e = new EventAgent(ev);
         const tagName = e.getTagName();
@@ -122,9 +193,11 @@ export default class InfoForm{
     btnGroupClick(e){
         const tar = e.getTar();
         const btnFunc = tar.dataset['btnFunc'];
-        this.options.func[btnFunc] && this.options.func[btnFunc]();
+        this.options.func[btnFunc] && this.options.func[btnFunc](this.form? this.form: null);
         //执行完用户的函数     关闭
-        this.close();
+        if(this.options.autoClose){
+            this.close();
+        }
     }
 
     close(){

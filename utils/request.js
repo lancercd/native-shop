@@ -10,7 +10,8 @@ export default function request(opt){
         // success = opt.success || function(){},
         begin = options.begin || function(){},
         finish = options.finish || function(){},
-        url = options.url;
+        url = options.url,
+        is_form_data = options.is_form_data || false;
     begin();
     function formatDatas(obj){
         let str = '';
@@ -19,7 +20,7 @@ export default function request(opt){
         }
         return str.replace(/&$/, '');
     }
-console.log('url: ' + url);
+// console.log('url: ' + url);
     return new Promise((resolve, reject) => {
         const xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         if(!xhr){
@@ -27,10 +28,11 @@ console.log('url: ' + url);
         }
 
         xhr.open(type, url, async);
-        type === 'POST' && xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-console.log('data: ' + data);
-        xhr.send(type === 'GET' ? null: formatDatas(data));
-
+        if(type === 'POST' && !is_form_data){
+            type === 'POST' && xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+        }
+        xhr.send(type === 'GET' ? null: is_form_data? data:formatDatas(data));
+        // xhr.send(data);
         xhr.onload = function(){
             finish();
             if(xhr.status==200)
@@ -39,15 +41,6 @@ console.log('data: ' + data);
             else
                 reject('加载失败');
         };
-        // xhr.onreadystatechange = function(){
-        //     if(xhr.readyState==4 && xhr.status==200)
-        //         resolve(xhr.responseText);
-        //         // resolve(JSON.parse(xhr.responseText));
-        //     else
-        //         // reject('加载失败');
-        //
-        //     // complete();
-        // };
         xhr.onerror = function(){
             reject(this);
         }
