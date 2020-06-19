@@ -1,7 +1,7 @@
 <?php
 namespace server;
-require_once('../config/constant.php');
-
+// require_once('../config/constant.php');
+use mysqli;
 class Sql{
     public static $link = null;
     protected $table = null;
@@ -15,10 +15,11 @@ class Sql{
     //     $this->_connect();
     //     $this->_opt();
     // }
-    public function bulid($table=null){
+    public function table($table=null){
         $this->table = is_null($table)? DB_PRE.$this->$table : DB_PRE.$table;
         $this->_connect();
         $this->_opt();
+        return $this;
     }
 
 
@@ -81,6 +82,7 @@ class Sql{
     // }
 
     public function find(){
+        echo "asdfasd";
         $data = $this->limit(1)->all();
         $data = current($data);
         return $data;
@@ -88,6 +90,12 @@ class Sql{
 
 
     public function all($flage=false){
+        $sql = "select " . $this->opt['field'] . ' FROM ' . $this->table . $this->opt['join'] . $this->opt['where'] . $this->opt['group'] . $this->opt['having'] . $this->opt['order'] . $this->opt['limit'];
+        // echo $sql.'<br> <hr>';
+        return $this->query($sql, $flage);
+    }
+
+    public function select($flage=false){
         $sql = "select " . $this->opt['field'] . ' FROM ' . $this->table . $this->opt['join'] . $this->opt['where'] . $this->opt['group'] . $this->opt['having'] . $this->opt['order'] . $this->opt['limit'];
         // echo $sql.'<br> <hr>';
         return $this->query($sql, $flage);
