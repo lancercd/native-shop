@@ -1,7 +1,7 @@
 
 <?php
 
-require_once('../function/function.php');
+require_once('../server/function.php');
 $p_menus = S('menus')->field('id, icon, menu_name, menu_link, target')->where('is_show=1 and pid=0')->order('sort ASC')->all();
 
 $c_menus = S('menus')->field('pid, icon, menu_name, menu_link')->where('is_show=1 and pid!=0')->order('sort ASC')->all();

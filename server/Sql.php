@@ -1,6 +1,6 @@
 <?php
-require_once('../constant.php');
-
+namespace server;
+require_once('../config/constant.php');
 
 class Sql{
     public static $link = null;
@@ -197,10 +197,10 @@ class Sql{
 
 
 
-function S($table){
-    $obj = new Sql($table);
-    return $obj;
-}
+// function S($table){
+//     $obj = new Sql($table);
+//     return $obj;
+// }
 
 
 // $sql = "delete from student";

@@ -1,7 +1,7 @@
 <?php
 
 require_once('function.php');
-require_once('../constant.php');
+require_once('../config/constant.php');
 class FileUpload
 {
     protected $dir;
