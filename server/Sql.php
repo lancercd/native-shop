@@ -10,7 +10,12 @@ class Sql{
     public static $sqls = array();
 
 
-    public function __construct($table=null){
+    // public function __construct($table=null){
+    //     $this->table = is_null($table)? DB_PRE.$this->$table : DB_PRE.$table;
+    //     $this->_connect();
+    //     $this->_opt();
+    // }
+    public function bulid($table=null){
         $this->table = is_null($table)? DB_PRE.$this->$table : DB_PRE.$table;
         $this->_connect();
         $this->_opt();
