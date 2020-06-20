@@ -7,9 +7,10 @@ class JsonService
 {
     private static $SUCCESSFUL_DEFAULT_MSG = 'success';
     private static $FAIL_DEFAULT_MSG = 'errot';
-    private static function result($code,$msg='',$data=[])
+    private static function result($code,$msg='',$data=null)
     {
-        exit(json_encode(compact('code','msg','data')));
+        if($data) exit(json_encode(compact('code','msg','data')));
+        else exit(json_encode(compact('code','msg')));
     }
 
     public static function successful($msg = 'success',$data=[],$status=200)
