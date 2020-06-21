@@ -3,7 +3,8 @@
 }
 header {
   z-index: 99;
-  border-bottom: 3px solid #16a085;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #fff;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -15,7 +16,8 @@ header .navbar {
 header .navbar .logo {
   font-weight: bold;
   margin-right: 20px;
-  color: #2ecc71;
+  color: rgba(231, 76, 60,.8);
+
   font-size: 1.3rem;
 }
 header .navbar .logo + label {
@@ -41,14 +43,35 @@ header .navbar .collapse .links li {
 header .navbar .collapse .links a {
   color: #777;
 }
+header .navbar .collapse .form{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+header .navbar .collapse .form * {
+    margin-left: 5px;
+}
+header .navbar .collapse .form button.login-btn{
+    border: 1px solid rgba(231, 76, 60,.8);
+    border-radius: .3rem;
+    padding: .3rem 1rem;
+    background-color: #fff;
+    font-size: 1rem;
+    color: rgba(231, 76, 60,.8);
+    cursor: pointer;
+}
+header .navbar .collapse .form button.login-btn:hover{
+
+}
 header .navbar .collapse .form a {
-  border: 1px solid #1abc9c;
+  border: 1px solid rgba(230, 126, 34,1.0);
   border-radius: .3rem;
   padding: .3rem 1rem;
-  color: #1abc9c;
+  color: rgba(230, 126, 34,1.0);
 }
-header .navbar .collapse .form a.login {
-  background-color: #1abc9c;
+header .navbar .collapse .form a.signin {
+  background-color: rgba(231, 76, 60,.8);
   color: #fff;
 }
 @media only screen and (min-width: 769px) and (max-width: 960px) {
@@ -134,6 +157,7 @@ header .navbar .collapse .form a.login {
       position: fixed;
       bottom: 0;
       border-radius: 3px 3px 0 0;
+      background-color: #fff;
       box-shadow: 0 5px 8px #000;
 
   }

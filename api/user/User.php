@@ -12,6 +12,7 @@ class User extends Base{
         if(!$user) return Json::fail('账号错误!');
         if($user['pwd'] != $pwd) return Json::fail('密码错误!');
         session_start();
+        // $this->setUser();
         $_SESSION['uid'] = $user['uid'];
         return Json::success('登录成功!');
         // return Json::success('session 设置成功!');

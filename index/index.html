@@ -5,94 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="stylesheet" href="../public/css/init.css"> -->
   <link rel="stylesheet" type="text/css" href="../public/icon-font/iconfont.css">
-  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+
   <link rel="stylesheet" type="text/css" href="./css/index.css">
   <link rel="stylesheet" type="text/css" href="../public/css/info-form.css">
   <link rel="stylesheet" type="text/css" href="../public/css/model.css">
+  <link rel="stylesheet" href="./css/test-all.css">
   <title>商品主页</title>
 </head>
 <body>
 
 
-
-<!-- <div id="container"  class="info-body"> -->
 <div id="container">
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a class="logo" href="#">123</a>
+                <label for="toggle-nav"><i class="icon iconfont icon-ego-menu"></i></label>
+                <input type="checkbox" id="toggle-nav">
+                <div class="collapse">
+                    <ul class="links">
+                        <li><a href="">首页</a></li>
+                        <li><a href="">我的购物车</a></li>
+                        <li><a href="">我的订单</a></li>
+                        <li><a href="">我的信息</a></li>
+                    </ul>
+                    <div class="form">
+                        <!-- <a href="#">登录</a> -->
+                        <button type="button" class="login-btn" name="loginBtn">登录</button>
+                        <!-- <div class=""> -->
+                            <a class="signin" href="#">注册</a>
+                        <!-- </div> -->
+                    </div>
+                </div>
 
-    <!-- <div class="site-topbar">
-      <div class="container clearfix">
-
-        <div class="topbar-nav pull-left">
-
-          <div class="logo-font-container">
-            lc-sh
-          </div>
-
+            </div>
         </div>
-
-        <div class="topbar-cart pull-right">
-          <a href="javascript:;" class="btn cart">
-            <i class="icon iconfont icon-cart-Empty"></i>
-            购物车(<span>0</span>)
-          </a>
-        </div>
-
-        <div class="topbar-user pull-right">
-          <button type="button" name="loginBtn">登录</button>
-          <span class="sep">|</span>
-          <a href="javascript:;">注册</a>
-        </div>
-      </div>
-    </div> -->
-
-
-
-
-
-
-
-
-
-    <!--页面header-->
-    <div class="site-header">
-      <div class="container flex-container  space-between">
-        <!--网站logo-->
-        <div class="header-logo">
-          <a href="index.html">
-            <!-- <img src="./image/logo.png"> -->
-            lc-shop
-          </a>
-        </div>
-
-        <div class="header-search">
-          <form class="search-form" >
-            <input type="text" class="search-text" id="search-text"/>
-            <button class="btn-search">
-              <i class="icon iconfont icon-search"></i>
-            </button>
-          </form>
-        </div>
-
-
-        <div class="topbar-user">
-          <button type="button" name="loginBtn">登录</button>
-          <span class="sep">|</span>
-          <a href="javascript:;">注册</a>
-        </div>
-
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
+    </header>
 
 
     <div class="site-main container">
@@ -126,71 +74,24 @@
       <div class="model-hot">
         <div class="channel-box clearfix">
           <ul class="channel-list clearfix">
-
-
-
-              <!--分类导航-->
-
-              <!-- 轮播图左边的列表    -->
-              <!-- <li class="item-category">
-
-                <div class="site-category">
-                  <ul class="category-list clearfix">
-                    <li class="category-item"><a class="title" href="javascript:;">手机 平板 电话卡</a><i class="icon iconfont2"></i>
-                    </li>
-                    <li class="category-item"><a class="title"  href="javascript:;">电视 盒子</a><i class="icon iconfont2"></i></li>
-                    <li class="category-item"><a class="title"  href="javascript:;">路由器 智能硬件</a><i class="icon iconfont2"></i></li>
-                    <li class="category-item"><a class="title"  href="javascript:;">移动电源 插线板</a><i class="icon iconfont2"></i></li>
-                    <li class="category-item"><a class="title"  href="javascript:;">耳机 音箱</a><i class="icon iconfont2"></i></li>
-                    <li class="category-item"><a class="title"  href="javascript:;">电池 存储卡</a><i class="icon iconfont2"></i></li>
-                    <li class="category-item"><a class="title"  href="javascript:;">保护套 后盖</a><i class="icon iconfont2"></i></li>
-                    <li class="category-item"><a class="title"  href="javascript:;">贴膜 其他配件</a><i class="icon iconfont2"></i></li>
-                    <li class="category-item"><a class="title"  href="javascript:;">米兔 服装</a><i class="icon iconfont2"></i></li>
-                    <li class="category-item"><a class="title"  href="javascript:;">箱包 其他周边</a><i class="icon iconfont2"></i></li>
-                  </ul>
-                </div>
-              </li> -->
-
-
-
-
-
-            <!-- <li class="channel-item">
-              <a href="javascript:;">
-                <i class="icon iconfont4">&#xe611;</i>
-                开放购买
-              </a>
-            </li>
-            <li class="channel-item">
-              <a href="javascript:;">
-                <i class="icon iconfont4">&#xe667;</i>
-                企业团购
-              </a>
-            </li>
-            <li class="channel-item">
-              <a href="javascript:;">
-                <i class="icon iconfont4">&#xe603;</i>
-                官翻产品
-              </a>
-            </li>
-            <li class="channel-item">
-              <a href="javascript:;">
-                <i class="icon iconfont4">&#xe60e;</i>
-                F码通道
-              </a>
-            </li>
-            <li class="channel-item">
-              <a href="javascript:;">
-                <i class="icon iconfont4">&#xe661;</i>
-                话费充值
-              </a>
-            </li>
-            <li class="channel-item">
-              <a href="javascript:;">
-                <i class="icon iconfont4">&#xe610;</i>
-                防伪查询
-              </a>
-            </li> -->
+            <div class="channel-item">
+                <a href=""><i class="icon iconfont icon-yifu"></i></a>
+            </div>
+            <div class="channel-item">
+                <a href=""><i class="icon iconfont icon-kuzi"></i></a>
+            </div>
+            <div class="channel-item">
+                <a href=""><i class="icon iconfont icon-lingshi"></i></a>
+            </div>
+            <div class="channel-item">
+                <a href=""><i class="icon iconfont icon-gongju"></i></a>
+            </div>
+            <div class="channel-item">
+                <a href=""><i class="icon iconfont icon-wp-sj"></i></a>
+            </div>
+            <div class="channel-item">
+                <a href=""><i class="icon iconfont icon-iconset0227"></i></a>
+            </div>
           </ul>
         </div>
         <ul class="hot-good-list clearfix">
@@ -326,42 +227,6 @@
       </div>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -779,82 +644,14 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div><!-- /id="container" -->
 
-<!-- <div id="_mask">
-    <div id="_info-Form">
-        <div class="inner-content">
-            <div class="close-btn"><i class="icon iconfont icon-baseline-close-px"></i></div>
-            <div class="info-icon">
-                <i class="icon iconfont icon-info i-warring"></i>
-            </div>
-            <div class="content">
-                登录
-            </div>
-            <form action="post" autocomplete="off">
-                <div>
-                    <label for="account">账号: </label>
-                    <input type="text" name="account" value="" id="account">
-                </div>
-                <div>
-                    <label for="pwd">密码: </label>
-                    <input type="password" name="pwd" value="" id="pwd" placeholder="">
-                </div>
-                <div>
-                    <label for="pwd">age: </label>
-                    <input type="number" name="age" value="" id="age">
-                </div>
-                <div>
-                    <label for="pwd">性别: </label>
-                    <input type="radio" name="sex" value="1">
-                    <input type="radio" name="sex" value="2">
-                </div>
-                <div>
-                    <label for="account">账号: </label>
-                    <input type="text" name="account" value="" id="account">
-                </div>
-                <div>
-                    <label for="pwd">密码: </label>
-                    <input type="password" name="pwd" value="" id="pwd">
-                </div>
-                <div>
-                    <label for="pwd">age: </label>
-                    <input type="number" name="age" value="" id="age">
-                </div>
-                <div>
-                    <label for="pwd">性别: </label>
-                    <input type="radio" name="sex" value="1">
-                    <input type="radio" name="sex" value="2">
-                </div>
-
-                <div class="btn-group">
-                    <button class="lc-btn btn-lg conform">确定</button>
-                    <button class="lc-btn btn-lg cancle">取消</button>
-                </div>
-            </form>
-
-        </div>
-    </div>
-</div> -->
-
+<div class="bottom-nav">
+    <div><a href="#" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
+    <div><a href="#"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
+    <div><a href="#"><i class="icon iconfont icon-shangpin1"></i>订单</a></div>
+    <div><a href="#"><i class="icon iconfont icon-user"></i>我的信息</a></div>
+</div>
 
 <script type="module" src="js/index.js" charset="utf-8"></script>
 <script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
