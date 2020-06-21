@@ -10,8 +10,9 @@ export default function request(opt){
         // success = opt.success || function(){},
         begin = options.begin || function(){},
         finish = options.finish || function(){},
-        url = options.url,
+        url = options.url || '',
         is_form_data = options.is_form_data || false;
+        if(url === '') throw new Error('url不能为空!');
     begin();
     function formatDatas(obj){
         let str = '';
@@ -24,10 +25,10 @@ export default function request(opt){
     return new Promise((resolve, reject) => {
         const xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         if(!xhr){
-            throw new Erroe('浏览器不支持ajax    换一下浏览器');
+            throw new Error('浏览器不支持ajax    换一下浏览器');
         }
 
-        xhr.open(type, url, async);
+        xhr.open(type, URL+url, async);
         if(type === 'POST' && !is_form_data){
             type === 'POST' && xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
         }
@@ -35,11 +36,13 @@ export default function request(opt){
         // xhr.send(data);
         xhr.onload = function(){
             finish();
-            if(xhr.status==200)
-                // resolve(xhr.responseText);
-                resolve(JSON.parse(xhr.responseText));
+            if(xhr.status==200){
+                const msg = JSON.parse(xhr.responseText);
+                (msg.code === 200)? resolve(msg) : reject(msg);
+                // console.log(msg);
+            }
             else
-                reject('加载失败');
+                reject(JSON.parse(xhr.responseText));
         };
         xhr.onerror = function(){
             reject(this);

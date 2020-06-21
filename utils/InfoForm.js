@@ -156,7 +156,6 @@ export default class InfoForm{
 
     createInput(op){
         const oDiv = document.createElement('div');
-
         if(op['type'] !== 'radio'){
             oDiv.innerHTML = `
                 <label for="${op['id']}">${op['label']}: </label>

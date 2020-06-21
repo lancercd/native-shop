@@ -187,7 +187,7 @@ body {
 }
 .site-topbar .topbar-cart .cart {
   position: relative;
-  z-index: 32;
+  z-index: 2;
   display: block;
   height: 39px;
   /* background: #424242; */
@@ -233,7 +233,7 @@ body {
 
 .site-header {
   position: relative;
-  z-index: 20;
+  z-index: 2;
   height: 100px;
 }
 .site-header .header-logo {
@@ -279,7 +279,7 @@ body {
   position: absolute;
   top: 88px;
   left: -85px;
-  z-index: 21;
+  z-index: 2;
   width: 234px;
   height: 460px;
   font-size: 14px;

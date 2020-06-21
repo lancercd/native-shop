@@ -32,6 +32,7 @@ export default class Message{
         }, options);
         options.type = type[options.type] || '';
         const messageEl = document.createElement('div');
+        messageEl.style.zIndex = 9999;
         messageEl.className = 'message move-in';
         messageEl.innerHTML = `
             <i class="icon iconfont icon-${options.type}"></i>

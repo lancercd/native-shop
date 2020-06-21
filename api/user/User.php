@@ -6,9 +6,15 @@ use \server\JsonService as Json;
 class User extends Base{
 
     public function login(){
+        $account = $_POST['account'];
+        $pwd = $_POST['pwd'];
+        $user = $this->table('user')->where("`account` = '{$account}'")->find();
+        if(!$user) return Json::fail('账号错误!');
+        if($user['pwd'] != $pwd) return Json::fail('密码错误!');
         session_start();
-        $_SESSION['uid'] = 1;
-        return Json::success('session 设置成功!');
+        $_SESSION['uid'] = $user['uid'];
+        return Json::success('登录成功!');
+        // return Json::success('session 设置成功!');
     }
 
 

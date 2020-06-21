@@ -82,7 +82,6 @@ class Sql{
     // }
 
     public final function find(){
-        echo "asdfasd";
         $data = $this->limit(1)->all();
         $data = current($data);
         return $data;
