@@ -6,14 +6,13 @@ namespace server;
 class JsonService
 {
     private static $SUCCESSFUL_DEFAULT_MSG = 'success';
-    private static $FAIL_DEFAULT_MSG = 'errot';
+    private static $FAIL_DEFAULT_MSG = 'error';
     private static function result($code,$msg='',$data=null)
     {
-        if($data) exit(json_encode(compact('code','msg','data')));
-        else exit(json_encode(compact('code','msg')));
+        $data? exit(json_encode(compact('code','msg','data'))):exit(json_encode(compact('code','msg')));
     }
 
-    public static function successful($msg = 'success',$data=[],$status=200)
+    public static function successful($msg='success',$data=[],$status=200)
     {
         if(false == is_string($msg)){
             $data = $msg;

@@ -1,5 +1,6 @@
 <?php
 namespace server;
+use server\JsonService as Json;
 
 class Route{
     // public static function boot(){
@@ -9,19 +10,30 @@ class Route{
         $this->init();
     }
     public function init(){
-        $this->buildPath();
+        $this->isRequest()? $this->buildPath():$this->reject();
         // $this->instantiation();
     }
     public function instantiation(){
-        $class = new $this->controller;
-        return $class;
+        if(class_exists($this->controller)) return new $this->controller;
+        else Json::fail('类不存在');
+        // return $class;
     }
     public function method(){
         return $this->action;
     }
 
+    private function reject(){
+        return Json::fail('Illegal request!');
+    }
+
+    private function isRequest(){
+        if($_SERVER['PATH_INFO']) return true;
+        else return false;
+    }
+
 
     private function buildPath(){
+
         $pathinfo = array_values(array_filter(explode('/', $_SERVER['PATH_INFO'])));
         $preController = array_shift($pathinfo);
         $this->controller = 'api\\'.$preController.'\\'.ucfirst($preController);

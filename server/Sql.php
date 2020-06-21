@@ -1,6 +1,6 @@
 <?php
 namespace server;
-// require_once('../config/constant.php');
+
 use mysqli;
 class Sql{
     public static $link = null;
@@ -15,7 +15,7 @@ class Sql{
     //     $this->_connect();
     //     $this->_opt();
     // }
-    public function table($table=null){
+    public final function table($table=null){
         $this->table = is_null($table)? DB_PRE.$this->$table : DB_PRE.$table;
         $this->_connect();
         $this->_opt();
@@ -24,53 +24,53 @@ class Sql{
 
 
 
-        private function _connect(){
-            if (is_null(self::$link)) {
-                $link = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
-                if($link->connect_error) die('数据库连接错误');
-                $link->query("set names utf8");
-                self::$link = $link;
-            }
+    private final function _connect(){
+        if (is_null(self::$link)) {
+            $link = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+            if($link->connect_error) die('数据库连接错误');
+            $link->query("set names utf8");
+            self::$link = $link;
         }
+    }
 
 
-        private function _transform($str){
-            if(get_magic_quotes_gpc()){
-                $str = stripslashes($str);
-            }
-            return self::$link->real_escape_string($str);
+    private final function _transform($str){
+        if(get_magic_quotes_gpc()){
+            $str = stripslashes($str);
         }
+        return self::$link->real_escape_string($str);
+    }
 
-    public function order($order){
+    public final function order($order){
         $this->opt['order'] = ' ORDER BY ' . $order;
         return $this;
     }
 
-    public function limit($limit){
+    public final function limit($limit){
         $this->opt['limit'] = ' LIMIT ' . $limit;
         return $this;
     }
 
-    public function field($field){
+    public final function field($field){
         $this->opt['field'] = $field;
         return $this;
     }
 
-    public function where($where){
+    public final function where($where){
         $this->opt['where'] = ' WHERE ' . $where;
         return $this;
     }
-    public function having($having){
+    public final function having($having){
         $this->opt['having'] = ' HAVING ' . $having;
         return $this;
     }
 
-    public function group($group){
+    public final function group($group){
         $this->opt['group'] = ' GROUP by  ' . $group;
         return $this;
     }
 
-    public function join($table2, $on){
+    public final function join($table2, $on){
         $this->opt['join'] .= '  INNER JOIN ' . DB_PRE.$table2 . ' ON ' . $on . ' ';
         // echo $this->opt['join'];die;
         return $this;
@@ -81,7 +81,7 @@ class Sql{
     //     return $this;
     // }
 
-    public function find(){
+    public final function find(){
         echo "asdfasd";
         $data = $this->limit(1)->all();
         $data = current($data);
@@ -89,18 +89,18 @@ class Sql{
     }
 
 
-    public function all($flage=false){
+    public final function all($flage=false){
         $sql = "select " . $this->opt['field'] . ' FROM ' . $this->table . $this->opt['join'] . $this->opt['where'] . $this->opt['group'] . $this->opt['having'] . $this->opt['order'] . $this->opt['limit'];
         // echo $sql.'<br> <hr>';
         return $this->query($sql, $flage);
     }
 
-    public function select($flage=false){
+    public final function select($flage=false){
         $sql = "select " . $this->opt['field'] . ' FROM ' . $this->table . $this->opt['join'] . $this->opt['where'] . $this->opt['group'] . $this->opt['having'] . $this->opt['order'] . $this->opt['limit'];
         // echo $sql.'<br> <hr>';
         return $this->query($sql, $flage);
     }
-    public function query($sql, $flage){
+    public final function query($sql, $flage){
         self::$sqls[] = $sql;
         $link = self::$link;
         // echo $sql;
@@ -118,7 +118,7 @@ class Sql{
         return $rows;
     }
 
-    private function _opt(){
+    private final function _opt(){
         $this->opt = array(
             'field' => '*',
             'where' => '',
@@ -133,7 +133,7 @@ class Sql{
     }
 
 
-    public function exe($sql){
+    public final function exe($sql){
         self::$sqls[] = $sql;
         $link = self::$link;
         $bool = $link->query($sql);
@@ -149,13 +149,13 @@ class Sql{
     }
 
 
-    public function del(){
+    public final function del(){
         if(empty($this->opt['where'])) die("删除语句无where");
         $sql = "DELETE FROM " . $this->table . $this->opt['where'];
         return $this->exe($sql);
     }
 
-    public function add($data){
+    public final function add($data){
         if(!is_array($data)) die("add()中传入参数不是数组");
         $fields='';
         $values='';
@@ -170,7 +170,7 @@ class Sql{
     }
 
 
-    public function update($data){
+    public final function update($data){
         if(empty($this->opt['where'])) die("更新语句没有加where条件");
         if(is_null($data)) die("update() 传入参数未空");
         if(!is_array($data)) die("传入参数不是数组");
@@ -187,7 +187,7 @@ class Sql{
 
 
 
-    public function update_value($data){
+    public final function update_value($data){
         if(empty($this->opt['where'])) die("更新语句没有加where条件");
         if(is_null($data)) die("update() 传入参数未空");
         if(!is_array($data)) die("传入参数不是数组");
