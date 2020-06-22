@@ -31,7 +31,7 @@ export default class ProductList{
         for (let item of product) {
             let oLi = document.createElement('li');
             let tmp = '';
-            let link = `detail.html?id=${item.product_id}`;//商品跳转连接
+            let link = `detail.php?id=${item.product_id}`;//商品跳转连接
             if(this.is_recomment){
                 tmp = `
                         <a class="thumb" href="${link}">

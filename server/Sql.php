@@ -57,7 +57,8 @@ class Sql{
     }
 
     public final function where($where){
-        $this->opt['where'] = ' WHERE ' . $where;
+        if($this->opt['where'] == '') $this->opt['where'] = ' WHERE ' . $where;
+        else $this->opt['where'] .= ' AND ' . $where;
         return $this;
     }
     public final function having($having){
@@ -66,12 +67,12 @@ class Sql{
     }
 
     public final function group($group){
-        $this->opt['group'] = ' GROUP by  ' . $group;
+        $this->opt['group'] = ' GROUP BY  ' . $group;
         return $this;
     }
 
-    public final function join($table2, $on){
-        $this->opt['join'] .= '  INNER JOIN ' . DB_PRE.$table2 . ' ON ' . $on . ' ';
+    public final function join($table2, $on, $method = 'INNER'){
+        $this->opt['join'] .= ' '.$method .' JOIN ' . DB_PRE.$table2 . ' ON ' . $on . ' ';
         // echo $this->opt['join'];die;
         return $this;
     }

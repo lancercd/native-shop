@@ -43,4 +43,26 @@ class Product extends Base{
             ['product_id' => 5, 'image' => '../public/image/T1UCV_B4dv1RXrhCrK.jpg', 'pro_name' => '小米4', 'tips' => 135000, 'price' => 1299],
         ]);
     }
+
+
+    public function get_price(){
+        $product_id = $_POST['product_id'];
+        $attr = json_decode($_POST['attr'], true);
+
+        $key = $this->table('attr_key k')->field("detail_id, GROUP_CONCAT(concat(`key`, ':', `value`)) value")->where("`product_id` = {$product_id}")->join('attr_value v', 'k.id = v.key_id')->group('detail_id')->select();
+
+        $value = [];
+        foreach ($attr as $k => $v) {$value[] = "{$k}:{$v}";}
+        // var_dump($value);die;
+        $detail_id = 0;
+        foreach ($key as $k => $v) {
+            if(!array_diff(explode(',', $v['value']), $value)){//匹配到了
+                $detail_id = $v['detail_id'];
+                break;
+            }
+        }
+        // $data = $this->table('product_detail')->where("`id` = {$detail_id}")->find();
+        $data = $this->table('product_detail')->field('id, price')->where("`id` = {$detail_id}")->find();
+        return Json::success($data);
+    }
 }

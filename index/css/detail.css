@@ -10,6 +10,11 @@
 .jieshao{
     min-height: 560px;
 }
+
+.jieshao .imgbox img{
+    height: 100%;
+    width: 100%;
+}
 .jieshao .left{width:560px;height:560px;border:1px solid #ccc;}
 .jieshao .right{
     width:620px;
@@ -84,5 +89,5 @@
 .xqxq{height: 80px;width: 555px;background: rgb(255,255,255);padding:20px;}
 /*是否下单*/
 .xiadan{height: 50px;line-height: 50px;}
-.xiadan .jrgwc{height: 50px;width: 200px;border:none;background:#ff6700;color:#fff;font-size: 18px;font-weight: bold;cursor:pointer;margin-right: 50px;}
-.xiadan .jrgwc:hover{border:1px solid #fff;}
+.xiadan .buynow{height: 50px;width: 200px;border:none;background:#ff6700;color:#fff;font-size: 18px;font-weight: bold;cursor:pointer;margin-right: 50px;}
+.xiadan .buynow:hover{border:1px solid #fff;}
