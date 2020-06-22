@@ -105,7 +105,7 @@ export default class AddressList{
             msg => {const message = new Message;message.show({text: msg.msg,type: 'error'});}
         );
         this.el.innerHTML = '';
-        if(!oList.data){
+        if(!oList){
             this.el.innerHTML = `
                 <div class="non-list">
                     这里什么都没有，快去添加吧!

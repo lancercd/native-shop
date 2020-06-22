@@ -21,19 +21,6 @@ class User extends Base{
     }
 
 
-    public function get_user(){
-
-        return Json::success(['uid' => $this->uid()]);
-    }
-
-
-    private function get_date(){
-        return $this->table('user')->field('id, real_name')->where('id = 2')->select();
-    }
-
-
-
-
     //地址
 
     public function address_add(){
