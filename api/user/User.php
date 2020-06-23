@@ -70,4 +70,10 @@ class User extends Base{
     }
 
 
+    public function test(){
+
+        return Json::success($data);
+    }
+
+
 }

@@ -51,34 +51,45 @@ body {
 .main .right-box .content {
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 }
 .main .right-box .content .item {
   display: flex;
-  height: 120px;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
   color: #757575;
 }
 .main .right-box .content .item:hover {
   background-color: rgba(200, 200, 200, 0.1);
 }
-.main .right-box .content .item > div:not(.img-box) {
-  height: 70%;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  border-left: 1px solid #ddd;
+.main .right-box .content .item > div {
+  width: 100%;
 }
-.main .right-box .content .item .img-box {
+.main .right-box .content .item .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 0;
+  font-size: 1.2rem;
+}
+.main .right-box .content .item .tail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 5px;
+  font-size: 1.2rem;
+}
+.main .right-box .content .item div .img-box {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   width: 100px;
 }
-.main .right-box .content .item .img-box img {
+.main .right-box .content .item div .img-box img {
   width: 70px;
   height: 70px;
   border: 1px solid #eee;

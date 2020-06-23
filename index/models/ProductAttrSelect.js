@@ -1,4 +1,4 @@
-// import EventAgent from '../../utils/EventAgent.js';
+import EventAgent from '../../utils/EventAgent.js';
 import InfoForm from '../../utils/InfoForm.js';
 import Message from '../../utils/Message.js';
 // import Fade from '../../utils/Fade.js';
@@ -10,27 +10,12 @@ export default class productAttrSelect{
         this.name = 'productAttrSelect';
         this.el = el;
         this.items = el.querySelectorAll('.option-list');
-        this.buyBtn = el.getElementsByClassName('buynow')[0];
+        this.actionBtn = el.getElementsByClassName('action-btn')[0];
         this.oPrice = el.getElementsByClassName('price')[0];
         this.productId = this.el.dataset.productId;
-
-        // this.productDetail = JSON.parse(document.getElementById('data').innerText);
-        // console.log(this.productDetail);
-        // console.log(this.el.dataset);
-        // this.selected = new WeakSet();
         this.selected = new Map();
         this.node = new Map();
-        // this.selected.set('key', 'value');
-        // this.selected.set('key', 'sdf');
-        // console.log(this.selected);
-        // this.selected.add(['key', 'value']);
-        // console.log(this.selected.get('key'));
         this.init();
-
-
-        // this.selected.forEach((v,k) => {
-        //     console.log(k + "  " + v);
-        // })
     }
 
     init(){
@@ -40,8 +25,17 @@ export default class productAttrSelect{
 
 
     bindEvent(){
-        this.buyBtn.addEventListener('click', this.onButNowClick.bind(this), 'false');
+        this.actionBtn.addEventListener('click', this.actionBtnClick.bind(this), 'false');
         this.items.forEach( item => item.addEventListener('click', this.onAttrSelect.bind(this), 'false'))
+    }
+
+    actionBtnClick(e){
+        const ev = new EventAgent(e);
+        let tar = ev.getTar();
+        let action = tar.dataset.action;
+        if(action === 'buynow' || action === 'add-cart'){
+            this.onButClick(action);
+        }
     }
 
     renderHightLight(tar){
@@ -70,7 +64,6 @@ export default class productAttrSelect{
         });
     }
     async renderPrice(){
-        // console.log(this.selected);
         let res;
         if(this.isAllSelected()){
             res = await this.getPrice();
@@ -78,9 +71,6 @@ export default class productAttrSelect{
                  this.oPrice.innerText = res.data.price;
                  this.detail_id = res.data.id;
             }
-
-        }else{
-            // this.oPrice.innerText = '';
         }
     }
 
@@ -93,10 +83,7 @@ export default class productAttrSelect{
             this.renderHightLight(tar);
             this.renderPrice();
         }
-        // console.log(this.selected);
-
     }
-
 
     dealAttr(tar){
         this.selected.set(tar.parentElement.getAttribute('data-attr-key'), tar.getAttribute('data-attr-value'));
@@ -104,36 +91,43 @@ export default class productAttrSelect{
         this.node.set(tar.parentElement, tar);
     }
 
-
     isAllSelected(){
         return (this.items.length === this.selected.size)? true:false;
-        // if(){
-        //     return true;
-        // }else{
-        //     return false;
-        // }
     }
 
-
-    onButNowClick(){
+    onButClick(btn){
+        const url = (btn==='buynow')? '/order/create':'/cart/add_cart';
         if(this.isAllSelected()){
-
             if(this.detail_id){
+                let products = '{"0":{"id":'+ this.detail_id +',"num":1}}';
                 request({
-                    url: '/order/create',
+                    url,
                     type: 'post',
-                    data: {
-                        detail_id:this.detail_id,
-                    },
+                    data: {products},
                 }).then(
                     res => {
-                        console.log(res.msg);
-                        const info = new InfoForm({
-                            type:'warring',
-                            msg: res.msg,
-                            btn:{0:{class: 'conform', func: 'refresh', text: '确定'}},
-                            func:{'refresh':()=>{ window.location.href="order.html";}}
-                        });
+                        if(btn==='buynow'){
+                            new InfoForm({
+                                type:'warring',
+                                msg: res.msg,
+                                btn:{
+                                    0:{class: 'conform', func: 'close', text: '确定'},
+                                    1:{class: 'cancle', func: 'toOrder', text: '查看订单'}
+                                },
+                                func:{'toOrder':()=>{window.location.href="order.php";}}
+                            });
+                        }else{
+                            new InfoForm({
+                                type:'warring',
+                                msg: res.msg,
+                                btn:{
+                                    0:{class: 'conform', func: 'close', text: '确定'},
+                                    1:{class: 'cancle', func: 'toCart', text: '去购物车'}
+                                },
+                                func:{'toCart':()=>{window.location.href="cart.php";}}
+                            });
+                        }
+
                     },
                     res => {
                         const info = new InfoForm({
@@ -149,6 +143,5 @@ export default class productAttrSelect{
         }
 
     }
-
 
 }

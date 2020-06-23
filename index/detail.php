@@ -93,9 +93,9 @@ $data['attribute_list'] = json_decode($data['attribute_list'], true);
 				</div> -->
 				<div class="bot mt20 ft20 ftbc">总计：<span class="price"><?php echo $data['price'] ?></span>元</div>
 			</div>
-			<div class="xiadan ml20 mt20">
-					<input class="buynow"  type="button" name="buynow" value="立即选购" />
-					<input class="0jrgwc" type="button" name="jrgwc" value="加入购物车" />
+			<div class="xiadan ml20 mt20 action-btn">
+					<input class="buynow"  type="button" name="buynow" data-action="buynow" value="立即选购" />
+					<input class="add-cart" type="button" name="jrgwc" data-action="add-cart" value="加入购物车" />
 
 			</div>
 		</div>

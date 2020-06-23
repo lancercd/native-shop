@@ -91,3 +91,16 @@
 .xiadan{height: 50px;line-height: 50px;}
 .xiadan .buynow{height: 50px;width: 200px;border:none;background:#ff6700;color:#fff;font-size: 18px;font-weight: bold;cursor:pointer;margin-right: 50px;}
 .xiadan .buynow:hover{border:1px solid #fff;}
+.xiadan .add-cart{
+    height: 50px;
+    width: 200px;
+    border: 1px solid #ff6700;
+    /* border:none; */
+    background:#fff;
+    color:#ff6700;
+    font-size: 18px;
+    font-weight: bold;
+    cursor:pointer;
+    margin-right: 50px;
+}
+.xiadan .add-cart:hover{border:1px solid #fff;}
