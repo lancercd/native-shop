@@ -4,8 +4,26 @@ namespace api\order;
 use \server\Base;
 use \server\JsonService as Json;
 class Order extends Base{
-    public function create(){
-        $buy_info = json_decode($_POST['products'],true);
+
+    public function form_cart_create(){
+        $cart_ids = explode(',', $_POST['cart_ids']);
+        $uid = $this->uid();
+        $data = [];
+        foreach ($cart_ids as $v) {
+            $cart = $this->table('cart')->where("`id` = $v")->where("`uid` = {$uid}")->find();
+            if($cart) $data[] = ['id'=>$cart['product_detail'], 'num' => $cart['num']];
+        }
+        if($this->create($data,true)){
+            foreach ($cart_ids as $v)
+                $cart = $this->table('cart')->where("`id` = $v")->where("`uid` = {$uid}")->del();
+        }
+
+        return Json::success('购买成功!');
+    }
+
+    public function create($data,$is_from_cart = false){
+        if($is_from_cart) $buy_info = $data;
+        else $buy_info = json_decode($_POST['products'],true);
 
         $uid = $this->uid();
         $user = $this->table('user')->where("`uid` = {$uid}")->find();
@@ -34,19 +52,18 @@ class Order extends Base{
             'status' => 0,
             'add_time' => time()
         ]);
-        // var_dump($res_order);die;
+
 
         //添加订单详情
-        foreach ($buy_info as $v){
-            $this->create_order_detail($res_order, $buy_info);
-        }
+        $this->create_order_detail($res_order, $buy_info);
 
 
         $res_user = $this->table('user')->where("`uid` = {$uid}")->update([
             'scort' => $user['scort'] + $total_score,
             'now_money' => $user['now_money'] - $total_price,
         ]);
-        Json::success('购买成功!');
+        if($is_from_cart) return true;
+        else return Json::success('购买成功!');
     }
 
 
@@ -64,12 +81,6 @@ class Order extends Base{
             }
         }
     }
-    public function getAge(){
-        echo "20";
-    }
 
 
-
-
-    // $attr = json_decode($_POST['attr'], true);
 }

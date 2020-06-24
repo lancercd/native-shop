@@ -5,7 +5,7 @@ require_once('../controller/order/Order.php');
 $order = new Order();
 
 $list = $order->get_order_list();
-
+// var_dump($list);die;
 
  ?>
 

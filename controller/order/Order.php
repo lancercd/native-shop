@@ -14,10 +14,11 @@ class Order extends Sql{
             $oid = $v['order_id'];
             $data[$k]['add_time'] = date('Y/m/d h:i:s', $data[$k]['add_time']);
             $data[$k]['status'] = $status[$data[$k]['status']];//订单状态  int -> string
-            $data[$k]['detail'][] = $this->table('order_detail o')
+            $data[$k]['detail'] = $this->table('order_detail o')
             ->field('o.id, o.count, o.total_price, o.pay_type, p.image')
             ->where("o.`order_id` = {$oid}")
-            ->join('product_detail p', 'o.`detail_id` = p.`id`')->find();
+            ->join('product_detail p', 'o.`detail_id` = p.`id`')
+            ->select();
         }
 
         return $data;

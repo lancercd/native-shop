@@ -1,3 +1,14 @@
+<?php
+require_once('../controller/cart/Cart.php');
+
+$cart = new Cart();
+
+$list = $cart->get_cart_list();
+// var_dump($list);die;
+
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,27 +20,35 @@
 		<link rel="stylesheet" type="text/css" href="../public/css/header.css">
 		<link rel="stylesheet" type="text/css" href="../public/css/model.css">
 		<link rel="stylesheet" type="text/css" href="../public/css/info-form.css">
+		<link rel="stylesheet" href="./css/test-all.css">
 	</head>
 	<body>
-	<!-- start header -->
-	<!--end header -->
 
-<!-- start banner_x -->
-		<div class="banner_x center">
-			<a href="./index.html" target="_blank"><div class="logo fl"></div></a>
-
-			<div class="wdgwc fl ml40">我的购物车</div>
-			<div class="wxts fl ml20">温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</div>
-			<div class="dlzc fr">
-				<ul>
-					<li><a href="./login.html" target="_blank">登录</a></li>
-					<li>|</li>
-					<li><a href="./register.html" target="_blank">注册</a></li>
+<header>
+	<div class="container">
+		<div class="navbar">
+			<a class="logo" href="#">123</a>
+			<label for="toggle-nav"><i class="icon iconfont icon-ego-menu"></i></label>
+			<input type="checkbox" id="toggle-nav">
+			<div class="collapse">
+				<ul class="links">
+					<li><a href="">首页</a></li>
+					<li><a href="cart.php">我的购物车</a></li>
+					<li><a href="order.php">我的订单</a></li>
+					<li><a href="self_info.html">我的信息</a></li>
 				</ul>
-
+				<div class="form">
+					<!-- <a href="#">登录</a> -->
+					<button type="button" class="login-btn" name="loginBtn">登录</button>
+					<!-- <div class=""> -->
+						<a class="signin" href="#">注册</a>
+					<!-- </div> -->
+				</div>
 			</div>
-			<div class="clear"></div>
+
 		</div>
+	</div>
+</header>
 		<div class="xiantiao"></div>
 		<div class="J_gwcxqbj">
 			<div class="gwcxd center">
@@ -44,36 +63,32 @@
 					<div style="width: 8%;">小计</div>
 					<div style="width: 5%;">操作</div>
 				</div>
-				<div class="content center J_cart_item" data-id="1" >
-					<div>
-						<input type="checkbox" class="select-one" data-id="1" />
-					</div>
-					<div><img src="../public/image/di1-3.jpg"></div>
-					<div>小米6全网通6GB内存+64GB 亮黑色</div>
-					<div><span class="price">2499.05</span>元</div>
-					<div>
-						<input class="number" type="number" value="1" step="1" min="1" max="10000" />
-					</div>
-					<div><span class="subtotal">2499.05</span>元</div>
-					<div><button class="btn-del btn-m lc-btn">删除</button></div>
-				</div>
-
-				<div class="content center J_cart_item" data-id="2" >
-					<div>
-						<input type="checkbox" class="select-one" data-id="2" />
-					</div>
-					<div><img src="../public/image/di1-3.jpg"></div>
-					<div>小米6全网通6GB内存+64GB 亮黑色</div>
-					<div><span class="price">2499.05</span>元</div>
-					<div>
-						<input class="number" type="number" value="1" step="1" min="1" max="10000" />
-					</div>
-					<div><span class="subtotal">2499.05</span>元</div>
-					<div><button class="btn-del btn-m lc-btn">删除</button></div>
-				</div>
+				<?php if ($list): ?>
+					<?php foreach ($list as $v): ?>
+						<div class="content center J_cart_item" data-id="<?php echo $v['c_id'] ?>" >
+							<div>
+								<input type="checkbox" class="select-one" data-id="<?php echo $v['c_id'] ?>" />
+							</div>
+							<div><img src="<?php echo $v['image'] ?>"></div>
+							<div><?php echo $v['name'] ?></div>
+							<div><span class="price"><?php echo $v['price'] ?></span>元</div>
+							<div>
+								<input class="number" type="number" value="<?php echo $v['num'] ?>" step="1" min="1" max="10000" />
+							</div>
+							<div><span class="subtotal"><?php echo $v['money'] ?></span>元</div>
+							<div><button class="btn-del btn-m lc-btn">删除</button></div>
+						</div>
+					<?php endforeach; ?>
+				<?php else: ?>
+					<?php echo '<div style="font-size: 25px;width:100%;text-align:center;padding: 20px 0 50px 0">这里什么都没有  还不快去添加!</div>' ?>
+				<?php endif; ?>
 
 
-				<div class="content center J_cart_item" data-id="3" >
+
+
+
+
+				<!-- <div class="content center J_cart_item" data-id="3" >
 					<div>
 						<input type="checkbox" class="select-one" data-id="3" />
 					</div>
@@ -85,7 +100,7 @@
 					</div>
 					<div><span class="subtotal">2499.05</span>元</div>
 					<div><button class="btn-del btn-m lc-btn">删除</button></div>
-				</div>
+				</div> -->
 
 			</div>
 			<div class="confirm-panel center">

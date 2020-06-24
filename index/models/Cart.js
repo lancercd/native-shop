@@ -90,17 +90,37 @@ export default class Cart{
             fade.fadeout({duration: 500,way: 'fadeout-r-l'});
             this.render();
 
-
         }
     }
     onPaymentClick(){
         if(!this.Select.selectCount()){
-            const body = document.getElementsByTagName('body')[0];
-            new InfoForm(body);
+            new InfoForm({
+                type: 'info',
+                msg: '没有商品被选中哦!'
+            });
             return;
         }
+        const select = [...this.Select.selected];
         //发送请求
-        // request({  });
+        request({
+            url: '/order/form_cart_create',
+            type: 'post',
+            data: {
+                cart_ids:select
+            }
+        }).then(
+            res=>{
+                new InfoForm({
+                    type:'warring',
+                    msg: res.msg,
+                    btn:{
+                        0:{class: 'conform', func: 'close', text: '确定'},
+                        1:{class: 'cancle', func: 'toOrder', text: '查看订单'}
+                    },
+                    func:{'toOrder':()=>{window.location.href="order.php";}}
+                });
+            }
+        );
     }
 
 
