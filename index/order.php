@@ -36,7 +36,7 @@ $list = $order->get_order_list();
 					</div>
 					<div class="menu-list">
 						<ul>
-							<li  class="active"><a href="">我的订单</a></li>
+							<li  class="active"><a href="order.php">我的订单</a></li>
 							<!-- <li><a href="">意外保险</a></li>
 							<li><a href="">评价晒单</a></li>
 							<li><a href="">4</a></li> -->
