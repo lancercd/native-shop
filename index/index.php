@@ -6,6 +6,7 @@
   <!-- <link rel="stylesheet" href="../public/css/init.css"> -->
 
   <link rel="stylesheet" type="text/css" href="./css/index.css">
+  <link rel="stylesheet" type="text/css" href="../public/css/responses/index.css">
   <link rel="stylesheet" href="./css/test-all.css">
   <title>商品主页</title>
 </head>
@@ -16,7 +17,7 @@
     <header>
         <div class="container">
             <div class="navbar">
-                <a class="logo" href="#">123</a>
+                <a class="logo" href="#">SHOPPING</a>
                 <label for="toggle-nav"><i class="icon iconfont icon-ego-menu"></i></label>
                 <input type="checkbox" id="toggle-nav">
                 <div class="collapse">
@@ -118,7 +119,7 @@
           </div>
         </div>
         <div id="slid-warp">
-            <ul class="star-goods-list" style="width:1240px;">
+            <ul class="star-goods-list">
                 <!-- <li class="star-item-1">
                     <a class="thumb" href="javascript:;">
                         <img src="../public/image/T1UCV_B4dv1RXrhCrK.jpg"/>
@@ -653,10 +654,10 @@
 <!-- /id="container" -->
 
 <div class="bottom-nav">
-    <div><a href="#" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
-    <div><a href="#"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
-    <div><a href="#"><i class="icon iconfont icon-shangpin1"></i>订单</a></div>
-    <div><a href="#"><i class="icon iconfont icon-user"></i>我的信息</a></div>
+    <div><a href="index.html" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
+    <div><a href="cart.php"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
+    <div><a href="order.php"><i class="icon iconfont icon-shangpin1"></i>订单</a></div>
+    <div><a href="self_info.html"><i class="icon iconfont icon-user"></i>我的信息</a></div>
 </div>
 
 <script type="module" src="js/index.js" charset="utf-8"></script>

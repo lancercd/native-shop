@@ -4,9 +4,6 @@ require_once('../controller/product/Product.php');
 $product = new Product();
 
 
-
-
-
 $data = $product->get_product();
 $data['attribute_list'] = json_decode($data['attribute_list'], true);
 // var_dump($data['attribute_list']);die;
@@ -16,7 +13,7 @@ $data['attribute_list'] = json_decode($data['attribute_list'], true);
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>小米6立即购买-小米商城</title>
+		<title>商品详情</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<link rel="stylesheet" type="text/css" href="./css/detail.css">
 	    <link rel="stylesheet" type="text/css" href="../public/css/info-form.css">

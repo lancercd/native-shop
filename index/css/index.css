@@ -105,16 +105,13 @@
 
 
 body {
-  /* min-width: 1226px; */
   background-color: #fff;
-  /* font: 14px/1.5 arial,'Microsoft Yahei','Hiragino Sans GB',sans-serif; */
   color: #333;
-  /* margin: 0; */
 }
-.container {
+/* .container {
   width: 1226px;
   margin: 0 auto;
-}
+} */
 
 .sep {
   margin: 0 3px;
@@ -384,16 +381,16 @@ body {
 /*banner start*/
 
 .site-main.container .J_wrap{
-    width: 1226px;/*轮播框架的宽度*/
+    width: 1226px;
     height: 530px;
-    position: relative;/**/
+    position: relative;
     /* top: -20px; */
     /* margin: 0 auto; */
 }
 
 .site-main.container .J_wrap .list {
     width: 1000px;
-    /* height: 700px; */
+    height: auto;
     list-style: none;
     padding-left: 0px;
     position: relative;
@@ -488,8 +485,8 @@ body {
   float: left;
   width: 234px;
   height: 170px;
-  padding: 3px;
-  background: #5f5750;
+  /* padding: 3px;
+  background: #5f5750; */
 }
 .model-hot .channel-list {
   float: left;
@@ -656,6 +653,7 @@ body {
 }
 .model-star-goods .star-goods-list {
   height: 340px;
+  width:1240px;
 }
 
 .model-star-goods .star-goods-list li {
