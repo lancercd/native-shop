@@ -668,6 +668,11 @@ body {
   text-align: center;
 }
 
+.thumb img{
+    width: 140px;
+    /* height: 140px; */
+}
+
 .model-star-goods .star-goods-list .title {
   overflow: hidden;
   margin: 0 20px 3px;

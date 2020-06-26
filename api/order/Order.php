@@ -21,7 +21,7 @@ class Order extends Base{
         return Json::success('购买成功!');
     }
 
-    public function create($data,$is_from_cart = false){
+    public function create($data = [],$is_from_cart = false){
         if($is_from_cart) $buy_info = $data;
         else $buy_info = json_decode($_POST['products'],true);
 

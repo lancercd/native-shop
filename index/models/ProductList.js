@@ -41,7 +41,7 @@ export default class ProductList{
                             </h3>
                         </a>
                         <p class="price">${item.price}元</p>
-                        <p class="tips">${item.tips}人好评</p>
+                        <p class="tips">${item.tips? item.tips:999}人好评</p>
                 `;
             }else{
                 tmp = `

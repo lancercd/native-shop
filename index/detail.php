@@ -6,8 +6,10 @@ $product = new Product();
 
 $data = $product->get_product();
 $data['attribute_list'] = json_decode($data['attribute_list'], true);
-// var_dump($data['attribute_list']);die;
+// var_dump($data);die;
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
