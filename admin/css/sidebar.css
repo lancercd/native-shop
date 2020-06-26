@@ -1,0 +1,121 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    text-decoration: none;
+}
+
+.container{
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    width: 1080px;
+    margin: 0 auto;
+}
+.sidebar-container{
+    /* display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around; */
+    width: 280px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(149, 165, 166,1);
+    z-index: 5;
+}
+
+.userinfo{
+    margin-bottom: 20%;
+    text-align: center;
+}
+.userinfo h3{
+    margin-top: 20px;
+}
+.userinfo .head-photo{
+    margin: 20px 0 0 0;
+}
+.userinfo .head-photo img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    box-shadow: 0 0 20px rgba(52, 73, 94,.5);
+    overflow: hidden;
+}
+
+.menu{
+    width: 280px;
+    /* border-radius: 8px; */
+    overflow: hidden;
+}
+.item{
+    border-top: 1px solid #aaa;
+    overflow: hidden;
+}
+
+.btn{
+    display: block;
+    position: relative;
+    padding: 16px 20px;
+    background: #fff;
+    color: #7f8c8d;
+}
+/* .btn::before{
+    content: '\f107';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #3498db;
+    bottom: -5px;
+    left: 20px;
+    transform: rotate(45deg);
+} */
+.btn i{
+    position: absolute;
+    top: 20px;
+    left: 200px;
+    border: 7px solid transparent;
+    border-left-color: #000;
+    transform-origin: 1px 7px;
+    transform:rotate(0deg);
+    transition: .5s;
+}
+.btn icon{
+
+    margin-right: 10px;
+    /* font-size: 25px;
+    line-height: 30px; */
+}
+.child-menu{
+    max-height: 0px;
+    background: rgba(236, 240, 241, .5);
+    overflow: hidden;
+    transition: max-height .5s;
+}
+.child-menu a{
+    display: block;
+    position: relative;
+    padding: 16px 26px 16px 56px;
+    color: rgba(127, 140, 141,1.0);
+    font-size: 14px;
+    margin: 4px 0;
+}
+.child-menu a::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height:100%;
+    top: 0;
+    left: 0;
+    background: #3498db;
+    transition: .3s;
+    opacity: 0;
+}
+.child-menu a:hover::before{
+    opacity: 1;
+}
+.item:target .child-menu{
+    max-height: 20em;
+}
+.item:target .btn i{
+    transform:rotate(90deg);
+}

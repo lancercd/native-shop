@@ -14,10 +14,22 @@ class User extends Base{
         if(!$user) return Json::fail('账号错误!');
         if($user['pwd'] != $pwd) return Json::fail('密码错误!');
         session_start();
-        // $this->setUser();
         $_SESSION['uid'] = $user['uid'];
         return Json::success('登录成功!');
         // return Json::success('session 设置成功!');
+    }
+
+    public function admin_login(){
+        $account = $_POST['account'];
+        if(empty($account)) return Json::fail('请输入账号!');
+        $pwd = $_POST['pwd'];
+        if(empty($pwd)) return Json::fail('请输入密码!');
+        $user = $this->table('admin')->where("`account` = '{$account}'")->find();
+        if(!$user) return Json::fail('账号错误!');
+        if($user['pwd'] != $pwd) return Json::fail('密码错误!');
+        session_start();
+        $_SESSION['aid'] = $user['aid'];
+        return Json::success('登录成功!');
     }
 
 
