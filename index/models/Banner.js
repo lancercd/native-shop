@@ -7,16 +7,12 @@ export default class Banner{
         this.goPreBtn = document.getElementById('goPre');
         this.goNextBtn = document.getElementById('goNext');
         this.pointList=  el.getElementsByClassName('pointList')[0];
-        // console.log(this.pointList);
-
-        this.index = 0;
+         this.index = 0;
         this.time = 0;
-        // console.log(this.items.length);
     }
 
 
     init(){
-        // console.log('ok');
         this.render();
         this.bindEvent();
         this.run();
@@ -24,7 +20,6 @@ export default class Banner{
 
 
     bindEvent(){
-        // console.log("ok");
         this.goNextBtn.addEventListener('click',() => {
             console.log("goNextBtn");
             this.goNext();
@@ -82,7 +77,6 @@ export default class Banner{
 
     goIndex(){
       this.clearActive();
-      // console.log(this.index);
       this.points[this.index].className = 'point active';
       this.items[this.index].className = 'item active';
     }
@@ -93,7 +87,6 @@ export default class Banner{
       } else{
           this.index = 0;
       }
-      // console.log(this.index);
       this.goIndex();
     }
 
@@ -106,7 +99,5 @@ export default class Banner{
       }
       this.goIndex();
     }
-
-
 
 }
