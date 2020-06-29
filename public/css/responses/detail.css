@@ -1,0 +1,76 @@
+/* detail 商品详情页的  响应式 */
+
+@media only screen and (max-width: 768px){
+    .xiangqing{
+        display: none;
+    }
+    .xiangqing .discription{
+        width: 100%;
+    }
+    .detail{
+        margin-top: 0;
+    }
+    .detail .left{
+        float: none;
+        width: 100%;
+        height: 60%;
+    }
+    .detail .right{
+        float: none;
+        width:100%;
+        margin-bottom: 6rem;
+    }
+    .detail .right #product-options{
+        width: 100%;
+        margin-left: 0px;
+
+    }
+    .detail .right #product-options .title{
+        font-size: 1.5rem;
+    }
+
+
+    .xqxq{
+        width: 100%;
+        margin-top: 0px;
+        margin-left: 0px;
+        padding-left:10px ;
+        background: rgb(255,255,255);
+    }
+    .xqxq .bot{
+        margin-top: 0;
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    .tack-order{
+        display: flex;
+        position: fixed;
+        bottom: 3rem;
+        width: 100%;
+        height: 60px;
+        justify-content: space-around;
+        padding: 5px 0;
+        margin-top: 10px;
+        margin-left: 0;
+        background-color: #fff;
+    }
+    .tack-order .buynow{
+        height: 50px;
+        width: 40%;
+        border:none;
+        background:#ff6700;
+        color:#fff;
+        font-size: 18px;
+        font-weight: bold;
+        cursor:pointer;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .tack-order .add-cart{
+        height: 50px;
+        width: 40%;
+        margin-right: 0;
+    }
+}
