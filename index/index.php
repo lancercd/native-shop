@@ -654,10 +654,10 @@
 <!-- /id="container" -->
 
 <div class="bottom-nav">
-    <div><a href="index.html" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
+    <div><a href="index.php" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
     <div><a href="cart.php"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
     <div><a href="order.php"><i class="icon iconfont icon-shangpin1"></i>订单</a></div>
-    <div><a href="self_info.html"><i class="icon iconfont icon-user"></i>我的信息</a></div>
+    <div><a href="self_info.php"><i class="icon iconfont icon-user"></i>我的信息</a></div>
 </div>
 
 <script type="module" src="js/index.js" charset="utf-8"></script>

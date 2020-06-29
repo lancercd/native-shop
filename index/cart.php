@@ -95,10 +95,10 @@ $list = $cart->get_cart_list();
 
         <!-- 手机端   底部的bar -->
         <div class="bottom-nav">
-            <div><a href="index.php" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
-            <div><a href="cart.php"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
+            <div><a href="index.php"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
+            <div><a href="cart.php" class="active"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
             <div><a href="order.php"><i class="icon iconfont icon-shangpin1"></i>订单</a></div>
-            <div><a href="self_info.html"><i class="icon iconfont icon-user"></i>我的信息</a></div>
+            <div><a href="self_info.php"><i class="icon iconfont icon-user"></i>我的信息</a></div>
         </div>
 	</body>
 
