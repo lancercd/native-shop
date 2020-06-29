@@ -99,6 +99,7 @@ export default class productAttrSelect{
         const url = (btn==='buynow')? '/order/create':'/cart/add_cart';
         if(this.isAllSelected()){
             if(this.detail_id){
+
                 let products = '{"0":{"id":'+ this.detail_id +',"num":1}}';
                 request({
                     url,

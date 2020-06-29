@@ -1,0 +1,39 @@
+
+/* cart  响应式  */
+@media screen and (max-width: 768px) {
+    .J_gwcxqbj .gwcxd{
+        width: 100%;
+        padding-bottom: 6rem;
+    }
+    .J_gwcxqbj .gwcxd .top{
+        padding: 0 15px;
+        font-size: 15px;
+    }
+
+    .confirm-panel{
+        width:100%;
+        margin-top: 20px;
+
+    }
+    .confirm-panel.center{
+        position: fixed;
+        bottom: 3.5rem;
+    }
+    .confirm-panel .select-product-info{
+        margin-left: 10px;
+    }
+    .confirm-panel .select-product-info show{
+        display: none;
+    }
+    .confirm-panel .money-count{
+        margin-right: 10px;
+    }
+    .confirm-panel .money-count .money{
+        min-width: 150px;
+    }
+    .J_gwcxqbj .gwcxd .content{
+        height: 120px;
+        padding: 0 30px 0 13px;
+    }
+
+}

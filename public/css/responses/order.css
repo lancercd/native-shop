@@ -1,0 +1,7 @@
+
+/* order  响应式 */
+@media only screen and (max-width: 768px) {
+    .main .left-menu{
+        display: none;
+    }
+}

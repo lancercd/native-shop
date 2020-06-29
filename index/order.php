@@ -16,6 +16,7 @@ $list = $order->get_order_list();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>订单</title>
 	<link rel="stylesheet" href="./css/order.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/responses/order.css">
     <link rel="stylesheet" href="./css/test-all.css">
 </head>
 <body>
@@ -83,7 +84,7 @@ $list = $order->get_order_list();
 	</div>
 
     <div class="bottom-nav">
-        <div><a href="index.html" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
+        <div><a href="index.php" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
         <div><a href="cart.php"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
         <div><a href="order.php"><i class="icon iconfont icon-shangpin1"></i>订单</a></div>
         <div><a href="self_info.html"><i class="icon iconfont icon-user"></i>我的信息</a></div>

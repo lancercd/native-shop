@@ -151,10 +151,8 @@ class Product extends Base{
         $attr = json_decode($_POST['attr'], true);
 
         $key = $this->table('attr_key k')->field("detail_id, GROUP_CONCAT(concat(`key`, ':', `value`)) value")->where("`product_id` = {$product_id}")->join('attr_value v', 'k.id = v.key_id')->group('detail_id')->select();
-
         $value = [];
         foreach ($attr as $k => $v) {$value[] = "{$k}:{$v}";}
-        // var_dump($value);die;
         $detail_id = 0;
         foreach ($key as $k => $v) {
             if(!array_diff(explode(',', $v['value']), $value)){//匹配到了
@@ -162,6 +160,7 @@ class Product extends Base{
                 break;
             }
         }
+        // var_dump($key);die;
         // $data = $this->table('product_detail')->where("`id` = {$detail_id}")->find();
         $data = $this->table('product_detail')->field('id, price')->where("`id` = {$detail_id}")->find();
         return Json::success($data);

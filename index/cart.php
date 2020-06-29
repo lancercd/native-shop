@@ -13,21 +13,19 @@ $list = $cart->get_cart_list();
 <html>
 	<head>
 		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>我的购物车-小米商城</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<link rel="stylesheet" type="text/css" href="./css/cart.css">
-		<link rel="stylesheet" type="text/css" href="../public/icon-font/iconfont.css">
-		<link rel="stylesheet" type="text/css" href="../public/css/header.css">
-		<link rel="stylesheet" type="text/css" href="../public/css/model.css">
-		<link rel="stylesheet" type="text/css" href="../public/css/info-form.css">
-		<link rel="stylesheet" href="./css/test-all.css">
+		<link rel="stylesheet" type="text/css" href="./css/test-all.css">
+        <link rel="stylesheet" type="text/css" href="../public/css/responses/cart.css">
 	</head>
 	<body>
 
 <header>
 	<div class="container">
 		<div class="navbar">
-			<a class="logo" href="#">123</a>
+			<a class="logo" href="#">SHOPPING</a>
 			<label for="toggle-nav"><i class="icon iconfont icon-ego-menu"></i></label>
 			<input type="checkbox" id="toggle-nav">
 			<div class="collapse">
@@ -53,7 +51,7 @@ $list = $cart->get_cart_list();
 		<div class="J_gwcxqbj">
 			<div class="gwcxd center">
 				<div class="top">
-					<div style="width: 5%;">
+					<div style="width: 7%;">
 						<input type="checkbox" class="select-all" />全选
 					</div>
 					<div style="width: 8%;">图片</div>
@@ -105,7 +103,7 @@ $list = $cart->get_cart_list();
 			</div>
 			<div class="confirm-panel center">
 				<div class="select-product-info">
-					共<span>2</span>件商品，已选择<span class="J_select_num">0</span>件
+					共<span>2</span>件<show>商品，已</show>选<show>择</show><span class="J_select_num">0</span>件
 				</div>
 				<div class="money-count">
 					<div class="money">合计:<span class="total-money J_total_money">0.00</span>元</div>
@@ -113,20 +111,15 @@ $list = $cart->get_cart_list();
 					<button class="lc-btn btn-lg btn-style J_payment">结算</button>
 				</div>
 			</div>
-
 		</div>
 
 
-
-
-	<!-- footer -->
-	<!-- <footer class="center">
-
-			<div class="mt20">小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</div>
-			<div>©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</div>
-			<div>违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</div>
-		</footer> -->
-
+        <div class="bottom-nav">
+            <div><a href="index.php" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
+            <div><a href="cart.php"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
+            <div><a href="order.php"><i class="icon iconfont icon-shangpin1"></i>订单</a></div>
+            <div><a href="self_info.html"><i class="icon iconfont icon-user"></i>我的信息</a></div>
+        </div>
 	</body>
 
 	<script type="module" src="js/cart.js" charset="utf-8"></script>
