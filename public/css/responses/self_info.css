@@ -1,0 +1,27 @@
+/* self_info 的响应式 */
+@media only screen and (max-width: 768px){
+    .main .left-menu{
+        display: none;
+    }
+
+
+
+
+    .main .right-box .content > div {
+        width: 60%;
+    }
+
+    .main .right-box .content > div .key{
+        width: 40%;
+    }
+
+    .main .right-box .right-box-title .address-btn{
+        display: block;
+        padding: .5rem .8rem;
+        border-radius: 10px;
+        background-color: rgba(231, 76, 60,.8);
+    }
+    .main .right-box .right-box-title .address-btn a{
+        color: #fff;
+    }
+}
