@@ -5,7 +5,6 @@ $cart = new Cart();
 
 $list = $cart->get_cart_list();
 // var_dump($list);die;
-
  ?>
 
 
@@ -14,7 +13,7 @@ $list = $cart->get_cart_list();
 	<head>
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>我的购物车-小米商城</title>
+		<title>我的购物车</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<link rel="stylesheet" type="text/css" href="./css/cart.css">
 		<link rel="stylesheet" type="text/css" href="./css/test-all.css">
@@ -81,25 +80,6 @@ $list = $cart->get_cart_list();
 					<?php echo '<div style="font-size: 25px;width:100%;text-align:center;padding: 20px 0 50px 0">这里什么都没有  还不快去添加!</div>' ?>
 				<?php endif; ?>
 
-
-
-
-
-
-				<!-- <div class="content center J_cart_item" data-id="3" >
-					<div>
-						<input type="checkbox" class="select-one" data-id="3" />
-					</div>
-					<div><img src="../public/image/di1-3.jpg"></div>
-					<div>小米6全网通6GB内存+64GB 亮黑色</div>
-					<div><span class="price">2499.05</span>元</div>
-					<div>
-						<input class="number" type="number" value="1" step="1" min="1" max="10000" />
-					</div>
-					<div><span class="subtotal">2499.05</span>元</div>
-					<div><button class="btn-del btn-m lc-btn">删除</button></div>
-				</div> -->
-
 			</div>
 			<div class="confirm-panel center">
 				<div class="select-product-info">
@@ -113,7 +93,7 @@ $list = $cart->get_cart_list();
 			</div>
 		</div>
 
-
+        <!-- 手机端   底部的bar -->
         <div class="bottom-nav">
             <div><a href="index.php" class="active"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
             <div><a href="cart.php"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
