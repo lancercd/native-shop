@@ -17,7 +17,8 @@
     }
     .confirm-panel.center{
         position: fixed;
-        bottom: 3.5rem;
+        bottom: 3rem;
+        padding: 5px 0;
     }
     .confirm-panel .select-product-info{
         margin-left: 10px;
