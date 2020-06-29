@@ -1,0 +1,56 @@
+/* address   响应式 */
+
+@media only screen and (max-width:768px){
+    .main .left-menu{
+        display: none;
+    }
+
+    .main .right-box .content{
+        padding-bottom: 3rem;
+    }
+
+    .main .right-box .content .item{
+
+        flex-wrap: nowrap;
+        height: auto;
+        max-width: 98%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 5px;
+        overflow: hidden;
+    }
+    .main .right-box .content .item .info{
+        width: 70%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+     .main .right-box .content .item .name {
+      min-width: 28%
+    }
+    .main .right-box .content .item .phone {
+      flex-grow: 1;
+    }
+    .main .right-box .content .item .detail {
+      width: 100%;
+    }
+    .main .right-box .content .item .del {
+        display: none;
+    }
+    .main .right-box .content .item .is-default {
+        order: -1;
+        width: 20%;
+    }
+    .main .right-box .content .item .is-default.hide{
+        display: none;
+    }
+    .main .right-box .content .item .is-default .show {
+      width: 100%;
+      border-radius: 5px;
+      padding: 0;
+    }
+    .main .right-box .content .item .address-deit {
+        width: 10%;
+    }
+}

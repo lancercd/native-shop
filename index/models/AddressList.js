@@ -73,14 +73,17 @@ export default class AddressList{
         const oFrag = document.createDocumentFragment();
         for (let address of data) {
             let oDiv = document.createElement('div');
+            const is_default = address.is_default;
             address.is_default = (address.is_default==1)? '<div class="show">默认</div>': ''
             let tmp = `
                     <div class="circle">${address.real_name}</div>
-                    <div class="name">${address.real_name}</div>
-                    <div class="phone">${address.phone}</div>
-                    <div class="detail">${address.province} ${address.city} ${address.district}<br>${address.detail}</div>
-                    <div class="is-default">${address.is_default}</div>
-                    <div class="del">删除</div>
+                    <div class="info">
+                        <div class="name">${address.real_name}</div>
+                        <div class="phone">${address.phone}</div>
+                        <div class="detail">${address.province} ${address.city} ${address.district}<br>${address.detail}</div>
+                        <div class="is-default ${(is_default==1)? '':'hide'}">${address.is_default}</div>
+                        <div class="del">删除</div>
+                    </div>
                     <div class="address-deit"><a href="#"><i class="icon iconfont icon-right"></i></a></div>
             `;
             oDiv.setAttribute('data-address-id', address.address_id);
