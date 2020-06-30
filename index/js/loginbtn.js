@@ -5,6 +5,7 @@ import request from '../../utils/request.js';
 
 const message = new Message;
 const loginBtn = document.getElementsByName('loginBtn')[0];
+const logout = document.getElementsByName('loginBtn')[0];
 if(loginBtn){
     loginBtn.addEventListener('click', () => {
         // const container = document.getElementById('container');
@@ -47,6 +48,32 @@ if(loginBtn){
                 },
                 // 'close': function(){alert('close');},
             },
+        });
+    }, false);
+}
+
+
+//点击用户头像  信息框
+const user_btns = document.getElementsByClassName('user-info')[0];
+//信息框消失  出现
+if(user_btns){
+    const user_btn_box = document.getElementsByClassName('user-btns')[0];
+
+    user_btns.addEventListener('mouseover', ()=>{
+        user_btn_box.style.display = 'block';
+    }, false);
+
+    user_btns.addEventListener('mouseout', ()=>{
+        user_btn_box.style.display = 'none';
+
+    }, false);
+
+    const user_logout_btn = document.getElementsByClassName('logout')[0];
+    user_logout_btn.addEventListener('click', ()=>{
+        request({
+            url: '/user/logout'
+        }).then(()=>{
+            location.reload();
         });
     }, false);
 }

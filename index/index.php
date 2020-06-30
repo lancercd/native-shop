@@ -15,6 +15,7 @@ if($is_logged){
     $avatar = $_SESSION['avatar'];
     $nickname = $_SESSION['nickname'];
 }
+// p($_SESSION['avatar']);die;
 
 $current_page = 'index';
  ?>

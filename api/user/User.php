@@ -16,6 +16,14 @@ class User extends Base{
         $this->setUser($user);
         return Json::success('登录成功!');
     }
+    public function logout(){
+        session_start();
+        if(isset($_SESSION['uid'])){
+            session_unset();
+            session_destroy();
+        }
+        return Json::success('退出成功!');
+    }
 
     public function admin_login(){
         $account = $_POST['account'];
@@ -28,6 +36,16 @@ class User extends Base{
         session_start();
         $_SESSION['aid'] = $user['aid'];
         return Json::success('登录成功!');
+    }
+
+    public function admin_logout(){
+        session_start();
+        if(isset($_SESSION['aid'])){
+            session_unset();
+            session_destroy();
+        }
+        header('location: ../admin/admin_login.php');
+        exit();
     }
 
 

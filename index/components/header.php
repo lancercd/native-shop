@@ -23,8 +23,18 @@
 
             </div>
             <?php if ($is_logged): //登录了?>
+
             <div class="user-info">
                 <img class="avatar" src="<?php echo $avatar ?>" alt="头像">
+                <div class="user-btns">
+                    <div class="item">
+                        <a href="self_info.php">我的信息</a>
+                    </div>
+                    <div class="item logout">
+                        退出登录
+                    </div>
+
+                </div>
             </div>
             <?php endif; ?>
         </div>
