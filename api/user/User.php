@@ -13,10 +13,8 @@ class User extends Base{
         $user = $this->table('user')->where("`account` = '{$account}'")->find();
         if(!$user) return Json::fail('账号错误!');
         if($user['pwd'] != $pwd) return Json::fail('密码错误!');
-        session_start();
-        $_SESSION['uid'] = $user['uid'];
+        $this->setUser($user);
         return Json::success('登录成功!');
-        // return Json::success('session 设置成功!');
     }
 
     public function admin_login(){

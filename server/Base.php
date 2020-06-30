@@ -13,11 +13,11 @@ class Base extends Sql{
         else return Json::fail('请先登录!');
     }
 
-    public final function setUser($uid, $nickname, $avatar, $real_name){
+    public final function setUser($user_info){
         session_start();
-        $_SESSION['uid'] = $uid;
-        $_SESSION['nickname'] = $nickname;
-        $_SESSION['avatar'] = $avatar;
-        $_SESSION['real_name'] = $real_name;
+        $_SESSION['uid'] = $user_info['uid'];
+        $_SESSION['nickname'] = $user_info['nickname'];
+        $_SESSION['avatar'] = $user_info['avatar'];
+        $_SESSION['real_name'] = $user_info['real_name'];
     }
 }

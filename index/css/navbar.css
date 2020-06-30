@@ -73,6 +73,16 @@ header .navbar .collapse .form a.signin {
   background-color: rgba(231, 76, 60,.8);
   color: #fff;
 }
+header .user-info{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: red;
+}
+header  .user-info .avatar{
+    width: 50px;
+}
 @media only screen and (min-width: 769px) and (max-width: 960px) {
   /* header .container {
     width: 758px;
