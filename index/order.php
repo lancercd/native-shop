@@ -1,12 +1,25 @@
 <?php
 require_once('../controller/order/Order.php');
+require_once('../server/function.php');
 
+$is_logged = lc_get_current_user()? true: false;
+
+$avatar = '';
+$uid = 0;
+$nickname = '';
+
+
+if($is_logged){
+    $uid = $_SESSION['uid'];
+    $avatar = $_SESSION['avatar'];
+    $nickname = $_SESSION['nickname'];
+}
 
 $order = new Order();
 
 $list = $order->get_order_list();
 // var_dump($list);die;
-
+$current_page = 'order';
  ?>
 
 <!DOCTYPE html>
@@ -21,31 +34,10 @@ $list = $order->get_order_list();
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <div class="navbar">
-                <a class="logo" href="#">SHOPPING</a>
-                <label for="toggle-nav"><i class="icon iconfont icon-ego-menu"></i></label>
-                <input type="checkbox" id="toggle-nav">
-                <div class="collapse">
-                    <ul class="links">
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="cart.php">我的购物车</a></li>
-                        <li><a href="order.php">我的订单</a></li>
-                        <li><a href="self_info.html">我的信息</a></li>
-                    </ul>
-                    <div class="form">
-                        <!-- <a href="#">登录</a> -->
-                        <button type="button" class="login-btn" name="loginBtn">登录</button>
-                        <!-- <div class=""> -->
-                            <a class="signin" href="#">注册</a>
-                        <!-- </div> -->
-                    </div>
-                </div>
+    <!-- start header -->
+    <?php require_once('./components/header.php') ?>
+    <!-- end header -->
 
-            </div>
-        </div>
-    </header>
 	<div class="container">
 		<div class="main">
 			<div class="left-menu">
@@ -105,12 +97,7 @@ $list = $order->get_order_list();
 		</div>
 	</div>
 
-    <div class="bottom-nav">
-        <div><a href="index.php"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
-        <div><a href="cart.php"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
-        <div><a href="order.php" class="active"><i class="icon iconfont icon-shangpin1"></i>订单</a></div>
-        <div><a href="self_info.php"><i class="icon iconfont icon-user"></i>我的信息</a></div>
-    </div>
+    <?php require_once('./components/footer.php') ?>
 	<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
 </body>
 </html>

@@ -1,5 +1,19 @@
 <?php
 require_once('../controller/product/Product.php');
+require_once('../server/function.php');
+$is_logged = lc_get_current_user()? true: false;
+
+$avatar = '';
+$uid = 0;
+$nickname = '';
+
+
+if($is_logged){
+    $uid = $_SESSION['uid'];
+    $avatar = $_SESSION['avatar'];
+    $nickname = $_SESSION['nickname'];
+}
+
 
 $product = new Product();
 
@@ -7,6 +21,8 @@ $product = new Product();
 $data = $product->get_product();
 $data['attribute_list'] = json_decode($data['attribute_list'], true);
 // var_dump($data);die;
+
+$current_page = '';
 ?>
 
 
@@ -24,31 +40,8 @@ $data['attribute_list'] = json_decode($data['attribute_list'], true);
 	</head>
 	<body>
 	<!-- start header -->
-	<header>
-        <div class="container">
-            <div class="navbar">
-                <a class="logo" href="#">SHOPPING</a>
-                <label for="toggle-nav"><i class="icon iconfont icon-ego-menu"></i></label>
-                <input type="checkbox" id="toggle-nav">
-                <div class="collapse">
-                    <ul class="links">
-                        <li><a href="">首页</a></li>
-                        <li><a href="cart.html">我的购物车</a></li>
-                        <li><a href="order.html">我的订单</a></li>
-                        <li><a href="self_info.html">我的信息</a></li>
-                    </ul>
-                    <div class="form">
-                        <!-- <a href="#">登录</a> -->
-                        <button type="button" class="login-btn" name="loginBtn">登录</button>
-                        <!-- <div class=""> -->
-                            <a class="signin" href="#">注册</a>
-                        <!-- </div> -->
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </header>
+    <?php require_once('./components/header.php') ?>
+    <!-- end header -->
 
 	<div class="xiangqing">
 		<div class="discription container">
@@ -97,12 +90,7 @@ $data['attribute_list'] = json_decode($data['attribute_list'], true);
 		</div>
 		<div class="clear"></div>
 	</div>
-	<div class="bottom-nav">
-	    <div><a href="index.php"><i class="icon iconfont icon-lingshi"></i>首页</a></div>
-	    <div><a href="cart.php"><i class="icon iconfont icon-cart-Empty"></i>购物车</a></div>
-	    <div><a href="order.php"><i class="icon iconfont icon-shangpin1"></i>订单</a></div>
-	    <div><a href="self_info.html"><i class="icon iconfont icon-user"></i>我的信息</a></div>
-	</div>
+	<?php require_once('./components/footer.php') ?>
 	<script type="module" src="js/detail.js" charset="utf-8"></script>
 	<script type="module" src="js/loginbtn.js" charset="utf-8"></script>
 	<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>

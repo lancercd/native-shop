@@ -1,3 +1,23 @@
+<?php
+require_once('../server/function.php');
+
+// is_logged();
+
+$is_logged = lc_get_current_user()? true: false;
+
+$avatar = '';
+$uid = 0;
+$nickname = '';
+
+
+if($is_logged){
+    $uid = $_SESSION['uid'];
+    $avatar = $_SESSION['avatar'];
+    $nickname = $_SESSION['nickname'];
+}
+
+$current_page = 'self_info';
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,19 +25,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>编辑收货地址</title>
-	<link rel="stylesheet" href="./css/reset.css">
-
-	<link rel="stylesheet" type="text/css" href="../public/icon-font/iconfont.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/header.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/model.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/info-form.css">
 	<link rel="stylesheet" href="./css/address.css">
+	<link rel="stylesheet" href="./css/test-all.css">
 </head>
 <body>
+	<!-- start header -->
+    <?php require_once('./components/header.php') ?>
+    <!-- end header -->
 
-	<header>
-
-	</header>
 	<div class="container">
 		<div class="main">
 			<div class="left-menu">

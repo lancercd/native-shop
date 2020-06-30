@@ -1,3 +1,24 @@
+<?php
+require_once('../server/function.php');
+
+// is_logged();
+
+$is_logged = lc_get_current_user()? true: false;
+
+$avatar = '';
+$uid = 0;
+$nickname = '';
+
+
+if($is_logged){
+    $uid = $_SESSION['uid'];
+    $avatar = $_SESSION['avatar'];
+    $nickname = $_SESSION['nickname'];
+}
+$current_page = '';
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,44 +32,10 @@
 	</head>
 	<body>
 
-<!-- start banner_x -->
+<!-- start header -->
+<?php require_once('./components/header.php') ?>
+<!-- end header -->
 
-<div class="site-header">
-  <div class="container flex-container  space-between">
-	<!--网站logo-->
-	<div class="header-logo">
-	  <a href="index.php">
-		<!-- <img src="../public/image/logo.png"> -->
-		lc-shop
-	  </a>
-	</div>
-
-	<div class="header-search">
-	  <form class="search-form" >
-		<input type="text" class="search-text" id="search-text"/>
-		<button class="btn-search">
-		  <i class="icon iconfont icon-search"></i>
-		</button>
-	  </form>
-	</div>
-
-
-	<div class="topbar-user">
-	  <button type="button" name="loginBtn">登录</button>
-	  <span class="sep">|</span>
-	  <a href="javascript:;">注册</a>
-	</div>
-
-  </div>
-</div>
-
-
-
-
-<!-- end banner_x -->
-
-	<!-- start banner_y -->
-	<!-- end banner -->
 
 	<!-- start danpin -->
 		<div class="danpin center">
