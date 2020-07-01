@@ -404,6 +404,11 @@ body {
     font-size: 50px;
 }
 
+.site-main.container .J_wrap .item img{
+    width: 1226px;
+    height: 460px;
+}
+
 .site-main.container .J_wrap .btn {
     width: 50px;
     height: 100px;

@@ -44,14 +44,10 @@ $current_page = 'index';
         <!-- 轮播 -->
         <div class="J_wrap">
           <ul class="list">
-            <li class="item active"><a href="javascript:;"><img src="../public/image/T1SShgB4Kv1RXrhCrK.jpg"/></a></li>
-            <li class="item"><a href="javascript:;"><img src="../public/image/T17QEgBj_T1RXrhCrK.jpg"/></a></li>
-            <li class="item"><a href="javascript:;"><img src="../public/image/T1EsWjB_KT1RXrhCrK.jpg"/></a></li>
-            <li class="item"><a href="javascript:;"><img src="../public/image/T1lVh_ByJv1RXrhCrK.jpg"/></a></li>
-            <li class="item"><a href="javascript:;"><img src="../public/image/T1lVh_ByJv1RXrhCrK.jpg"/></a></li>
-            <li class="item"><a href="javascript:;"><img src="../public/image/T1lVh_ByJv1RXrhCrK.jpg"/></a></li>
-            <li class="item"><a href="javascript:;"><img src="../public/image/T1lVh_ByJv1RXrhCrK.jpg"/></a></li>
-            <li class="item"><a href="javascript:;"><img src="../public/image/T1lVh_ByJv1RXrhCrK.jpg"/></a></li>
+              <li class="item"><a href="javascript:;"><img src="../public/banner/buy.jpg"/></a></li>
+            <li class="item active"><a href="javascript:;"><img src="../public/banner/404.jpg"/></a></li>
+            <li class="item"><a href="javascript:;"><img src="../public/banner/get_money.jpg"/></a></li>
+            <li class="item"><a href="javascript:;"><img src="../public/banner/havent _finished.jpg"/></a></li>
           </ul>
           <ul class="pointList"></ul>
           <button type="button" class="btn" id="goPre">
