@@ -90,5 +90,4 @@ $current_page = 'cart';
 </body>
 
 <script type="module" src="js/cart.js" charset="utf-8"></script>
-<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
 </html>

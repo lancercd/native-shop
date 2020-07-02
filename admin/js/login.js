@@ -4,7 +4,9 @@ import Message from '../../utils/Message.js';
 
 const message = new Message();
 const form = document.getElementsByName('form1')[0];
+
 form.onsubmit = () => {
+    console.log('asdfa');
     const formData = new FormData(form);
 
     if(formData.get('account') === ''){

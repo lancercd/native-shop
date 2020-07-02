@@ -111,6 +111,5 @@ $current_page = 'self_info';
 
 	<script type="module" src="./js/address.js"></script>
 	<script type="module" src="./js/loginbtn.js" charset="utf-8"></script>
-	<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
 </body>
 </html>

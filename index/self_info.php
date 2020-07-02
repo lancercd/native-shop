@@ -91,7 +91,6 @@ $current_page = 'self_info';
 	</div>
 
     <?php require_once('./components/footer.php') ?>
-	<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
 
 </body>
 </html>

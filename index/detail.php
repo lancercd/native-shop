@@ -95,6 +95,5 @@ $current_page = '';
 	<?php require_once('./components/footer.php') ?>
 	<script type="module" src="js/detail.js" charset="utf-8"></script>
 	<script type="module" src="js/loginbtn.js" charset="utf-8"></script>
-	<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
 	</body>
 </html>

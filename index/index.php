@@ -195,6 +195,6 @@ $current_page = 'index';
     <script type="module" src="js/show_login.js" charset="utf-8"></script>
 <?php endif; ?>
 
-<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
+
 </body>
 </html>

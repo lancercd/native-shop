@@ -21,7 +21,7 @@
    <div class="log">
        admin
    </div>
-   <form name="form1" action="post">
+   <form name="form1">
        <div class="input">
            账号: <input name="account" type="text" id="account" placeholder="account" value="1311282756">
        </div>
@@ -41,5 +41,4 @@
 
 </body>
 <script type="module" src="js/login.js"></script>
-<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
 </html>
