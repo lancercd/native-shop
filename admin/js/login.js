@@ -12,12 +12,14 @@ form.onsubmit = () => {
             type: 'error',
             text: '请输入用户名',
         });
+        return false;
     }
     if(formData.get('pwd') === ''){
         message.show({
             type: 'error',
             text: '请输入密码',
         });
+        return false;
     }
     request({
         url: '/user/admin_login',

@@ -83,22 +83,4 @@ class Order extends Base{
     }
 
 
-    //管理员界面的  矩形图
-    public function get_chart_data(){
-        return Json::success([
-            5,6,1,3,8,4,9,1,2,5
-        ]);
-    }
-
-
-
-    //管理员界面的  进度条图
-    public function get_chart_progress_data(){
-        return Json::success([
-            'num' => [44,44,44,44,44],
-            'stick' => [0.5, 0.6,0.8]
-        ]);
-    }
-
-
 }

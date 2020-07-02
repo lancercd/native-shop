@@ -44,7 +44,7 @@ export default class Chart{
     getData(){
         //矩形图
         request({
-            url: '/order/get_chart_data',
+            url: '/admin/get_chart_data',
         }).then(
             res => {
                 const max = Math.max(...res.data);
@@ -62,7 +62,7 @@ export default class Chart{
 
         //进度条
         request({
-            url: '/order/get_chart_progress_data'
+            url: '/admin/get_chart_progress_data'
         }).then(
             res => {
                 this.renderProgress(res.data);

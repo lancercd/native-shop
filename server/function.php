@@ -31,10 +31,12 @@ function is_logged(){
         header("Location: index.php?need_log=true");
     }
 }
+
+//没登录返回  登录页面  (管理员)
 function ad_is_logged(){
     session_start();
-    if(empty($_SESSION['id'])){
-        header("Location: login.php");
+    if(empty($_SESSION['aid'])){
+        header("Location: admin_login.php");
     }
 }
 

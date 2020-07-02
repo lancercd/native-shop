@@ -1,4 +1,18 @@
+<?php
+require_once('../controller/admin/Admin.php');
+require_once('../server/function.php');
+ad_is_logged();//没登录返回  登录页面
+$admin = new Admin();
+$avatar = $_SESSION['avatar'];
+$aid = $_SESSION['aid'];
 
+// 总用户数
+$user_count = $admin->get_user_count();
+
+// 为完成订单数
+$order_nonfifish = $admin->get_op_order_count();
+
+ ?>
 
 
 
@@ -23,7 +37,7 @@
         <div class="userinfo">
             <h3>商城管理</h3>
             <div class="head-photo">
-                <img src="../public/image/me.jpg" alt="">
+                <img src="<?php echo $avatar ?>" alt="">
             </div>
             <div class="nickname">刘灿</div>
         </div>
@@ -120,7 +134,7 @@
                         <div class="as-head-btn">急</div>
                     </div>
                     <div class="ad-info-body">
-                        <div class="ad-info-num">1</div>
+                        <div class="ad-info-num"><?php echo $order_nonfifish ?></div>
                         <spqn>待处理</spqn>
                     </div>
                 </div>
@@ -154,7 +168,7 @@
                         <!-- <div class="as-head-btn">急</div> -->
                     </div>
                     <div class="ad-info-body">
-                        <div class="ad-info-num">1</div>
+                        <div class="ad-info-num"><?php echo $user_count ?></div>
                         <!-- <spqn>待审核</spqn> -->
                     </div>
                 </div>
@@ -241,7 +255,7 @@
 
                     <div class="col">
                         <div class="flex-column-css data">
-                            <div class="num">8</div>
+                            <div class="num">0</div>
                             <div class="discription">总订单量</div>
                         </div>
                     </div>

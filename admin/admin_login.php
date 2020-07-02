@@ -1,6 +1,5 @@
 <?php
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,22 +15,6 @@
  <link rel="stylesheet" href="../public/icon-font/iconfont.css">
 </head>
 <body>
-
-<script>
-   function checkform(form){
-       if(form.account.value==""){
-           alert("请输入用户名");
-           form.account.focus();
-           return false;
-       }
-       if(form.pwd.value==""){
-           alert("请输入密码");
-           form.pwd.focus();
-           return false;
-       }
-   }
-</script>
-
 
 <div id="container">
 
