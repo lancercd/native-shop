@@ -1,7 +1,8 @@
 <?php
 require_once('../server/function.php');
 
-// is_logged();
+$show_login = false;
+if(isset($_GET['need_log']) && $_GET['need_log']) $show_login = true;
 
 $is_logged = lc_get_current_user()? true: false;
 
@@ -190,6 +191,9 @@ $current_page = 'index';
 
 <script type="module" src="js/index.js" charset="utf-8"></script>
 <script type="module" src="js/loginbtn.js" charset="utf-8"></script>
-<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
+<?php if ($show_login): ?>
+    <script type="module" src="js/show_login.js" charset="utf-8"></script>
+<?php endif; ?>
+
 </body>
 </html>

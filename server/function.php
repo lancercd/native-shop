@@ -25,10 +25,10 @@ function lc_get_current_user(){
     return empty($_SESSION['uid'])? false:$_SESSION['uid'];
 }
 
-
+//若没有登录  返回首页   显示登录框
 function is_logged(){
     if(!lc_get_current_user()){
-        header("Location: index.php");
+        header("Location: index.php?need_log=true");
     }
 }
 function ad_is_logged(){

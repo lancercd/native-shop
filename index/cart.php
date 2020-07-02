@@ -1,7 +1,7 @@
 <?php
 require_once('../controller/cart/Cart.php');
 require_once('../server/function.php');
-
+is_logged();//若没有登录  返回首页   显示登录框
 $is_logged = lc_get_current_user()? true: false;
 $avatar = '';
 $uid = 0;
