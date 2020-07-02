@@ -97,6 +97,16 @@ class User extends Base{
         // else return Json::fail('获取列表失败!');
     }
 
+    public function get_money(){
+        $uid = $this->uid();
+        $res = $this->table('user')->where("`uid` = {$uid}")->update([
+            'now_money' => 100000
+        ]);
+        if($res)
+            return Json::success('金额更新到100000(测试!)');
+        else
+            return Json::fail('使用了才能领取,快去使用吧!');
+    }
 
     public function test(){
 

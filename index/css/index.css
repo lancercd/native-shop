@@ -565,7 +565,10 @@ body {
   float: left;
   margin-left: 14px;
 }
-.model-hot .good-item a,
+.model-hot .good-item button{
+    border: none;
+}
+.model-hot .good-item button,
 .model-hot .good-item img {
   display: block;
   height: 170px;

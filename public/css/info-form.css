@@ -279,6 +279,8 @@
 #message-container .message .text {
     padding: 0 5px;
     color: #333;
+    /* word-break: keep-all; */
+    white-space:nowrap;
     user-select: none;
 }
 #message-container .message .close {

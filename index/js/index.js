@@ -8,17 +8,38 @@ import ProductList from '../models/ProductList.js';
 const message = new Message;
 
 const banner = document.getElementsByClassName('J_wrap')[0];
-// console.log(banner.getElementsByTagName('li'));
 
 new Banner(banner).init();
 
+function get_money(){
 
+    request({
+        url:'/user/get_money',
+    }).then(
+        res => {
+            message.show({
+                type: 'success',
+                text: res.msg,
+                // duration: 0
+            })
+        },
+        res => {
+            message.show({
+                type: 'error',
+                text: res.msg,
+                // duration: 0
+            });
+        }
+    );
+    // console.log('ok');
+}
+const banner_s = document.getElementsByClassName('banner-s');
+for (let item of banner_s) {
+    item.addEventListener('click', get_money, false);
+}
 
 const oProductMore = document.getElementById('more');
 // new ProductMore(oProductMore);
-
-
-
 
 
 //热销产品
