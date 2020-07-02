@@ -6,25 +6,40 @@ use \server\JsonService as Json;
 class Admin extends Base{
     //管理员界面的  矩形图
     public function get_chart_data(){
-        $beginToday=mktime(0,0,0,date('m'),date('d'),date('Y'));
-        $endToday = strtotime(date('Y-m-d'.'00:00:00',time()+3600*24));
-        $now = time();
-        $one_day = 60*60*24;
-        $data = [];
-
-        $thisTime = $one_day*9;
-        $order_count = $this->table('order')->where("`add_time` > {$beginToday}-{$thisTime} and `add_time` < {$endToday}-{$thisTime}")->field('COUNT(*) num')->find(true);
-        var_dump($order_count);die;
-        $data[] = $order_count['num'];
-        $order_count = $this->table('order')->where("`add_time` > {$beginToday} and `add_time` < {$endToday}")->field('COUNT(*) num')->find();
-        $data[] = $order_count['num'];
-        // return Json::success([
-        //     5,6,1,3,8,4,9,1,2,5
-        // ]);
+        return Json::success($this->get_day_order_count(10));
     }
 
 
-    //管理员界面的  进度条图
+    /**
+     * 获取近 i天的订单数
+     * @param  int $i 近i天
+     * @return array    order数
+     */
+    private function get_day_order_count($i){
+        $beginToday=mktime(0,0,0,date('m'),date('d'),date('Y'));
+        $endToday = strtotime(date('Y-m-d'.'00:00:00',time()+3600*24));
+        $one_day = 60*60*24;
+        $data = [];
+
+        $start = $beginToday - ($one_day * ($i-1));
+        $end = $start + $one_day;
+
+        while ($i) {
+            $order_count = $this->table('order')->where("`add_time` > {$start} and `add_time` < {$end}")->field('COUNT(*) num')->find();
+            $data[] = $order_count['num'];
+
+            $start = $end;
+            $end = $start + $one_day;
+            --$i;
+        }
+        return $data;
+    }
+
+
+    /**
+     * 管理员界面的  进度条图
+     * @return array
+     */
     public function get_chart_progress_data(){
         $now = time();
         $day = 60*60*24;

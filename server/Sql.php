@@ -5,6 +5,7 @@ use mysqli;
 class Sql{
     public static $link = null;
     protected $table = null;
+    private $show_sql = false;
     private $opt;
 
     public static $sqls = array();
@@ -84,6 +85,7 @@ class Sql{
 
     public final function find(){
         $data = $this->limit(1)->all();
+        if($this->show_sql)return $data;
         $data = current($data);
         return $data;
     }
@@ -100,10 +102,16 @@ class Sql{
         // echo $sql.'<br> <hr>';
         return $this->query($sql, $flage);
     }
+
+    public final function fetchSql(){
+        $this->show_sql = true;
+        return $this;
+    }
     public final function query($sql, $flage){
         self::$sqls[] = $sql;
         $link = self::$link;
         // echo $sql;
+        if($this->show_sql) return $sql;
         $result = $link->query($sql);
         if(is_bool($result)) die("数据库查询失败：$sql");
         if($flage){
@@ -135,6 +143,7 @@ class Sql{
 
     public final function exe($sql){
         self::$sqls[] = $sql;
+        if($this->show_sql) return $sql;
         $link = self::$link;
         $bool = $link->query($sql);
         $this->_opt();
