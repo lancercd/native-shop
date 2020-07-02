@@ -44,10 +44,10 @@ $current_page = 'index';
         <!-- 轮播 -->
         <div class="J_wrap">
           <ul class="list">
-              <li class="item"><a href="javascript:;"><img src="../public/banner/buy.jpg"/></a></li>
-            <li class="item active"><a href="javascript:;"><img src="../public/banner/404.jpg"/></a></li>
-            <li class="item"><a href="javascript:;"><img src="../public/banner/get_money.jpg"/></a></li>
-            <li class="item"><a href="javascript:;"><img src="../public/banner/havent _finished.jpg"/></a></li>
+              <li class="item"><a href="https://github.com/lancercd/native-shop" target="_blank"><img src="../public/banner/buy.jpg"/></a></li>
+            <li class="item active"><a href="https://github.com/lancercd/native-shop" target="_blank"><img src="../public/banner/404.jpg"/></a></li>
+            <li class="item"><a href="https://github.com/lancercd/native-shop" target="_blank"><img src="../public/banner/havent _finished.jpg"/></a></li>
+            <li class="item"><a href="https://github.com/lancercd/native-shop" target="_blank"><img src="../public/banner/get_money.jpg"/></a></li>
           </ul>
           <ul class="pointList"></ul>
           <button type="button" class="btn" id="goPre">
