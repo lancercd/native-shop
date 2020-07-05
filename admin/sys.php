@@ -58,9 +58,9 @@ $order_nonfifish = $admin->get_op_order_count();
                     <icon class="iconfont icon-tieziguanli"></icon><i></i>订单管理
                 </a>
             <div class="child-menu">
-                    <a href="post_check.php?stype=isPbu">待处理</a>
-                    <a href="post_check.php?stype=witPbu">待审核</a>
-                    <a href="post_check.php?stype=noPbu">已完成</a>
+                    <a href="order.php">所有订单</a>
+                    <!-- <a href="post_check.php?stype=witPbu">待审核</a>
+                    <a href="post_check.php?stype=noPbu">已完成</a> -->
             </div>
             </li>
 
@@ -298,6 +298,5 @@ $order_nonfifish = $admin->get_op_order_count();
     </div>
 </div>
 <script type="module" src="./js/sys.js" charset="utf-8"></script>
-<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
 </body>
 </html>

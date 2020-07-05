@@ -1,0 +1,49 @@
+.main-container .content {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+.main-container .content .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+  color: #757575;
+}
+.main-container .content .item:hover {
+  background-color: rgba(200, 200, 200, 0.1);
+}
+.main-container .content .item > div {
+  width: 100%;
+}
+.main-container .content .item .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 0;
+  font-size: 1.2rem;
+}
+.main-container .content .item .tail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 5px;
+  font-size: 1.2rem;
+}
+.main-container .content .item div .img-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100px;
+}
+.main-container .content .item div .img-box img {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #eee;
+}
+.main-container .content .item > div.link-detail:hover a {
+  color: #ff6700;
+}
