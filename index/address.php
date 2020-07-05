@@ -58,8 +58,8 @@ $current_page = 'self_info';
 					</div>
 					<div class="menu-list">
 						<ul>
-							<li><a href="self_info.html">我的信息</a></li>
-							<li  class="active"><a href="address.html">收货地址</a></li>
+							<li><a href="self_info.php">我的信息</a></li>
+							<li  class="active"><a href="address.php">收货地址</a></li>
 						</ul>
 					</div>
 				</div>
