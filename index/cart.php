@@ -90,4 +90,5 @@ $current_page = 'cart';
 </body>
 
 <script type="module" src="js/cart.js" charset="utf-8"></script>
+<script type="module" src="js/loginbtn.js" charset="utf-8"></script>
 </html>

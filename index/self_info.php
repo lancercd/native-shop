@@ -92,5 +92,6 @@ $current_page = 'self_info';
 
     <?php require_once('./components/footer.php') ?>
 
+    <script type="module" src="js/loginbtn.js" charset="utf-8"></script>
 </body>
 </html>

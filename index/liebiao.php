@@ -120,6 +120,6 @@ $current_page = '';
 
 	<!-- end danpin -->
 
-	<script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
+	<script type="module" src="js/loginbtn.js" charset="utf-8"></script>
 	</body>
 </html>

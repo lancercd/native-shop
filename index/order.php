@@ -98,5 +98,8 @@ $current_page = 'order';
 	</div>
 
     <?php require_once('./components/footer.php') ?>
+
+
+    <script type="module" src="js/loginbtn.js" charset="utf-8"></script>
 </body>
 </html>
