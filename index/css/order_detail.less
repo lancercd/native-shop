@@ -1,0 +1,125 @@
+body{
+    background-color: rgb(245,245,245);
+}
+
+.main{
+    display: flex;
+    padding: 20px 0 0 0;
+
+    .right-box{
+        flex-grow: 1;
+        min-height: 100%;
+        padding-bottom: 20px;
+        background-color: #fff;
+
+        .right-box-title{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px 10px 30px;
+            border-bottom: 2px solid rgb(204, 204, 204);
+            .title{
+
+                font-size: 23px;
+                color: rgb(117, 117, 117);
+                font-weight: bold;
+            }
+        }
+
+        .content{
+            display: flex;
+            flex-direction: column;
+            min-height: 50px;
+            padding: 10px 30px;
+
+
+            .title{
+                display: flex;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                background-color: rgba(52, 152, 219,.2);
+                .time{
+                    padding: 10px 15px;
+
+                }
+                .order-id{
+                    min-width: 160px;
+                    font-weight: 800;
+                    padding: 10px 15px;
+                }
+            }
+
+
+            .item-box{
+                min-height: 100px;
+                padding: 10px;
+                border-radius: 5px;
+                // background-color:rgba(236, 240, 241,.5);
+                border: 1px solid rgba(236, 240, 241,.8);
+
+                &>div{
+                    // background-color: #fff;
+                }
+                .item{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    // justify-content: center;
+
+                    .product-info{
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        .img-box{
+                            padding-right: 5px;
+                            margin-right: 5px;
+                            border-right: 1px solid #95a5a6;
+                            img{
+                                height: 150px;
+                                width: 150px;
+                            }
+                        }
+                        .info{
+                            height: 150px;
+                            padding: 10px 0;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 160px;
+                        }
+                        .pro-name{
+                            font-weight: 700;
+                        }
+                        .introduce{
+                            // max-width: 50px;
+                            font-weight: 400;
+                            font-size: 13px;
+                            color: #95a5a6;
+                        }
+                    }
+
+                    .detail-info{
+                        height: 150px;
+                        display: flex;
+                        align-items: center;
+
+                        &>div{
+                            padding: 0 15px;
+                        }
+                    }
+                    .order-info{
+
+                    }
+                    .express-info{
+
+                    }
+
+
+
+
+                }
+            }
+        }
+    }
+}

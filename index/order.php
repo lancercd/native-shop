@@ -77,7 +77,9 @@ $current_page = 'order';
                         <div class="head">
                             <div style="width: 20%;">订单号:<?php echo $v['order_id'] ?></div>
     						<div style="width: 30%;"><?php echo $v['add_time'] ?></div>
-    						<div class="link-detail" ><a href="">订单详情></a></div>
+    						<div class="link-detail" >
+                                <a href="order_detail.php?oid=<?php echo $v['order_id'] ?>">订单详情></a>
+                            </div>
                         </div>
                         <?php foreach ($v['detail'] as $detail): ?>
                         <div class="tail">

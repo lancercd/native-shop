@@ -1,0 +1,20 @@
+/* order_detail  响应式 */
+@media only screen and (max-width: 768px) {
+    .main .right-box .content{
+        /* flex-direction: column; */
+        padding-bottom: 3rem;
+    }
+
+    .main .right-box .content .item-box .item{
+        flex-direction: column;
+        /* display: none; */
+    }
+
+    .main .right-box .content .item-box .item .product-info{
+        flex-direction: column;
+    }
+
+    .main .right-box .content .item-box .item .product-info .img-box{
+        border: none;
+    }
+}
