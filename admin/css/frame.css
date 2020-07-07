@@ -4,15 +4,10 @@
     padding: 0;
 }
 .main-container{
-    /* margin: 0 auto; */
     width: 800px;
-    /* min-height: 90vh;
-    max-height: 100vh; */
     min-height: 900px;
-    max-height: 1000px;
     box-shadow: 0 0 10px rgba(52, 73, 94, .3);
     background-color: rgba(52, 152, 219, .1);
-    /* float: right; */
     overflow: hidden;
 }
 .main-container .main-header{
