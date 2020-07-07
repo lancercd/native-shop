@@ -39,7 +39,7 @@ class Order extends Sql{
     private function order_detail($oid, $uid = 0){
         $model = new Sql();
         $model = $model->table('order')->where("`order_id` = {$oid}");
-        if(!$uid) $model = $model->where("`uid` = {$uid}");
+        if($uid) $model = $model->where("`uid` = {$uid}");
         $data = $model->find();
         //没有查询到信息  返回空
         if(!$data) return;

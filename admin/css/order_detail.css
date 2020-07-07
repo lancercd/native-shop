@@ -1,0 +1,107 @@
+.right-box {
+  flex-grow: 1;
+  min-height: 100%;
+  padding-bottom: 20px;
+  background-color: #fff;
+}
+.right-box .right-box-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px 10px 30px;
+  border-bottom: 2px solid #cccccc;
+}
+.right-box .right-box-title .title {
+  font-size: 23px;
+  color: #757575;
+  font-weight: bold;
+}
+.right-box .content {
+  display: flex;
+  flex-direction: column;
+  min-height: 50px;
+  padding: 10px 30px;
+}
+.right-box .content .title {
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(52, 152, 219, 0.2);
+}
+.right-box .content .title .time {
+  padding: 10px 15px;
+}
+.right-box .content .title .order-id {
+  min-width: 160px;
+  font-weight: 800;
+  padding: 10px 15px;
+}
+.right-box .content .item-box {
+  min-height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(236, 240, 241, 0.8);
+}
+.right-box .content .item-box .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.right-box .content .item-box .item .product-info {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.right-box .content .item-box .item .product-info .img-box {
+  padding-right: 5px;
+  margin-right: 5px;
+  border-right: 1px solid #95a5a6;
+}
+.right-box .content .item-box .item .product-info .img-box img {
+  height: 150px;
+  width: 150px;
+}
+.right-box .content .item-box .item .product-info .info {
+  height: 150px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 160px;
+}
+.right-box .content .item-box .item .product-info .pro-name {
+  font-weight: 700;
+}
+.right-box .content .item-box .item .product-info .introduce {
+  font-weight: 400;
+  font-size: 13px;
+  color: #95a5a6;
+}
+.right-box .content .item-box .item .detail-info {
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+.right-box .content .item-box .item .detail-info > div {
+  padding: 0 15px;
+}
+
+
+.right-box .content{
+
+    padding-bottom: 3rem;
+}
+
+.right-box .content .item-box .item{
+    flex-direction: column;
+    border: none;
+}
+
+.right-box .content .item-box .item .product-info{
+    flex-direction: column;
+}
+
+.right-box .content .item-box .item .product-info .img-box{
+    border: none;
+}
