@@ -91,6 +91,17 @@ $current_page = '';
 			</div>
 		</div>
 		<div class="clear"></div>
+
+
+        <div class="img-list">
+            <!-- 商家描述图片 -->
+            <div class="item"><img src="" alt=""></div>
+            <div class="item"><img src="" alt=""></div>
+            <div class="item"><img src="" alt=""></div>
+            <div class="item"><img src="" alt=""></div>
+        </div>
+
+
 	</div>
 	<?php require_once('./components/footer.php') ?>
 	<script type="module" src="js/detail.js" charset="utf-8"></script>
