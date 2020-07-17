@@ -92,13 +92,26 @@ $current_page = '';
 		</div>
 		<div class="clear"></div>
 
+        <div class="nav-bar">
+            <div class="active">详情</div>
+            <div class="">评论</div>
+        </div>
 
         <div class="img-list">
             <!-- 商家描述图片 -->
-            <div class="item"><img src="" alt=""></div>
-            <div class="item"><img src="" alt=""></div>
-            <div class="item"><img src="" alt=""></div>
-            <div class="item"><img src="" alt=""></div>
+            <div class="item"><img src="../public/image/0f96fe7f6a8596a0.jpg" alt=""></div>
+            <div class="item"><img src="../public/image/0f96fe7f6a8596a0.jpg" alt=""></div>
+            <div class="item"><img src="../public/image/0f96fe7f6a8596a0.jpg" alt=""></div>
+            <div class="item"><img src="../public/image/0f96fe7f6a8596a0.jpg" alt=""></div>
+        </div>
+
+        <div class="comment">
+            <div class="item">
+
+            </div>
+            <div class="item">
+
+            </div>
         </div>
 
 
@@ -107,5 +120,6 @@ $current_page = '';
 	<script type="module" src="js/detail.js" charset="utf-8"></script>
 	<script type="module" src="js/loginbtn.js" charset="utf-8"></script>
     <script type="module" src="js/loginbtn.js" charset="utf-8"></script>
+    <script src="http://localhost:9527/livereload.js" charset="utf-8"></script>
 	</body>
 </html>
